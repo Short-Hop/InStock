@@ -1,16 +1,79 @@
-@font-face {
-  font-family: "AvenirNextRegular";
-  src: url(../assets/fonts/AvenirNextRegular.otf);
+button {
+  border: none;
 }
 
-@font-face {
-  font-family: "AvenirNextDemiBold";
-  src: url(../assets/fonts/AvenirNextDemi.otf);
-}
-
-@font-face {
-  font-family: "AvenirNextBold";
-  src: url(../assets/fonts/AvenirNextBold.otf);
+@media (min-width: 320px) {
+  .createnew {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__title {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .createnew .createnew__form {
+    width: 69vw;
+  }
+  .createnew .createnew__form form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .createnew .createnew__form form label {
+    margin-bottom: 8px;
+  }
+  .createnew .createnew__form form input {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .createnew .createnew__form form input::-webkit-input-placeholder {
+    margin-left: 10px;
+  }
+  .createnew .createnew__form form input:-ms-input-placeholder {
+    margin-left: 10px;
+  }
+  .createnew .createnew__form form input::-ms-input-placeholder {
+    margin-left: 10px;
+  }
+  .createnew .createnew__form form input::placeholder {
+    margin-left: 10px;
+  }
+  .createnew .createnew__form form input #description {
+    height: 80px;
+  }
+  .createnew .createnew__form form button {
+    width: 100%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: blue;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: blue;
+  }
 }
 
 body {
@@ -42,7 +105,7 @@ h4 {
 }
 
 h5 {
-  color: #AFAFAF;
+  color: #afafaf;
   font-size: 3.8vw;
   line-height: 6.2vw;
   margin: 0px;
@@ -51,7 +114,7 @@ h5 {
 
 .divider {
   height: 1px;
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
 }
 
 @media (min-width: 600px) {
