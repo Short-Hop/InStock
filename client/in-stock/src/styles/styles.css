@@ -37,26 +37,58 @@ button {
   .createnew .createnew__form form label {
     margin-bottom: 8px;
   }
-  .createnew .createnew__form form input {
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country,
+  .createnew .createnew__form form #status {
     margin-bottom: 24px;
     height: 48px;
     background-color: #fafafa;
     border-radius: 4px;
     width: 100%;
   }
-  .createnew .createnew__form form input::-webkit-input-placeholder {
+  .createnew .createnew__form form input::-webkit-input-placeholder,
+  .createnew .createnew__form form #country::-webkit-input-placeholder,
+  .createnew .createnew__form form #status::-webkit-input-placeholder {
     margin-left: 10px;
   }
-  .createnew .createnew__form form input:-ms-input-placeholder {
+  .createnew .createnew__form form input:-ms-input-placeholder,
+  .createnew .createnew__form form #country:-ms-input-placeholder,
+  .createnew .createnew__form form #status:-ms-input-placeholder {
     margin-left: 10px;
   }
-  .createnew .createnew__form form input::-ms-input-placeholder {
+  .createnew .createnew__form form input::-ms-input-placeholder,
+  .createnew .createnew__form form #country::-ms-input-placeholder,
+  .createnew .createnew__form form #status::-ms-input-placeholder {
     margin-left: 10px;
   }
-  .createnew .createnew__form form input::placeholder {
+  .createnew .createnew__form form input::placeholder,
+  .createnew .createnew__form form #country::placeholder,
+  .createnew .createnew__form form #status::placeholder {
     margin-left: 10px;
   }
-  .createnew .createnew__form form input #description {
+  .createnew .createnew__form form input::-webkit-input-placeholder #country select,
+  .createnew .createnew__form form #country::-webkit-input-placeholder #country select,
+  .createnew .createnew__form form #status::-webkit-input-placeholder #country select {
+    color: red;
+  }
+  .createnew .createnew__form form input:-ms-input-placeholder #country select,
+  .createnew .createnew__form form #country:-ms-input-placeholder #country select,
+  .createnew .createnew__form form #status:-ms-input-placeholder #country select {
+    color: red;
+  }
+  .createnew .createnew__form form input::-ms-input-placeholder #country select,
+  .createnew .createnew__form form #country::-ms-input-placeholder #country select,
+  .createnew .createnew__form form #status::-ms-input-placeholder #country select {
+    color: red;
+  }
+  .createnew .createnew__form form input::placeholder #country select,
+  .createnew .createnew__form form #country::placeholder #country select,
+  .createnew .createnew__form form #status::placeholder #country select {
+    color: red;
+  }
+  .createnew .createnew__form form input #description,
+  .createnew .createnew__form form #country #description,
+  .createnew .createnew__form form #status #description {
     height: 80px;
   }
   .createnew .createnew__form form button {

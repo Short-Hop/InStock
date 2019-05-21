@@ -30,7 +30,9 @@ button {
         label {
           margin-bottom: 8px;
         }
-        input {
+        input,
+        #country,
+        #status {
           margin-bottom: 24px;
           height: 48px;
           background-color: #fafafa;
@@ -38,6 +40,10 @@ button {
           width: 100%;
           &::placeholder {
             margin-left: 10px;
+
+            #country select {
+              color: red;
+            }
           }
           #description {
             height: 80px;

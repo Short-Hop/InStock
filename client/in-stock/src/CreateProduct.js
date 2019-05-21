@@ -17,13 +17,19 @@ class CreateProduct extends React.Component {
             <label>City</label>
             <input type="text" id="city" placeholder="City" />
             <label>Country</label>
-            <input type="text" id="country" placeholder="Item Name" />
+            <select name="country" id="country">
+              <option value="Canada" selected>
+                Canada
+              </option>
+              <option value="USA">USA</option>
+              <option value="France">France</option>
+            </select>
             <label>Quantity</label>
             <input type="text" id="quantity" placeholder="0" />
             <label>Status</label>
-            <i class="material-icons">
-              toggle_on</i>
-            <input type="text" id="status" />
+            <i class="material-icons" id="status">
+              toggle_on
+            </i>
             <label>Item Description</label>
             <input type="text" id="description" placeholder="(Optional)" />
             <button id="Save">Save</button>
