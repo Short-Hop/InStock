@@ -21,6 +21,8 @@ class CreateProduct extends React.Component {
             <label>Quantity</label>
             <input type="text" id="quantity" placeholder="0" />
             <label>Status</label>
+            <i class="material-icons">
+              toggle_on</i>
             <input type="text" id="status" />
             <label>Item Description</label>
             <input type="text" id="description" placeholder="(Optional)" />
