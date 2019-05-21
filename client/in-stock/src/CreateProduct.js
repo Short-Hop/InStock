@@ -9,33 +9,51 @@ class CreateProduct extends React.Component {
         <h1 className="createnew__title">Create New</h1>
         <div className="createnew__form">
           <form>
-            <label>
-              <h2 />
-              Product
-            </label>
-            <input type="text" id="product" placeholder="Item Name" />
-            <label>Last Ordered</label>
-            <input type="text" id="ordered" placeholder="yyyy-mm-dd" />
-            <label>City</label>
-            <input type="text" id="city" placeholder="City" />
-            <label>Country</label>
-            <select name="country" id="country">
-              <option value="Canada" selected>
-                Canada
-              </option>
-              <option value="USA">USA</option>
-              <option value="France">France</option>
-            </select>
-            <label>Quantity</label>
-            <input type="text" id="quantity" placeholder="0" />
-            <label>Status</label>
-            <div id="status">
-              <img src={toggle_on} />
+            <div className="row">
+              <div className="column">
+                <label>Product</label>
+                <input type="text" id="product" placeholder="Item Name" />
+              </div>
+              <div className="column">
+                <label>Last Ordered</label>
+                <input type="text" id="ordered" placeholder="yyyy-mm-dd" />
+              </div>
+            </div>
+            <div className="row">
+              <div className="column">
+                <label>City</label>
+                <input type="text" id="city" placeholder="City" />
+              </div>
+              <div className="column">
+                <label>Country</label>
+                <select name="country" id="country">
+                  <option value="Canada" selected>
+                    Canada
+                  </option>
+                  <option value="USA">USA</option>
+                  <option value="France">France</option>
+                </select>
+              </div>
+            </div>
+            <div className="row">
+              <div className="column">
+                <label>Quantity</label>
+                <input type="text" id="quantity" placeholder="0" />
+              </div>
+              <div className="column">
+                <label>Status</label>
+                <div id="status">
+                  <p>In stock</p>
+                  <img src={toggle_on} />
+                </div>
+              </div>
             </div>
             <label>Item Description</label>
             <input type="text" id="description" placeholder="(Optional)" />
-            <button id="Save">Save</button>
-            <button id="Cancel">Cancel</button>
+            <div className="form__buttons">
+              <button id="Save">Save</button>
+              <button id="Cancel">Cancel</button>
+            </div>
           </form>
         </div>
       </div>
