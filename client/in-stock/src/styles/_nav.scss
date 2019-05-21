@@ -1,0 +1,51 @@
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #323232;
+  min-height: 80px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  &__logo {
+    text-align: center;
+    width: 100%;
+    padding-top: 5px;
+    img {
+      height: 6vw;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    &&--inventory {
+      padding: 1rem;
+      font-size: 4vw;
+      width: 50%;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    &&--inventory,
+    &&--Location {
+      border-bottom: solid #ffffff;
+      font-family: myDemi;
+    }
+  }
+}
