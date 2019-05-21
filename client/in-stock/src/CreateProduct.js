@@ -1,4 +1,6 @@
 import React from "react";
+import toggle_on from "./assets/Icons/SVG/Icon-toggle_on.svg";
+import toggle_off from "./assets/Icons/SVG/Icon-toggle_off.svg";
 
 class CreateProduct extends React.Component {
   render() {
@@ -27,9 +29,9 @@ class CreateProduct extends React.Component {
             <label>Quantity</label>
             <input type="text" id="quantity" placeholder="0" />
             <label>Status</label>
-            <i class="material-icons" id="status">
-              toggle_on
-            </i>
+            <div id="status">
+              <img src={toggle_on} />
+            </div>
             <label>Item Description</label>
             <input type="text" id="description" placeholder="(Optional)" />
             <button id="Save">Save</button>

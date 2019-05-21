@@ -31,8 +31,7 @@ button {
           margin-bottom: 8px;
         }
         input,
-        #country,
-        #status {
+        #country {
           margin-bottom: 24px;
           height: 48px;
           background-color: #fafafa;
@@ -43,12 +42,18 @@ button {
 
             #country select {
               color: red;
+              //Arrows
             }
           }
           #description {
             height: 80px;
           }
         }
+        #status {
+          text-align: left;
+          margin-bottom: 24px;
+        }
+
         button {
           width: 100%;
           border-radius: 4px;
@@ -57,13 +62,13 @@ button {
           text-transform: uppercase;
         }
         #Save {
-          background-color: blue;
+          background-color: #004892;
           color: white;
         }
 
         #Cancel {
           background-color: white;
-          color: blue;
+          color: #004892;
         }
       }
     }

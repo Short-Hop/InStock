@@ -12,20 +12,20 @@ $Mercury: #e1e1e1;
 $Alabaster: #fafafa;
 
 //Fonts
-// @font-face {
-//   font-family: "AvenirNextRegular";
-//   src: url(../assets/fonts/AvenirNextRegular.otf);
-// }
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
 
-// @font-face {
-//   font-family: "AvenirNextDemiBold";
-//   src: url(../assets/fonts/AvenirNextDemi.otf);
-// }
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
 
-// @font-face {
-//   font-family: "AvenirNextBold";
-//   src: url(../assets/fonts/AvenirNextBold.otf);
-// }
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
+}
 
 body {
   font-family: AvenirNextRegular;
@@ -65,6 +65,14 @@ h5 {
   line-height: 6.2vw;
   margin: 0px;
   font-weight: bold;
+}
+
+label {
+  color: $Silver;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 .divider {

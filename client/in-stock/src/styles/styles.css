@@ -38,8 +38,7 @@ button {
     margin-bottom: 8px;
   }
   .createnew .createnew__form form input,
-  .createnew .createnew__form form #country,
-  .createnew .createnew__form form #status {
+  .createnew .createnew__form form #country {
     margin-bottom: 24px;
     height: 48px;
     background-color: #fafafa;
@@ -47,49 +46,44 @@ button {
     width: 100%;
   }
   .createnew .createnew__form form input::-webkit-input-placeholder,
-  .createnew .createnew__form form #country::-webkit-input-placeholder,
-  .createnew .createnew__form form #status::-webkit-input-placeholder {
+  .createnew .createnew__form form #country::-webkit-input-placeholder {
     margin-left: 10px;
   }
   .createnew .createnew__form form input:-ms-input-placeholder,
-  .createnew .createnew__form form #country:-ms-input-placeholder,
-  .createnew .createnew__form form #status:-ms-input-placeholder {
+  .createnew .createnew__form form #country:-ms-input-placeholder {
     margin-left: 10px;
   }
   .createnew .createnew__form form input::-ms-input-placeholder,
-  .createnew .createnew__form form #country::-ms-input-placeholder,
-  .createnew .createnew__form form #status::-ms-input-placeholder {
+  .createnew .createnew__form form #country::-ms-input-placeholder {
     margin-left: 10px;
   }
   .createnew .createnew__form form input::placeholder,
-  .createnew .createnew__form form #country::placeholder,
-  .createnew .createnew__form form #status::placeholder {
+  .createnew .createnew__form form #country::placeholder {
     margin-left: 10px;
   }
   .createnew .createnew__form form input::-webkit-input-placeholder #country select,
-  .createnew .createnew__form form #country::-webkit-input-placeholder #country select,
-  .createnew .createnew__form form #status::-webkit-input-placeholder #country select {
+  .createnew .createnew__form form #country::-webkit-input-placeholder #country select {
     color: red;
   }
   .createnew .createnew__form form input:-ms-input-placeholder #country select,
-  .createnew .createnew__form form #country:-ms-input-placeholder #country select,
-  .createnew .createnew__form form #status:-ms-input-placeholder #country select {
+  .createnew .createnew__form form #country:-ms-input-placeholder #country select {
     color: red;
   }
   .createnew .createnew__form form input::-ms-input-placeholder #country select,
-  .createnew .createnew__form form #country::-ms-input-placeholder #country select,
-  .createnew .createnew__form form #status::-ms-input-placeholder #country select {
+  .createnew .createnew__form form #country::-ms-input-placeholder #country select {
     color: red;
   }
   .createnew .createnew__form form input::placeholder #country select,
-  .createnew .createnew__form form #country::placeholder #country select,
-  .createnew .createnew__form form #status::placeholder #country select {
+  .createnew .createnew__form form #country::placeholder #country select {
     color: red;
   }
   .createnew .createnew__form form input #description,
-  .createnew .createnew__form form #country #description,
-  .createnew .createnew__form form #status #description {
+  .createnew .createnew__form form #country #description {
     height: 80px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
   }
   .createnew .createnew__form form button {
     width: 100%;
@@ -99,13 +93,28 @@ button {
     text-transform: uppercase;
   }
   .createnew .createnew__form form #Save {
-    background-color: blue;
+    background-color: #004892;
     color: white;
   }
   .createnew .createnew__form form #Cancel {
     background-color: white;
-    color: blue;
+    color: #004892;
   }
+}
+
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
 }
 
 body {
@@ -142,6 +151,14 @@ h5 {
   line-height: 6.2vw;
   margin: 0px;
   font-weight: bold;
+}
+
+label {
+  color: #afafaf;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
 }
 
 .divider {
