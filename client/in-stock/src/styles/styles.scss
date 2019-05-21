@@ -60,7 +60,7 @@ h4 {
 h5 {
     color: $Silver;
     font-size: 3.8vw;
-    line-height: 6.2vw;
+    line-height: 4.2vw;
     margin: 0px;
     font-weight: bold;
 }
@@ -136,4 +136,6 @@ h5 {
         line-height: 20px;
     }
 }
+
+@import "inventory";
 

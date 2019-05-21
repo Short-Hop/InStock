@@ -1,0 +1,190 @@
+td {
+    display: block;
+}
+
+
+.inventory {
+    padding: 5vw;
+
+    th {
+        @extend h5;
+        display: none;
+        text-align: left;
+    }
+
+    td {
+        
+        h3 {
+            margin-bottom: 5vw;
+        }
+        h4 {
+            margin-bottom: 3vw;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+        }
+        
+    }
+
+    .divider {
+        height: 1px;
+        padding: 0px;
+        margin-bottom: 7.5vw;
+    }
+
+    &__mobile--kebab {
+        &:active {
+            img {
+                filter: brightness(0.5);
+            }
+        }
+
+        float: right;
+        img {
+            width: 1.5vw;  
+        }
+    }
+
+    &__kebab {
+        display: none;
+    }
+
+    &__mobile--label {
+        @extend h5;
+        margin-bottom: 5vw;
+    }
+}
+
+@media (min-width: 600px) {
+
+    td {
+        display: table-cell;
+        height: 13vw;
+    }
+
+    .inventory {
+        padding: 3vw;
+
+        th {   
+            display: table-cell;
+        }
+
+        td {  
+
+            h3 {
+                margin-bottom: 0px;
+            }
+
+            h4 {
+                margin-bottom: 0px;
+                display: inline-block;
+            }
+        }
+
+        &__mobile--label {
+            display: none;
+        }
+
+        &__mobile--kebab {
+            display: none;
+        }
+
+        &__kebab {
+            display: inherit;
+            float: right;
+            &:active {
+                img {
+                    filter: brightness(0.5);
+                }
+            }
+
+            img {
+                width: 0.6vw
+            }
+        }
+
+        &__item {
+            width: 32vw;
+            h4 {
+                width: 27vw;
+            }
+        }
+
+        &__date {
+            width: 16vw;
+        }
+
+        &__location {
+            width: 16vw;
+        }
+
+        &__quantity {
+            width: 13vw;
+        }
+
+        &__status {
+            width: 16vw;
+        }
+
+    }
+}
+
+@media (min-width: 1440px) {
+
+    td {
+        height: 80px;
+    }
+
+    .inventory {
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        
+        th {   
+
+        }
+
+        td {  
+
+            h3 {
+
+            }
+
+            h4 {
+
+            }
+        }
+
+        &__kebab {
+            img {
+                width: 4px
+            }
+        }
+
+        &__item {
+            width: 368px;
+            h4 {
+
+            }
+        }
+
+        &__date {
+            width: 184px;
+        }
+
+        &__location {
+            width: 184px;
+        }
+
+        &__quantity {
+            width: 184px;
+        }
+
+        &__status {
+            width: 161px;
+        }
+
+    }
+
+}
