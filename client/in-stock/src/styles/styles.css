@@ -315,5 +315,7 @@ td {
   .inventory__status {
     width: 161px;
   }
+.location {
+  margin: 32px 16px;
 }
 /*# sourceMappingURL=styles.css.map */

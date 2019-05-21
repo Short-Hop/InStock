@@ -5,9 +5,19 @@ import LocHeader from "../src/component/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Inventory from "./components/Inventory"
 
 
+=======
+import Location from "./components/Location";
+
+>>>>>>> Stashed changes
+=======
+import Location from "./components/Location";
+
+>>>>>>> Stashed changes
 class App extends React.Component {
   render() {
     return (
@@ -16,7 +26,15 @@ class App extends React.Component {
         <InvHeader />
         <LocHeader />
         <CreateProduct />
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <Inventory/>
+=======
+        <Location />
+>>>>>>> Stashed changes
+=======
+        <Location />
+>>>>>>> Stashed changes
       </>
     );
   }
