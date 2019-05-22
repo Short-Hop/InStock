@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
+import Inventory from "./Inventory"
 
 export default class WarehouseName extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class WarehouseName extends Component {
             <p>weinberg@instock.com</p>
           </div>
         </div>
+        <Inventory/>
       </div>
     );
   }
