@@ -1,21 +1,22 @@
 import React, { Component } from "react";
+import logo from "../assets/Logo/Logo-instock.svg";
 
 export default class nav extends Component {
   render() {
     return (
       <nav className="nav">
-        <div class="nav__logo">
+        <div className="nav__logo">
           <a href="../html/bandsite.html">
-            <img src="../assets/Logo/Logo-instock.svg" />
+            <img src={logo} />
           </a>
         </div>
-        <div class="nav__menu">
-          <div className="nav__menu--inventory">
-            <a href="/html/bandsite.html">Inventory</a>
-          </div>
-          <div class="nav__menu--location">
-            <a href="/html/show.html">Location</a>
-          </div>
+        <div className="nav__menu">
+          <a className="nav__menu--inventory" href="">
+            Inventory
+          </a>
+          <a className="nav__menu--location" href="">
+            Location
+          </a>
         </div>
       </nav>
     );
