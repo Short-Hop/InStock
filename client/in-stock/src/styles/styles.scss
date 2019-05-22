@@ -12,20 +12,20 @@ $Mercury: #e1e1e1;
 $Alabaster: #fafafa;
 
 //Fonts
-// @font-face {
-//   font-family: "AvenirNextRegular";
-//   src: url(../assets/fonts/AvenirNextRegular.otf);
-// }
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
 
-// @font-face {
-//   font-family: "AvenirNextDemiBold";
-//   src: url(../assets/fonts/AvenirNextDemi.otf);
-// }
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
 
-// @font-face {
-//   font-family: "AvenirNextBold";
-//   src: url(../assets/fonts/AvenirNextBold.otf);
-// }
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
+}
 
 body {
   font-family: AvenirNextRegular;
@@ -41,7 +41,7 @@ h1 {
 
 h2 {
   font-size: 4.4vw;
-  line-height: 6.9vw;
+  line-height: 6vw;
   font-family: AvenirNextDemiBold;
   margin: 0px;
   color: $Black;
@@ -138,4 +138,6 @@ h5 {
 }
 
 @import "inventory";
+@import "header";
+@import "createproduct";
 
