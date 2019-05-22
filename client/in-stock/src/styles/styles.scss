@@ -134,9 +134,12 @@ h5 {
 }
 
 @import "inventory";
+@import "header";
+@import "nav";
+@import "createproduct";
+@import "product"
 @import "location";
-@import "header.scss";
-@import "nav.scss";
 @import "createproduct";
 @import "warehouseName";
+
 
