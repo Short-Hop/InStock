@@ -1,19 +1,17 @@
 .header {
-  margin: 0px 16px 16px 16px;
+  margin: 32px 16px;
   display: flex;
   flex-direction: column;
 
-  &__logo {
-    margin: 12px auto;
-    width: 19vh;
+  h1 {
+    margin: 0px 0px 16px 0px;
   }
 
   &__search {
     min-height: 48px;
-    margin-top: 8px;
     width: 100%;
     border-radius: 4px;
-    background: #fafafa url("../assets/icons/SVG/Icon-search.svg");
+    background: #fafafa url("../assets/Icons/SVG/Icon-search.svg");
     background-repeat: no-repeat;
     background-position: 16px 50%;
     text-indent: 43px;
@@ -21,5 +19,35 @@
     font-family: Regular;
     color: #323232;
     border: 1px solid #e1e1e1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 48px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1 {
+      margin: 0px;
+    }
+
+    &__search {
+      width: 249px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    margin: 40px 180px;
+
+    h1 {
+      margin-top: 8px;
+    }
+
+    &__search {
+      width: 252px;
+    }
   }
 }
