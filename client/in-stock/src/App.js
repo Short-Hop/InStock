@@ -6,6 +6,7 @@ import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
 import Inventory from "./components/Inventory"
+import Product from "./components/Product"
 
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <>
         <Nav />
+        <Product/>
         <InvHeader />
         <Inventory/>
         <LocHeader />

@@ -1,81 +1,3 @@
-button {
-  border: none;
-}
-
-@media (min-width: 320px) {
-  .createnew {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .createnew .createnew__title {
-    margin-top: 32px;
-    margin-bottom: 32px;
-  }
-  .createnew .createnew__form {
-    width: 69vw;
-  }
-  .createnew .createnew__form form {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .createnew .createnew__form form label {
-    margin-bottom: 8px;
-  }
-  .createnew .createnew__form form input {
-    margin-bottom: 24px;
-    height: 48px;
-    background-color: #fafafa;
-    border-radius: 4px;
-    width: 100%;
-  }
-  .createnew .createnew__form form input::-webkit-input-placeholder {
-    margin-left: 10px;
-  }
-  .createnew .createnew__form form input:-ms-input-placeholder {
-    margin-left: 10px;
-  }
-  .createnew .createnew__form form input::-ms-input-placeholder {
-    margin-left: 10px;
-  }
-  .createnew .createnew__form form input::placeholder {
-    margin-left: 10px;
-  }
-  .createnew .createnew__form form input #description {
-    height: 80px;
-  }
-  .createnew .createnew__form form button {
-    width: 100%;
-    border-radius: 4px;
-    height: 48px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .createnew .createnew__form form #Save {
-    background-color: blue;
-    color: white;
-  }
-  .createnew .createnew__form form #Cancel {
-    background-color: white;
-    color: blue;
-  }
-}
-
 @font-face {
   font-family: "AvenirNextRegular";
   src: url(../assets/fonts/AvenirNextRegular.otf);
@@ -380,7 +302,7 @@ button {
 }
 
 .header {
-  margin: 0px 16px 16px 16px;
+  margin: 32px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -390,14 +312,12 @@ button {
           flex-direction: column;
 }
 
-.header__logo {
-  margin: 12px auto;
-  width: 19vh;
+.header h1 {
+  margin: 0px 0px 16px 0px;
 }
 
 .header__search {
   min-height: 48px;
-  margin-top: 8px;
   width: 100%;
   border-radius: 4px;
   background: #fafafa url("../assets/Icons/SVG/Icon-search.svg");
@@ -408,6 +328,135 @@ button {
   font-family: Regular;
   color: #323232;
   border: 1px solid #e1e1e1;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 48px 24px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header h1 {
+    margin: 0px;
+  }
+  .header__search {
+    width: 249px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    margin: 40px 180px;
+  }
+  .header h1 {
+    margin-top: 8px;
+  }
+  .header__search {
+    width: 252px;
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #323232;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__logo {
+  text-align: center;
+  width: 100%;
+  padding-top: 12px;
+}
+
+.nav__menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav__menu--inventory, .nav__menu--location {
+  padding: 0.5rem;
+  font-size: 4.5vw;
+  width: 50%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav__menu--inventory:hover, .nav__menu--location:hover {
+  border-bottom: solid #ffffff;
+  font-family: myDemi;
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 68px;
+  }
+  .nav__logo {
+    margin-left: 24px;
+    padding: 0px;
+    width: 0%;
+  }
+  .nav__menu {
+    margin-left: 180px;
+    display: unset;
+  }
+  .nav__menu--inventory, .nav__menu--location {
+    font-size: 1.1em;
+    padding: 0px 8px 20px 8px;
+  }
+  .nav__menu--location {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .nav {
+    height: 80px;
+  }
+  .nav__logo {
+    margin-left: 180px;
+  }
+  .nav__logo img {
+    height: 23px;
+  }
+  .nav__menu--inventory, .nav__menu--location {
+    padding: 0px 8px 23px 8px;
+    font-size: 1.4em;
+    margin-left: 100px;
+  }
 }
 
 button {
@@ -488,4 +537,86 @@ button {
   }
 }
 
+.product {
+  padding: 5vw;
+}
+
+.product__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.product__header img {
+  width: 4.3vw;
+  display: inline-block;
+  margin-right: 5vw;
+}
+
+.product__header h1 {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 5vw;
+}
+
+.product .divider {
+  display: none;
+}
+
+.product__inStock {
+  font-size: 3.8vw;
+  font-family: AvenirNextDemiBold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  color: white;
+  background-color: #6BB01A;
+  padding: 1.7vw;
+  width: 30vw;
+  text-align: center;
+  margin-bottom: 10vw;
+}
+
+.product__outStock {
+  font-size: 3.8vw;
+  font-family: AvenirNextDemiBold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  color: #323232;
+  background-color: #e1e1e1;
+  padding: 1.7vw;
+  width: 30vw;
+  text-align: center;
+  margin-bottom: 10vw;
+}
+
+.product h5, .product .inventory th, .inventory .product th, .product .inventory__mobile--label {
+  margin-bottom: 5vw;
+}
+
+.product h4 {
+  margin-bottom: 7.5vw;
+}
+
+.product__description {
+  margin-bottom: 10vw;
+}
+
+.product button {
+  background-color: #004892;
+  color: white;
+  font-family: AvenirNextDemiBold;
+  border-radius: 4px;
+  width: 100%;
+  height: 15vw;
+  font-size: 3.8vw;
+}
 /*# sourceMappingURL=styles.css.map */
