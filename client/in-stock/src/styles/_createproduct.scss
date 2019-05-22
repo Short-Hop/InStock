@@ -54,7 +54,6 @@ p {
 
             select #country &::after {
               content: "<>";
-              color: red;
             }
           }
           #description {
@@ -90,6 +89,13 @@ p {
         }
       }
     }
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
   }
 }
 

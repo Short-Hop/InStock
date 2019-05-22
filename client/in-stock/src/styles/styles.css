@@ -76,22 +76,18 @@ p {
   select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
   .createnew .createnew__form form #country::-webkit-input-placeholder::after {
     content: "<>";
-    color: red;
   }
   select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
   .createnew .createnew__form form #country:-ms-input-placeholder::after {
     content: "<>";
-    color: red;
   }
   select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
   .createnew .createnew__form form #country::-ms-input-placeholder::after {
     content: "<>";
-    color: red;
   }
   select #country .createnew .createnew__form form input::placeholder::after, select #country
   .createnew .createnew__form form #country::placeholder::after {
     content: "<>";
-    color: red;
   }
   .createnew .createnew__form form input #description,
   .createnew .createnew__form form #country #description {
@@ -130,6 +126,13 @@ p {
   .createnew .createnew__form form #Cancel {
     background-color: white;
     color: #004892;
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
   }
 }
 
