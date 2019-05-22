@@ -1,8 +1,7 @@
 import React from "react";
-import Nav from "../src/component/Nav";
-import InvHeader from "../src/component/InvHeader";
-// import LocHeader from "../src/component/LocHeader";
-import "../src/styles/styles.css";
+import Nav from "./components/Nav";
+import InvHeader from "./components/InvHeader";
+import LocHeader from "./components/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
@@ -15,9 +14,10 @@ class App extends React.Component {
       <>
         <Nav />
         <InvHeader />
+        <Inventory/>
         <LocHeader />
         <CreateProduct />
-        <Inventory/>
+        
       </>
     );
   }
