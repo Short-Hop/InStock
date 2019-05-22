@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Switch from "react-switch";
-import AddButton from "./AddButton";
+import Add from "../assets/Icons/SVG/Icon-add.svg";
 
 class CreateWarehouse extends React.Component {
   state = {
@@ -9,9 +8,10 @@ class CreateWarehouse extends React.Component {
       warehouse: "",
       address: "",
       location: "",
-      country: "Toronto",
       name: "",
       position: "",
+      phone: "",
+      email: "",
       description: "Description"
     },
     fields: {},
@@ -44,26 +44,32 @@ class CreateWarehouse extends React.Component {
       errors["location"] = "Cannot be empty";
     }
 
-    if (!fields["country"]) {
-      formIsValid = false;
-      errors["country"] = "Cannot be empty";
-    }
     if (!fields["name"]) {
       formIsValid = false;
       errors["name"] = "Cannot be empty";
     }
+    if (!fields["position"]) {
+      formIsValid = false;
+      errors["position"] = "Cannot be empty";
+    }
 
-    if (typeof fields["name"] !== "undefined") {
-      if (!fields["name"].match(/^[0-9]+$/)) {
+    if (!fields["phone"]) {
+      formIsValid = false;
+      errors["phone"] = "Cannot be empty";
+    }
+
+    if (typeof fields["phone"] !== "undefined") {
+      if (!fields["phone"].match(/^[0-9]+$/)) {
         formIsValid = false;
-        errors["name"] = "Only numbers";
+        errors["phone"] = "Only numbers";
       }
     }
 
-    if (!fields["status"]) {
+    if (!fields["email"]) {
       formIsValid = false;
-      errors["status"] = "Cannot be empty";
+      errors["email"] = "Cannot be empty";
     }
+
     this.setState({ errors: errors });
     return formIsValid;
   }
@@ -82,12 +88,14 @@ class CreateWarehouse extends React.Component {
       let addressinput = address.value;
       const location = event.target.location;
       let locationinput = location.value;
-      const country = event.target.country;
-      let countryinput = country.value;
       const name = event.target.name;
       let nameinput = name.value;
       const position = event.target.position;
       let positioninput = position.value;
+      const phone = event.target.phone;
+      let phoneinput = phone.value;
+      const email = event.target.email;
+      let emailinput = email.value;
       const description = event.target.description;
       let descriptioninput = description.value;
 
@@ -95,25 +103,27 @@ class CreateWarehouse extends React.Component {
         warehouse: warehouseinput,
         address: addressinput,
         location: locationinput,
-        country: countryinput,
         name: nameinput,
-        // status: statusinput,
+        position: positioninput,
+        phone: phoneinput,
+        email: emailinput,
         description: descriptioninput
       });
 
       warehouse.value = "";
       address.value = "";
       location.value = "";
-      country.value = "";
       name.value = "";
-      // status.value = "";
+      position.value = "";
+      phone.value = "";
+      email.value = "";
       description.value = "";
 
-      if (this.handleValidation()) {
-        alert("Form submitted");
-      } else {
-        alert("Form has errors.");
-      }
+      // if (this.handleValidation()) {
+      //   alert("Form submitted");
+      // } else {
+      //   alert("Form has errors.");
+      // }
     };
 
     return (
@@ -122,7 +132,7 @@ class CreateWarehouse extends React.Component {
           <h1 className="createnew__title">Add New</h1>
           <div className="createnew__form">
             <form onSubmit={submitHandler}>
-              <div className="row">
+              <div className="column">
                 <div className="column">
                   <label>Warehouse</label>
                   <input
@@ -133,6 +143,8 @@ class CreateWarehouse extends React.Component {
                     value={this.state.fields["warehouse"]}
                   />
                 </div>
+              </div>
+              <div className="row">
                 <div className="column">
                   <label>Address</label>
                   <input
@@ -143,13 +155,11 @@ class CreateWarehouse extends React.Component {
                     value={this.state.fields["address"]}
                   />
                 </div>
-              </div>
-              <div className="row">
-                <div className="column">
+                <div className="column" id="selectdiv">
                   <label>Location</label>
                   <select
-                    name="toronto"
-                    id="toronto"
+                    name="location"
+                    id="location"
                     onChange={this.handleChange.bind(this, "location")}
                     value={this.state.fields["location"]}
                   >
@@ -183,14 +193,37 @@ class CreateWarehouse extends React.Component {
                   />
                 </div>
               </div>
-              <label>Item Description</label>
-              <input
-                type="text"
-                id="description"
-                placeholder="(Optional)"
-                onChange={this.handleChange.bind(this, "description")}
-                value={this.state.fields["description"]}
-              />
+              <div className="row">
+                <div className="column">
+                  <label>Phone Number</label>
+                  <input
+                    type="text"
+                    id="phone"
+                    placeholder="(000) 000 - 000"
+                    onChange={this.handleChange.bind(this, "phone")}
+                    value={this.state.fields["phone"]}
+                  />
+                </div>
+                <div className="column">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    placeholder="email@instock.com"
+                    onChange={this.handleChange.bind(this, "position")}
+                    value={this.state.fields["position"]}
+                  />
+                </div>
+              </div>
+              <div className="column">
+                <label>Item Description</label>
+                <textarea
+                  id="description"
+                  placeholder="Use commas to separate each category"
+                  onChange={this.handleChange.bind(this, "description")}
+                  value={this.state.fields["description"]}
+                />
+              </div>
               <div className="form__buttons">
                 <button id="Save">Save</button>
                 <button id="Cancel">Cancel</button>
@@ -199,6 +232,27 @@ class CreateWarehouse extends React.Component {
           </div>
         </div>
         <AddButton Popup={this.state} />
+      </>
+    );
+  }
+}
+
+class AddButton extends React.Component {
+  state = {
+    showPopup: false
+  };
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
+  render() {
+    const Popup = this.props.state;
+    return (
+      <>
+        <button className="AddButton" onClick={this.togglePopup.bind(this)}>
+          <img src={Add} alt="Add New" />
+        </button>
       </>
     );
   }

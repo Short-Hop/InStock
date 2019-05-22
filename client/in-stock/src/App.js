@@ -24,7 +24,7 @@ class App extends React.Component {
         <Inventory/> */}
         {/* <WarehouseName /> */}
         {/* <LocHeader /> */}
-        {/* <CreateProduct /> */}
+        <CreateProduct />
         {/* <Inventory /> */}
         {/* <Location /> */}
         <CreateWarehouse />
