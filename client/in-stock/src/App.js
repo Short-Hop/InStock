@@ -5,8 +5,8 @@ import LocHeader from "../src/component/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
-import Inventory from "./components/Inventory"
-
+import Inventory from "./components/Inventory";
+import Location from "./components/Location";
 
 class App extends React.Component {
   render() {
@@ -16,7 +16,8 @@ class App extends React.Component {
         <InvHeader />
         <LocHeader />
         <CreateProduct />
-        <Inventory/>
+        <Inventory />
+        <Location />
       </>
     );
   }
