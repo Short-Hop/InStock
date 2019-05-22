@@ -610,4 +610,62 @@ button {
     margin: 0px 180px;
   }
 }
+
+.location {
+  margin: 32px 16px;
+}
+
+.location__table {
+  width: 100%;
+}
+
+.location__table .location__table-row1 .location-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.location__table .location__table-row1 .location-content .rightArrowImg {
+  margin-left: auto;
+}
+
+@media (min-width: 600px) {
+  .location {
+    margin: 32px 24px;
+  }
+  .location__table {
+    width: 100%;
+  }
+  .location__table .location__table-row1 .location-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .location__table .location__table-row1 .location-content .rightArrowImg {
+    margin-left: auto;
+  }
+  .location__table .location__table-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
