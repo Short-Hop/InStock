@@ -4,8 +4,8 @@ import InvHeader from "./components/InvHeader";
 import LocHeader from "./components/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
-import CreateProduct from "./CreateProduct";
-import Product from "./components/Product"
+import CreateProduct from "./components/CreateProduct";
+import Product from "./components/Product";
 import Inventory from "./components/Inventory";
 import Location from "./components/Location";
 import WarehouseName from "./components/WarehouseName";
@@ -15,16 +15,15 @@ class App extends React.Component {
     return (
       <>
         <Nav />
-        <Product/>
+        <Product />
         <InvHeader />
-        <Inventory/>
+        <Inventory />
         <LocHeader />
         {/* <InvHeader />
         <Inventory/> */}
         <WarehouseName />
         {/* <LocHeader /> */}
         <CreateProduct />
-
         <Inventory />
         <Location />
       </>

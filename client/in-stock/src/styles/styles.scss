@@ -1,3 +1,147 @@
+@import "createproduct";
+
+// Color Pallate
+$Black: #323232;
+$Instock-blue: #004892;
+$Brainflix-blue: #0095ff;
+$Brainflix-blue-2: #0065ad;
+$White: #ffffff;
+$Silver: #afafaf;
+$Instock-blue-dark: #002f5f;
+$Mercury: #e1e1e1;
+$Alabaster: #fafafa;
+
+//Fonts
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
+}
+
+body {
+  font-family: AvenirNextRegular;
+}
+
+h1 {
+  font-size: 7.5vw;
+  line-height: 10vw;
+  font-family: AvenirNextBold;
+  margin: 0px;
+  color: $Black;
+}
+
+h2 {
+  font-size: 4.4vw;
+  line-height: 6.9vw;
+  font-family: AvenirNextDemiBold;
+  margin: 0px;
+  color: $Black;
+}
+
+h3 {
+  @extend h2;
+}
+
+h4 {
+  font-size: 4.1vw;
+  line-height: 5.6vw;
+  margin: 0px;
+  color: $Black;
+  font-weight: 500;
+}
+
+h5 {
+  color: $Silver;
+  font-size: 3.8vw;
+  line-height: 6.2vw;
+  margin: 0px;
+  font-weight: bold;
+}
+
+label {
+  color: $Silver;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 1px;
+  background-color: $Mercury;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 4.7vw;
+    line-height: 5.7vw;
+    font-family: AvenirNextBold;
+  }
+
+  h2 {
+    font-size: 3vw;
+    line-height: 4.2vw;
+  }
+
+  h3 {
+    font-size: 2.1vw;
+    line-height: 3vw;
+  }
+
+  h4 {
+    font-size: 1.8vw;
+    line-height: 2.9vw;
+  }
+
+  h5 {
+    font-size: 1.55vw;
+    line-height: 2.85vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0px;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: AvenirNextBold;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  h5 {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 // Color Pallate
 $Black: #323232;
 $Instock-blue: #004892;
