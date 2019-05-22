@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "./components/Nav";
-import InvHeader from "./components/InvHeader";
-import LocHeader from "./components/LocHeader";
+import Header from "./components/Header";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
@@ -16,16 +15,13 @@ class App extends React.Component {
       <>
         <Nav />
         <Product/>
-        <InvHeader />
+        <Header title="Inventory" />
         <Inventory/>
-        <LocHeader />
         {/* <InvHeader />
         <Inventory/> */}
         <WarehouseName />
         {/* <LocHeader /> */}
         <CreateProduct />
-
-        <Inventory />
         <Location />
       </>
     );
