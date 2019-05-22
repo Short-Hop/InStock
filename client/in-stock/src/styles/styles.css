@@ -55,34 +55,42 @@ p {
   }
   .createnew .createnew__form form input::-webkit-input-placeholder,
   .createnew .createnew__form form #country::-webkit-input-placeholder {
-    padding-left: 20px;
+    padding-left: 16px;
+    font-size: 12px;
   }
   .createnew .createnew__form form input:-ms-input-placeholder,
   .createnew .createnew__form form #country:-ms-input-placeholder {
-    padding-left: 20px;
+    padding-left: 16px;
+    font-size: 12px;
   }
   .createnew .createnew__form form input::-ms-input-placeholder,
   .createnew .createnew__form form #country::-ms-input-placeholder {
-    padding-left: 20px;
+    padding-left: 16px;
+    font-size: 12px;
   }
   .createnew .createnew__form form input::placeholder,
   .createnew .createnew__form form #country::placeholder {
-    padding-left: 20px;
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input::-webkit-input-placeholder #country select,
-  .createnew .createnew__form form #country::-webkit-input-placeholder #country select {
+  select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-webkit-input-placeholder::after {
+    content: "<>";
     color: red;
   }
-  .createnew .createnew__form form input:-ms-input-placeholder #country select,
-  .createnew .createnew__form form #country:-ms-input-placeholder #country select {
+  select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country:-ms-input-placeholder::after {
+    content: "<>";
     color: red;
   }
-  .createnew .createnew__form form input::-ms-input-placeholder #country select,
-  .createnew .createnew__form form #country::-ms-input-placeholder #country select {
+  select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-ms-input-placeholder::after {
+    content: "<>";
     color: red;
   }
-  .createnew .createnew__form form input::placeholder #country select,
-  .createnew .createnew__form form #country::placeholder #country select {
+  select #country .createnew .createnew__form form input::placeholder::after, select #country
+  .createnew .createnew__form form #country::placeholder::after {
+    content: "<>";
     color: red;
   }
   .createnew .createnew__form form input #description,
@@ -106,6 +114,7 @@ p {
   }
   .createnew .createnew__form form #status p {
     margin-right: 16px;
+    width: 100%;
   }
   .createnew .createnew__form form button {
     width: 100%;
@@ -171,26 +180,12 @@ p {
   .createnew .createnew__form form #status {
     text-align: left;
     margin-bottom: 24px;
+    width: 29vw;
   }
   .createnew .createnew__form form #product,
   .createnew .createnew__form form #city,
   .createnew .createnew__form form #quantity {
     margin-right: 24px;
-  }
-  .createnew .createnew__form form button {
-    width: 100%;
-    border-radius: 4px;
-    height: 48px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .createnew .createnew__form form #Save {
-    background-color: #004892;
-    color: white;
-  }
-  .createnew .createnew__form form #Cancel {
-    background-color: white;
-    color: #004892;
   }
   .createnew .createnew__form form .form__buttons {
     display: -webkit-box;
@@ -215,6 +210,66 @@ p {
   .createnew .createnew__form form #Cancel {
     background-color: white;
     color: #004892;
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form {
+    width: 576px;
+  }
+  .createnew .createnew__form form .row .column {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+    margin-right: 48px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 

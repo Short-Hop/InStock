@@ -5,7 +5,7 @@ import InvHeader from "../src/component/InvHeader";
 import LocHeader from "../src/component/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
-import CreateProduct from "./CreateProduct";
+import CreateProduct from "./components/CreateProduct";
 
 
 class App extends React.Component {

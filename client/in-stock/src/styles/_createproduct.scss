@@ -49,11 +49,12 @@ p {
           border-radius: 4px;
           width: 100%;
           &::placeholder {
-            padding-left: 20px;
+            padding-left: 16px;
+            font-size: 12px;
 
-            #country select {
+            select #country &::after {
+              content: "<>";
               color: red;
-              //Arrows
             }
           }
           #description {
@@ -67,6 +68,7 @@ p {
           align-items: center;
           p {
             margin-right: 16px;
+            width: 100%;
           }
         }
 
@@ -111,9 +113,6 @@ p {
           }
         }
 
-        label {
-          //   margin-bottom: 24px;
-        }
         input,
         #country {
           margin-bottom: 24px;
@@ -129,29 +128,13 @@ p {
         #status {
           text-align: left;
           margin-bottom: 24px;
+          width: 29vw;
         }
 
         #product,
         #city,
         #quantity {
           margin-right: 24px;
-        }
-
-        button {
-          width: 100%;
-          border-radius: 4px;
-          height: 48px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-        #Save {
-          background-color: #004892;
-          color: white;
-        }
-
-        #Cancel {
-          background-color: white;
-          color: #004892;
         }
 
         .form__buttons {
@@ -173,6 +156,65 @@ p {
         #Cancel {
           background-color: white;
           color: #004892;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: flex;
+    flex-direction: column;
+
+    .createnew__form {
+      width: 576px;
+      form {
+        .row {
+          .column {
+            margin-right: 40px;
+          }
+        }
+
+        #description {
+          height: 80px;
+          width: 480px;
+          margin-bottom: 40px;
+        }
+        #status {
+          text-align: left;
+          margin-bottom: 24px;
+        }
+
+        #product,
+        #city,
+        #quantity {
+          margin-right: 40px;
+        }
+
+        #Cancel {
+          background-color: white;
+          color: #004892;
+          margin-right: 48px;
+        }
+
+        .form__buttons {
+          display: flex;
+          flex-direction: row-reverse;
+          margin-bottom: 40px;
+          width: 100%;
+        }
+        button {
+          width: 160px;
+          height: 48px;
+          border-radius: 4px;
+          height: 48px;
+          font-weight: bold;
+          text-transform: uppercase;
         }
       }
     }

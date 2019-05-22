@@ -1,6 +1,5 @@
 import React from "react";
-import toggle_on from "./assets/Icons/SVG/Icon-toggle_on.svg";
-import toggle_off from "./assets/Icons/SVG/Icon-toggle_off.svg";
+import Switch from "react-switch";
 
 class CreateProduct extends React.Component {
   render() {
@@ -24,7 +23,7 @@ class CreateProduct extends React.Component {
                 <label>City</label>
                 <input type="text" id="city" placeholder="City" />
               </div>
-              <div className="column">
+              <div className="column" id="selectdiv">
                 <label>Country</label>
                 <select name="country" id="country">
                   <option value="Canada" selected>
@@ -44,7 +43,7 @@ class CreateProduct extends React.Component {
                 <label>Status</label>
                 <div id="status">
                   <p>In stock</p>
-                  <img src={toggle_on} />
+                  <Switch />
                 </div>
               </div>
             </div>
