@@ -7,7 +7,9 @@ import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
 import Inventory from "./components/Inventory"
 import Product from "./components/Product"
-
+import Inventory from "./components/Inventory";
+import Location from "./components/Location";
+import WarehouseName from "./components/WarehouseName";
 
 class App extends React.Component {
   render() {
@@ -18,8 +20,14 @@ class App extends React.Component {
         <InvHeader />
         <Inventory/>
         <LocHeader />
+        {/* <InvHeader />
+        <Inventory/> */}
+        <WarehouseName />
+        {/* <LocHeader /> */}
         <CreateProduct />
-        
+
+        <Inventory />
+        <Location />
       </>
     );
   }
