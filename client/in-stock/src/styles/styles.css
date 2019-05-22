@@ -1,3 +1,404 @@
+button {
+  border: none;
+}
+
+html,
+body,
+input,
+button,
+form,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+@media (min-width: 320px) {
+  .createnew {
+    width: 69vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__title {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .createnew .createnew__form {
+    width: 100%;
+  }
+  .createnew .createnew__form form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form label {
+    margin-bottom: 8px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .createnew .createnew__form form input::-webkit-input-placeholder,
+  .createnew .createnew__form form #country::-webkit-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input:-ms-input-placeholder,
+  .createnew .createnew__form form #country:-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input::-ms-input-placeholder,
+  .createnew .createnew__form form #country::-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input::placeholder,
+  .createnew .createnew__form form #country::placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-webkit-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country:-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::placeholder::after, select #country
+  .createnew .createnew__form form #country::placeholder::after {
+    content: "<>";
+  }
+  .createnew .createnew__form form input #description,
+  .createnew .createnew__form form #country #description {
+    height: 80px;
+  }
+  .createnew .createnew__form form #status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .createnew .createnew__form form #status p {
+    margin-right: 16px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 100%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .createnew {
+    width: 70vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .createnew .createnew__form form .row .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 12px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 62.5vw;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 24px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .createnew .createnew__form form button {
+    width: 20%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form {
+    width: 576px;
+  }
+  .createnew .createnew__form form .row .column {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+    margin-right: 48px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
+}
+
+body {
+  font-family: AvenirNextRegular;
+}
+
+h1 {
+  font-size: 7.5vw;
+  line-height: 10vw;
+  font-family: AvenirNextBold;
+  margin: 0px;
+  color: #323232;
+}
+
+h2, h3 {
+  font-size: 4.4vw;
+  line-height: 6.9vw;
+  font-family: AvenirNextDemiBold;
+  margin: 0px;
+  color: #323232;
+}
+
+h4 {
+  font-size: 4.1vw;
+  line-height: 5.6vw;
+  margin: 0px;
+  color: #323232;
+  font-weight: 500;
+}
+
+h5, .inventory th, .inventory__mobile--label {
+  color: #afafaf;
+  font-size: 3.8vw;
+  line-height: 6.2vw;
+  margin: 0px;
+  font-weight: bold;
+}
+
+label {
+  color: #afafaf;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e1e1e1;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 4.7vw;
+    line-height: 5.7vw;
+    font-family: AvenirNextBold;
+  }
+  h2, h3 {
+    font-size: 3vw;
+    line-height: 4.2vw;
+  }
+  h3 {
+    font-size: 2.1vw;
+    line-height: 3vw;
+  }
+  h4 {
+    font-size: 1.8vw;
+    line-height: 2.9vw;
+  }
+  h5, .inventory th, .inventory__mobile--label {
+    font-size: 1.55vw;
+    line-height: 2.85vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: AvenirNextBold;
+  }
+  h2, h3 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  h5, .inventory th, .inventory__mobile--label {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
 @font-face {
   font-family: "AvenirNextRegular";
   src: url(../assets/fonts/AvenirNextRegular.otf);
@@ -463,8 +864,19 @@ button {
   border: none;
 }
 
+html,
+body,
+input,
+button,
+form,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
 @media (min-width: 320px) {
   .createnew {
+    width: 69vw;
     margin-left: 5vw;
     margin-right: 5vw;
     display: -webkit-box;
@@ -480,7 +892,7 @@ button {
     margin-bottom: 32px;
   }
   .createnew .createnew__form {
-    width: 69vw;
+    width: 100%;
   }
   .createnew .createnew__form form {
     width: 100%;
@@ -491,34 +903,76 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .createnew .createnew__form form label {
     margin-bottom: 8px;
   }
-  .createnew .createnew__form form input {
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
     margin-bottom: 24px;
     height: 48px;
     background-color: #fafafa;
     border-radius: 4px;
     width: 100%;
   }
-  .createnew .createnew__form form input::-webkit-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::-webkit-input-placeholder,
+  .createnew .createnew__form form #country::-webkit-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input:-ms-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input:-ms-input-placeholder,
+  .createnew .createnew__form form #country:-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input::-ms-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::-ms-input-placeholder,
+  .createnew .createnew__form form #country::-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input::placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::placeholder,
+  .createnew .createnew__form form #country::placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input #description {
+  select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-webkit-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country:-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::placeholder::after, select #country
+  .createnew .createnew__form form #country::placeholder::after {
+    content: "<>";
+  }
+  .createnew .createnew__form form input #description,
+  .createnew .createnew__form form #country #description {
     height: 80px;
+  }
+  .createnew .createnew__form form #status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .createnew .createnew__form form #status p {
+    margin-right: 16px;
+    width: 100%;
   }
   .createnew .createnew__form form button {
     width: 100%;
@@ -528,12 +982,159 @@ button {
     text-transform: uppercase;
   }
   .createnew .createnew__form form #Save {
-    background-color: blue;
+    background-color: #004892;
     color: white;
   }
   .createnew .createnew__form form #Cancel {
     background-color: white;
-    color: blue;
+    color: #004892;
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .createnew {
+    width: 70vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .createnew .createnew__form form .row .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 12px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 62.5vw;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 24px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .createnew .createnew__form form button {
+    width: 20%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form {
+    width: 576px;
+  }
+  .createnew .createnew__form form .row .column {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+    margin-right: 48px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
@@ -865,8 +1466,19 @@ button {
   border: none;
 }
 
+html,
+body,
+input,
+button,
+form,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
 @media (min-width: 320px) {
   .createnew {
+    width: 69vw;
     margin-left: 5vw;
     margin-right: 5vw;
     display: -webkit-box;
@@ -882,7 +1494,7 @@ button {
     margin-bottom: 32px;
   }
   .createnew .createnew__form {
-    width: 69vw;
+    width: 100%;
   }
   .createnew .createnew__form form {
     width: 100%;
@@ -893,34 +1505,76 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   .createnew .createnew__form form label {
     margin-bottom: 8px;
   }
-  .createnew .createnew__form form input {
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
     margin-bottom: 24px;
     height: 48px;
     background-color: #fafafa;
     border-radius: 4px;
     width: 100%;
   }
-  .createnew .createnew__form form input::-webkit-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::-webkit-input-placeholder,
+  .createnew .createnew__form form #country::-webkit-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input:-ms-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input:-ms-input-placeholder,
+  .createnew .createnew__form form #country:-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input::-ms-input-placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::-ms-input-placeholder,
+  .createnew .createnew__form form #country::-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input::placeholder {
-    margin-left: 10px;
+  .createnew .createnew__form form input::placeholder,
+  .createnew .createnew__form form #country::placeholder {
+    padding-left: 16px;
+    font-size: 12px;
   }
-  .createnew .createnew__form form input #description {
+  select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-webkit-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country:-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::placeholder::after, select #country
+  .createnew .createnew__form form #country::placeholder::after {
+    content: "<>";
+  }
+  .createnew .createnew__form form input #description,
+  .createnew .createnew__form form #country #description {
     height: 80px;
+  }
+  .createnew .createnew__form form #status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .createnew .createnew__form form #status p {
+    margin-right: 16px;
+    width: 100%;
   }
   .createnew .createnew__form form button {
     width: 100%;
@@ -930,12 +1584,159 @@ button {
     text-transform: uppercase;
   }
   .createnew .createnew__form form #Save {
-    background-color: blue;
+    background-color: #004892;
     color: white;
   }
   .createnew .createnew__form form #Cancel {
     background-color: white;
-    color: blue;
+    color: #004892;
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .createnew {
+    width: 70vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .createnew .createnew__form form .row .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 12px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 62.5vw;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 24px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .createnew .createnew__form form button {
+    width: 20%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form {
+    width: 576px;
+  }
+  .createnew .createnew__form form .row .column {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+    margin-right: 48px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
