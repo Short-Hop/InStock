@@ -9,7 +9,7 @@ $Instock-blue-dark: #002f5f;
 $Mercury: #e1e1e1;
 $Alabaster: #fafafa;
 
-// Fonts
+//Fonts
 @font-face {
   font-family: "AvenirNextRegular";
   src: url(../assets/fonts/AvenirNextRegular.otf);
@@ -58,11 +58,13 @@ h4 {
 }
 
 h5 {
-  color: $Silver;
-  font-size: 3.8vw;
-  line-height: 6.2vw;
-  margin: 0px;
-  font-weight: bold;
+
+    color: $Silver;
+    font-size: 3.8vw;
+    line-height: 4.2vw;
+    margin: 0px;
+    font-weight: bold;
+
 }
 
 .divider {
@@ -133,5 +135,7 @@ h5 {
   }
 }
 
+@import "inventory";
 @import "header.scss";
 @import "nav.scss";
+@import "createproduct";
