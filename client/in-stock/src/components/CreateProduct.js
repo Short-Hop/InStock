@@ -10,16 +10,53 @@ class CreateProduct extends React.Component {
       City: "",
       Country: "Canada",
       Quantity: 0,
+      Status: true,
       Description: "Description"
     }
   };
   render() {
+    const submitHandler = event => {
+      event.preventDefault();
+      const product = event.target.product;
+      let productinput = product.value;
+      const ordered = event.target.ordered;
+      let orderedinput = ordered.value;
+      const city = event.target.city;
+      let cityinput = city.value;
+      const country = event.target.country;
+      let countryinput = country.value;
+      const quantity = event.target.quantity;
+      let quantityinput = quantity.value;
+      const status = event.target.status;
+      let statusinput = status.value;
+      const description = event.target.description;
+      let descriptioninput = description.value;
+
+      axios.post(`http://localhost`, {
+        Product: productinput,
+        Ordered: orderedinput,
+        City: cityinput,
+        Country: countryinput,
+        Quantity: quantityinput,
+        Status: statusinput,
+        Description: descriptioninput
+      });
+
+      product.value = "";
+      ordered.value = "";
+      city.value = "";
+      country.value = "";
+      quantity.value = "";
+      status.value = "";
+      description.value = "";
+    };
+
     return (
       <>
         <div className="createnew">
           <h1 className="createnew__title">Create New</h1>
           <div className="createnew__form">
-            <form>
+            <form onSubmit={submitHandler}>
               <div className="row">
                 <div className="column">
                   <label>Product</label>
@@ -68,7 +105,7 @@ class CreateProduct extends React.Component {
             </form>
           </div>
         </div>
-        <AddButton />
+        <AddButton Popup={this.state} />
       </>
     );
   }
