@@ -5,7 +5,6 @@ import LocHeader from "./components/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
-import Inventory from "./components/Inventory"
 import Product from "./components/Product"
 import Inventory from "./components/Inventory";
 import Location from "./components/Location";
