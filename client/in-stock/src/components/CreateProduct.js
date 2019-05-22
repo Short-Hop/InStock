@@ -3,6 +3,12 @@ import Switch from "react-switch";
 
 class CreateProduct extends React.Component {
   render() {
+    state = {
+      form ={
+        Product: "";
+        Last Ordered : 
+      } 
+    }
     return (
       <div className="createnew">
         <h1 className="createnew__title">Create New</h1>
