@@ -2,6 +2,10 @@ td {
     display: block;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+}
 
 .inventory {
     padding: 5vw;
@@ -11,20 +15,16 @@ td {
         display: none;
         text-align: left;
     }
+    
+    
 
     td {
-        
         h3 {
-            margin-bottom: 5vw;
+            margin-bottom: 4vw;
         }
         h4 {
             margin-bottom: 3vw;
         }
-        button {
-            background-color: transparent;
-            border: none;
-        }
-        
     }
 
     .divider {
@@ -34,7 +34,8 @@ td {
     }
 
     &__mobile--kebab {
-        &:active {
+        position: relative;
+        &:visited {
             img {
                 filter: brightness(0.5);
             }
@@ -52,7 +53,23 @@ td {
 
     &__mobile--label {
         @extend h5;
+        font-size: 3.8vw;
         margin-bottom: 5vw;
+    }
+
+    &__remove {
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        text-align: left;
+        border: solid 1px $Mercury;
+        border-radius: 4px;
+        top: 11vw;
+        right: 0px;
+        width: 49vw;
+        padding: 4vw;
+        box-shadow: 0px 10vw 9vw #eeeeee;
+        font-family: AvenirNextRegular;
     }
 }
 
@@ -93,6 +110,8 @@ td {
         &__kebab {
             display: inherit;
             float: right;
+            position: relative;
+            margin-right: 1.8vw;
             &:active {
                 img {
                     filter: brightness(0.5);
@@ -108,6 +127,7 @@ td {
             width: 32vw;
             h4 {
                 width: 27vw;
+
             }
         }
 
@@ -127,10 +147,21 @@ td {
             width: 16vw;
         }
 
+        &__remove {
+            top: 4.5vw;
+            width: 19vw;
+            padding: 1.7vw;
+            right: -1.5vw;
+            box-shadow: 0px 4vw 3vw #eeeeee;
+        }
     }
 }
 
 @media (min-width: 1440px) {
+
+    table {
+        width: 1080px
+    }
 
     td {
         height: 80px;
@@ -163,9 +194,13 @@ td {
         }
 
         &__item {
+            box-sizing: border-box;
             width: 368px;
             h4 {
-
+                width: 305px;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -185,6 +220,13 @@ td {
             width: 161px;
         }
 
+        &__remove {
+            top: 30px;
+            width: 161px;
+            padding: 15px;
+            right: -30px;
+            box-shadow: 0px 20px 40px #eeeeee;
+        }
     }
 
 }

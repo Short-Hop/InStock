@@ -1,5 +1,6 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
+import { Link } from "react-router-dom";
 
 export default class Location extends React.Component {
   render() {
@@ -64,7 +65,30 @@ export default class Location extends React.Component {
             </div>
           </div>
           <hr className="divider" />
+<<<<<<< HEAD
           <div className="row-level">
+=======
+          <tr className="location__table-row1">
+            <div className="location-content">
+              <h3 className="title">Warehouse Number 1</h3>
+                <img className="rightArrowImg" src={rightArrow} />
+            </div>
+          </tr>
+          <tr>
+            <h4>469 King St W, Toronto, ON</h4>
+          </tr>
+          <br />
+          <div class="location__table-container">
+            <div className="location__table-content">
+              <tr>
+                <h4>Mara Weinberg</h4>
+              </tr>
+              <tr>
+                <h4>Warehouse Manager</h4>
+              </tr>
+            </div>
+            <br />
+>>>>>>> 9a45135666fce254a5d05d148aee8d99dfb498db
             <div>
               <tr className="row-level-row1">
                 <div className="location-content">
