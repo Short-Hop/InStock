@@ -1,6 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
+import Nav from "../src/components/Nav";
+import InvHeader from "../src/components/InvHeader";
+import LocHeader from "../src/components/LocHeader";
+=======
 import Nav from "./components/Nav";
 import Header from "./components/Header";
+>>>>>>> 9a45135666fce254a5d05d148aee8d99dfb498db
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./components/CreateProduct";

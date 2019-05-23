@@ -1,16 +1,32 @@
+// Needs to be improved
 .location {
   margin: 32px 16px;
-  &__table {
+  .row-level-main {
+    display: none;
+  }
+  .location_table {
     width: 100%;
-    .location__table-row1 {
-      .location-content {
-        display: flex;
-        flex-direction: row;
-
-        .title {
+    .row-level {
+      .row-level-row1 {
+        .location-content {
+          display: flex;
+          flex-direction: row;
+          width: 90vw;
+          .title {
+          }
+          .rightArrowImg {
+            margin-left: auto;
+          }
         }
-        .rightArrowImg {
-          margin-left: auto;
+      }
+      .row-level-container {
+        .row-level-content {
+          &__arrow {
+            .rightArrowImg {
+              // margin-left: 10vw;
+              display: none;
+            }
+          }
         }
       }
     }
@@ -20,25 +36,76 @@
 @media (min-width: 600px) {
   .location {
     margin: 32px 24px;
-    &__table {
+    .location_table {
       width: 100%;
-      .location__table-row1 {
-        .location-content {
+      .row-level {
+        .row-level-row1 {
+          .location-content {
+            display: flex;
+            flex-direction: row;
+            width: 92vw;
+            .title {
+            }
+            .rightArrowImg {
+              margin-left: auto;
+            }
+          }
+        }
+        .row-level-container {
           display: flex;
           flex-direction: row;
-          align-items: center;
-          .title {
-          }
-          .rightArrowImg {
-            margin-left: auto;
+          justify-content: space-between;
+          .row-level-content {
+            &__arrow {
+              .rightArrowImg {
+                // margin-left: 10vw;
+                display: none;
+              }
+            }
           }
         }
       }
-      .location__table-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        .location__table-content {
+    }
+  }
+  @media (min-width: 1440px) {
+    .location {
+      margin: 32px 180px;
+      .row-level-main {
+        display: contents;
+        margin-top: 48px;
+      }
+      .location_table {
+        width: 100%;
+        .row-level {
+          display: flex;
+          flex-direction: row;
+          .row-level-row1 {
+            .location-content {
+              display: flex;
+              flex-direction: row;
+              width: 230px;
+              .title {
+              }
+              .rightArrowImg {
+                display: none;
+              }
+            }
+          }
+          .row-level-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-evenly;
+            .row-level-content {
+              &__arrow {
+                display: flex;
+                flex-direction: row;
+                .rightArrowImg {
+                  margin-left: 10vw;
+                }
+              }
+            }
+          }
         }
       }
     }
