@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import logo from "../assets/Logo/Logo-instock.svg";
+import { Link } from "react-router-dom";
 
 export default class nav extends Component {
   render() {
     return (
       <nav className="nav">
         <div className="nav__logo">
-          <a href="../html/bandsite.html">
+          <Link to="/warehouses">
             <img src={logo} />
-          </a>
+          </Link>
         </div>
         <div className="nav__menu">
-          <a className="nav__menu--inventory" href="">
+          <Link className="nav__menu--inventory" to="/inventory">
             Inventory
-          </a>
-          <a className="nav__menu--location" href="">
+          </Link>
+          <Link className="nav__menu--location" to="/warehouses">
             Location
-          </a>
+          </Link>
         </div>
       </nav>
     );
