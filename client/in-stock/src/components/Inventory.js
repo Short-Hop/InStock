@@ -1,5 +1,6 @@
 import React from 'react';
-import InventoryItem from "./InventoryItem"
+import InventoryItem from "./InventoryItem";
+
 
 class Inventory extends React.Component {
     render() {
@@ -14,6 +15,7 @@ class Inventory extends React.Component {
                             <th>QUANTITY</th>
                             <th>STATUS</th>
                         </tr>
+                    
                     <InventoryItem></InventoryItem>
                     <InventoryItem></InventoryItem>
                     <InventoryItem></InventoryItem>
