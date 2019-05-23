@@ -135,7 +135,7 @@ button {
 }
 
 .inventory {
-  padding: 5vw;
+  padding: 0px 5vw;
 }
 
 .inventory th {
@@ -202,7 +202,7 @@ button {
     height: 13vw;
   }
   .inventory {
-    padding: 3vw;
+    padding: 0px 3vw;
   }
   .inventory th {
     display: table-cell;
@@ -314,7 +314,7 @@ button {
 }
 
 .header {
-  margin: 32px 16px;
+  margin: 32px 5vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,15 +336,16 @@ button {
   background-repeat: no-repeat;
   background-position: 16px 50%;
   text-indent: 43px;
-  font-size: 1.1em;
-  font-family: Regular;
+  font-family: AvenirNextRegular;
+  font-size: 4.1vw;
   color: #323232;
   border: 1px solid #e1e1e1;
+  height: 15vw;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .header {
-    margin: 48px 24px;
+    margin: 48px 3vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -358,6 +359,8 @@ button {
   }
   .header__search {
     width: 249px;
+    height: 48px;
+    font-size: 14px;
   }
 }
 
@@ -410,7 +413,7 @@ button {
           justify-content: space-between;
 }
 
-.nav__menu--inventory, .nav__menu--location {
+.nav__menu--inventory, .nav__menu .inventory__selected, .nav__menu--location, .nav__menu .location__selected {
   padding: 0.5rem;
   font-size: 4.5vw;
   width: 50%;
@@ -420,9 +423,16 @@ button {
   text-align: center;
 }
 
-.nav__menu--inventory:hover, .nav__menu--location:hover {
-  border-bottom: solid #ffffff;
-  font-family: myDemi;
+.nav__menu--inventory:hover, .nav__menu .inventory__selected:hover, .nav__menu--location:hover, .nav__menu .location__selected:hover {
+  border-bottom: solid #ffffff 5px;
+}
+
+.nav__menu .inventory__selected {
+  border-bottom: solid #ffffff 5px;
+}
+
+.nav__menu .location__selected {
+  border-bottom: solid #ffffff 5px;
 }
 
 @media screen and (min-width: 600px) {
@@ -445,11 +455,11 @@ button {
     margin-left: 180px;
     display: unset;
   }
-  .nav__menu--inventory, .nav__menu--location {
+  .nav__menu--inventory, .nav__menu .inventory__selected, .nav__menu--location, .nav__menu .location__selected {
     font-size: 1.1em;
     padding: 0px 8px 20px 8px;
   }
-  .nav__menu--location {
+  .nav__menu--location, .nav__menu .location__selected {
     margin-left: 60px;
   }
 }
@@ -464,7 +474,7 @@ button {
   .nav__logo img {
     height: 23px;
   }
-  .nav__menu--inventory, .nav__menu--location {
+  .nav__menu--inventory, .nav__menu .inventory__selected, .nav__menu--location, .nav__menu .location__selected {
     padding: 0px 8px 23px 8px;
     font-size: 1.4em;
     margin-left: 100px;
