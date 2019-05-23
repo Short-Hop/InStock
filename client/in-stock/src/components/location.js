@@ -7,9 +7,10 @@ export default class Location extends React.Component {
       <section className="location">
         <table className="location_table">
           <LocationEntry />
-          <LocationEntry />
+          <hr className="divider" />
           <LocationEntry />
           <hr className="divider" />
+          <LocationEntry />
         </table>
       </section>
     );
