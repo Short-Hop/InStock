@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../src/component/Nav";
-import InvHeader from "../src/component/InvHeader";
-import LocHeader from "../src/component/LocHeader";
+import Nav from "../src/components/Nav";
+import InvHeader from "../src/components/InvHeader";
+import LocHeader from "../src/components/LocHeader";
 import "./App.css";
 import "./styles/styles.css";
 import CreateProduct from "./CreateProduct";
@@ -12,11 +12,11 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {/* <Nav />
+        <Nav />
         <InvHeader />
         <LocHeader />
         <CreateProduct />
-        <Inventory /> */}
+        <Inventory />
         <Location />
       </>
     );
