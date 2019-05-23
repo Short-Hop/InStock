@@ -1,3 +1,7 @@
+const fs = require('fs');
+
+let data = JSON.parse(fs.readFileSync('data.json', 'utf8'))
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
