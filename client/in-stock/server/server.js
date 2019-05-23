@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/inventory", (req, res) => {
-  res.json(videos);
+  res.json(warehouse);
 });
 
 app.get("/location", (req, res) => {
-  res.json(videos);
+  res.json(warehouses);
 });
 
 //post routes
