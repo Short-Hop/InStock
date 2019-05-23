@@ -76,6 +76,21 @@ button {
   }
 }
 
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url(../assets/fonts/AvenirNextRegular.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextDemiBold";
+  src: url(../assets/fonts/AvenirNextDemi.otf);
+}
+
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url(../assets/fonts/AvenirNextBold.otf);
+}
+
 body {
   font-family: AvenirNextRegular;
 }
@@ -321,11 +336,15 @@ td {
   margin: 32px 16px;
 }
 
-.location__table {
+.location .row-level-main {
+  display: none;
+}
+
+.location .location_table {
   width: 100%;
 }
 
-.location__table .location__table-row1 .location-content {
+.location .location_table .row-level .row-level-row1 .location-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,20 +352,25 @@ td {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 90vw;
 }
 
-.location__table .location__table-row1 .location-content .rightArrowImg {
+.location .location_table .row-level .row-level-row1 .location-content .rightArrowImg {
   margin-left: auto;
+}
+
+.location .location_table .row-level .row-level-container .row-level-content__arrow .rightArrowImg {
+  display: none;
 }
 
 @media (min-width: 600px) {
   .location {
     margin: 32px 24px;
   }
-  .location__table {
+  .location .location_table {
     width: 100%;
   }
-  .location__table .location__table-row1 .location-content {
+  .location .location_table .row-level .row-level-row1 .location-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -354,14 +378,12 @@ td {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    width: 92vw;
   }
-  .location__table .location__table-row1 .location-content .rightArrowImg {
+  .location .location_table .row-level .row-level-row1 .location-content .rightArrowImg {
     margin-left: auto;
   }
-  .location__table .location__table-container {
+  .location .location_table .row-level .row-level-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -372,6 +394,69 @@ td {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .location .location_table .row-level .row-level-container .row-level-content__arrow .rightArrowImg {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (min-width: 1440px) {
+  .location {
+    margin: 32px 180px;
+  }
+  .location .row-level-main {
+    display: contents;
+    margin-top: 48px;
+  }
+  .location .location_table {
+    width: 100%;
+  }
+  .location .location_table .row-level {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .location .location_table .row-level .row-level-row1 .location-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 230px;
+  }
+  .location .location_table .row-level .row-level-row1 .location-content .rightArrowImg {
+    display: none;
+  }
+  .location .location_table .row-level .row-level-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .location .location_table .row-level .row-level-container .row-level-content__arrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .location .location_table .row-level .row-level-container .row-level-content__arrow .rightArrowImg {
+    margin-left: 10vw;
   }
 }
 /*# sourceMappingURL=styles.css.map */

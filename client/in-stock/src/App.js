@@ -12,11 +12,11 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Nav />
+        {/* <Nav />
         <InvHeader />
         <LocHeader />
         <CreateProduct />
-        <Inventory />
+        <Inventory /> */}
         <Location />
       </>
     );
