@@ -24,7 +24,7 @@ class App extends React.Component {
         {/* <LocHeader /> */}
         <CreateProduct />
         <CreateWarehouse />
-        <Location />
+        {/* <Location /> */}
       </>
     );
   }
