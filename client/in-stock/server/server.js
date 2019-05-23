@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/inventory", (req, res) => {
-  res.json(warehouse);
+  res.json(warehouses);
 });
 
 app.get("/location", (req, res) => {
