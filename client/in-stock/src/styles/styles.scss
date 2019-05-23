@@ -80,6 +80,10 @@ label {
   background-color: $Mercury;
 }
 
+.link {
+  text-decoration: none;
+}
+
 @media (min-width: 600px) {
   h1 {
     font-size: 4.7vw;
