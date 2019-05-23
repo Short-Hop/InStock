@@ -1,6 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
+const Router = require("../server/routes");
 
-let data = JSON.parse(fs.readFileSync('data.json', 'utf8'))
+let data = JSON.parse(fs.readFileSync("data.json", "utf8"));
 
 const express = require("express");
 const app = express();
@@ -10,6 +11,10 @@ const bodyParser = require("body-parser");
 app.use(bodyParser());
 app.use(cors());
 app.use(express.json());
+
+app.use("/inventory", Router);
+app.use("/location", Router);
+app.use("/location/warehouseId", Router);
 
 //data
 const warehouses = [];
