@@ -65,9 +65,6 @@ export default class Location extends React.Component {
             </div>
           </div>
           <hr className="divider" />
-<<<<<<< HEAD
-          <div className="row-level">
-=======
           <tr className="location__table-row1">
             <div className="location-content">
               <h3 className="title">Warehouse Number 1</h3>
@@ -88,7 +85,6 @@ export default class Location extends React.Component {
               </tr>
             </div>
             <br />
->>>>>>> 9a45135666fce254a5d05d148aee8d99dfb498db
             <div>
               <tr className="row-level-row1">
                 <div className="location-content">
