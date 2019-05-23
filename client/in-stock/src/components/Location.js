@@ -1,7 +1,19 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
+import axios from "axios";
 
 export default class Location extends React.Component {
+
+  state = {
+    warehouse: [],
+  }
+    axios
+          .get(`http://localhost:8080/`)
+          .then(response => {
+             (response.data)
+            console.log(response.data)
+          }
+      
   render() {
     return (
       <section className="location">
@@ -205,4 +217,5 @@ export default class Location extends React.Component {
       </section>
     );
   }
+}
 }

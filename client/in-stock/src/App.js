@@ -16,7 +16,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
-            <Route path="/warehouses" exact component={LocationPage} />
+            <Route path="/location" exact component={LocationPage} />
             <Route path="/inventory" exact component={InventoryPage} />
             <Route path="/inventory/:id" component={Product} />
             <Route path="/warehouses/:id" component={WarehouseName} />
