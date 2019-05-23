@@ -109,11 +109,11 @@ class CreateProduct extends React.Component {
       // status.value = "";
       description.value = "";
 
-      if (this.handleValidation()) {
-        alert("Form submitted");
-      } else {
-        alert("Form has errors.");
-      }
+      // if (this.handleValidation()) {
+      //   alert("Form submitted");
+      // } else {
+      //   alert("Form has errors.");
+      // }
     };
 
     return (
@@ -211,4 +211,29 @@ class CreateProduct extends React.Component {
   }
 }
 
+// class Switch extends Component {
+//   constructor() {
+//     super();
+//     this.state = { checked: false };
+//     this.handleChange = this.handleChange.bind(this);
+//   }
+
+//   handleChange(checked) {
+//     this.setState({ checked });
+//   }
+
+//   render() {
+//     return (
+//       <label>
+//         <Switch
+//           uncheckedIcon={false}
+//           checkedIcon={false}
+//           onChange={this.handleChange}
+//           checked={this.state.checked}
+//           onColor={"#00B200"}
+//         />
+//       </label>
+//     );
+//   }
+// }
 export default CreateProduct;
