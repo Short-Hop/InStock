@@ -14,7 +14,7 @@
           width: 90vw;
           .title {
           }
-          .rightArrowImg {
+          .rightArrowImg1 {
             margin-left: auto;
           }
         }
@@ -22,7 +22,7 @@
       .row-level-container {
         .row-level-content {
           &__arrow {
-            .rightArrowImg {
+            .rightArrowImg2 {
               // margin-left: 10vw;
               display: none;
             }
@@ -46,7 +46,7 @@
             width: 92vw;
             .title {
             }
-            .rightArrowImg {
+            .rightArrowImg1 {
               margin-left: auto;
             }
           }
@@ -57,7 +57,7 @@
           justify-content: space-between;
           .row-level-content {
             &__arrow {
-              .rightArrowImg {
+              .rightArrowImg2 {
                 // margin-left: 10vw;
                 display: none;
               }
@@ -67,42 +67,42 @@
       }
     }
   }
-  @media (min-width: 1440px) {
-    .location {
-      margin: 32px 180px;
-      .row-level-main {
-        display: contents;
-        margin-top: 48px;
-      }
-      .location_table {
-        width: 100%;
-        .row-level {
-          display: flex;
-          flex-direction: row;
-          .row-level-row1 {
-            .location-content {
-              display: flex;
-              flex-direction: row;
-              width: 230px;
-              .title {
-              }
-              .rightArrowImg {
-                display: none;
-              }
-            }
-          }
-          .row-level-container {
+}
+@media (min-width: 1440px) {
+  .location {
+    margin: 32px 180px;
+    .row-level-main {
+      display: contents;
+      margin-top: 48px;
+    }
+    .location_table {
+      width: 100%;
+      .row-level {
+        display: flex;
+        flex-direction: row;
+        .row-level-row1 {
+          .location-content {
             display: flex;
             flex-direction: row;
-            width: 100%;
-            justify-content: space-evenly;
-            .row-level-content {
-              &__arrow {
-                display: flex;
-                flex-direction: row;
-                .rightArrowImg {
-                  margin-left: 10vw;
-                }
+            width: 230px;
+            .title {
+            }
+            .rightArrowImg1 {
+              display: none;
+            }
+          }
+        }
+        .row-level-container {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: space-evenly;
+          .row-level-content {
+            &__arrow {
+              display: flex;
+              flex-direction: row;
+              .rightArrowImg2 {
+                margin-left: 10vw;
               }
             }
           }
