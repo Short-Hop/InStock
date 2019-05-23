@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
 import Inventory from "./Inventory";
-import Nav from "./Nav";
+import Nav from "./Nav"
 
-const url = `http://localhost:8080/warehouse/${warehouse.data.id}`;
 
 export default class WarehouseName extends Component {
   state = {
