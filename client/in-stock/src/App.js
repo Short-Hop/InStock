@@ -13,8 +13,8 @@ class App extends React.Component {
     return (
       <>
         <Nav />
-        {/* <InvHeader />
-        <Inventory/> */}
+        <InvHeader />
+        <Inventory />
         <WarehouseName />
         {/* <LocHeader /> */}
         <CreateProduct />
