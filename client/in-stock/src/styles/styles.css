@@ -966,10 +966,23 @@ textarea {
 }
 
 @media (min-width: 320px) {
+  .shadow {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .createnew {
-    width: 69vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -977,6 +990,10 @@ textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    background-color: white;
+    padding: 5vw;
+    overflow: hidden;
+    overflow-y: scroll;
   }
   .createnew .createnew__title {
     margin-top: 32px;
@@ -1109,7 +1126,10 @@ textarea {
     color: #004892;
   }
   .AddButton {
-    float: right;
+    position: fixed;
+    z-index: 1;
+    right: 7vw;
+    bottom: 7vw;
     background-color: #004892;
     width: 60px;
     height: 60px;
@@ -1117,11 +1137,18 @@ textarea {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
+  .shadow {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .createnew {
-    width: 70vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    max-height: 596px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1129,6 +1156,7 @@ textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border-radius: 8px;
   }
   .createnew .createnew__form form .row {
     display: -webkit-box;
@@ -1207,14 +1235,23 @@ textarea {
     background-color: white;
     color: #004892;
   }
+  .AddButton {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media (min-width: 1440px) {
+  .shadow {
+    padding: 0px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .createnew {
+    padding: 48px;
     width: 576px;
     height: 624px;
-    margin-left: 48px;
-    margin-right: 48px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1222,12 +1259,24 @@ textarea {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    overflow: visible;
+  }
+  .createnew .createnew__title {
+    margin-top: 8px;
   }
   .createnew .createnew__form {
     width: 576px;
   }
   .createnew .createnew__form form .row .column {
     margin-right: 40px;
+  }
+  .createnew .createnew__form form .row input,
+  .createnew .createnew__form form .row #country,
+  .createnew .createnew__form form .row #location {
+    width: auto;
+  }
+  .createnew .createnew__form form .row #status {
+    width: 200px;
   }
   .createnew .createnew__form form #description {
     height: 80px;
