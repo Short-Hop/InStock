@@ -109,11 +109,11 @@ class CreateProduct extends React.Component {
       // status.value = "";
       description.value = "";
 
-      if (this.handleValidation()) {
-        alert("Form submitted");
-      } else {
-        alert("Form has errors.");
-      }
+      // if (this.handleValidation()) {
+      //   alert("Form submitted");
+      // } else {
+      //   alert("Form has errors.");
+      // }
     };
 
     return (
