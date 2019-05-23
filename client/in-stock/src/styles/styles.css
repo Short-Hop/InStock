@@ -938,4 +938,324 @@ button {
     margin: 0px 180px;
   }
 }
+
+button {
+  border: none;
+}
+
+html,
+body,
+input,
+button,
+form,
+p,
+textarea {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+@media (min-width: 320px) {
+  .createnew {
+    width: 69vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__title {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .createnew .createnew__form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form label {
+    margin-bottom: 8px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form textarea,
+  .createnew .createnew__form form #country,
+  .createnew .createnew__form form #location {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    width: 100%;
+  }
+  .createnew .createnew__form form input::-webkit-input-placeholder,
+  .createnew .createnew__form form textarea::-webkit-input-placeholder,
+  .createnew .createnew__form form #country::-webkit-input-placeholder,
+  .createnew .createnew__form form #location::-webkit-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input:-ms-input-placeholder,
+  .createnew .createnew__form form textarea:-ms-input-placeholder,
+  .createnew .createnew__form form #country:-ms-input-placeholder,
+  .createnew .createnew__form form #location:-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input::-ms-input-placeholder,
+  .createnew .createnew__form form textarea::-ms-input-placeholder,
+  .createnew .createnew__form form #country::-ms-input-placeholder,
+  .createnew .createnew__form form #location::-ms-input-placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  .createnew .createnew__form form input::placeholder,
+  .createnew .createnew__form form textarea::placeholder,
+  .createnew .createnew__form form #country::placeholder,
+  .createnew .createnew__form form #location::placeholder {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+  select #country .createnew .createnew__form form input::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form textarea::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-webkit-input-placeholder::after, select #country
+  .createnew .createnew__form form #location::-webkit-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form textarea:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country:-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #location:-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form textarea::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #country::-ms-input-placeholder::after, select #country
+  .createnew .createnew__form form #location::-ms-input-placeholder::after {
+    content: "<>";
+  }
+  select #country .createnew .createnew__form form input::placeholder::after, select #country
+  .createnew .createnew__form form textarea::placeholder::after, select #country
+  .createnew .createnew__form form #country::placeholder::after, select #country
+  .createnew .createnew__form form #location::placeholder::after {
+    content: "<>";
+  }
+  .createnew .createnew__form form input #description,
+  .createnew .createnew__form form textarea #description,
+  .createnew .createnew__form form #country #description,
+  .createnew .createnew__form form #location #description {
+    height: 80px;
+  }
+  .createnew .createnew__form form #status {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .createnew .createnew__form form #status p {
+    margin-right: 16px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 100%;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+  .AddButton {
+    float: right;
+    background-color: #004892;
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+  }
+}
+
+@media (min-width: 768px) {
+  .createnew {
+    width: 70vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form form .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .createnew .createnew__form form .row .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 12px;
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-right: 12px;
+  }
+  .createnew .createnew__form form input,
+  .createnew .createnew__form form #country,
+  .createnew .createnew__form form #location {
+    margin-bottom: 24px;
+    height: 48px;
+    background-color: #fafafa;
+    border-radius: 4px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 62.5vw;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+    width: 29vw;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 24px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .createnew .createnew__form form #Save {
+    background-color: #004892;
+    color: white;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+  }
+}
+
+@media (min-width: 1440px) {
+  .createnew {
+    width: 576px;
+    height: 624px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .createnew .createnew__form {
+    width: 576px;
+  }
+  .createnew .createnew__form form .row .column {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #description {
+    height: 80px;
+    width: 480px;
+    margin-bottom: 40px;
+  }
+  .createnew .createnew__form form #status {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .createnew .createnew__form form #product,
+  .createnew .createnew__form form #city,
+  .createnew .createnew__form form #quantity {
+    margin-right: 40px;
+  }
+  .createnew .createnew__form form #Cancel {
+    background-color: white;
+    color: #004892;
+    margin-right: 48px;
+  }
+  .createnew .createnew__form form .form__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .createnew .createnew__form form button {
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
