@@ -3,6 +3,7 @@ import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
 import Inventory from "./Inventory";
 import Nav from "./Nav"
 
+
 export default class WarehouseName extends Component {
   render() {
     return (
@@ -11,25 +12,25 @@ export default class WarehouseName extends Component {
       <div className="warehouseName">
         <div className="warehouseName__title">
           <img src={Arrow} />
-          <h1>Warehouse Name</h1>
+          <h1>{this.props.name}</h1>
         </div>
         <div className="warehouseName__detail">
           <div className="warehouseName__detail--address">
             <h3>ADDRESS</h3>
-            <p>123 Main Street W.</p>
-            <p>Suite 201</p>
-            <p id="space">Toronto, ON</p>
-            <p> M65GB7 CA</p>
+            <p>{this.props.address.street}</p>
+            <p>{this.props.address.buildingNumber}</p>
+            <p id="space">{this.props.city}</p>
+            <p>{this.props.postalCode}</p>
           </div>
           <div className="warehouseName__detail--contact">
             <h3>CONTACT</h3>
-            <p>Mara Weinberg</p>
-            <p>Warehouse Manager</p>
-            <p id="space">+1 416 678 2345</p>
-            <p>weinberg@instock.com</p>
+            <p>{this.props.contact.name}</p>
+            <p>{this.props.contact.position}</p>
+            <p id="space">{this.props.contact.phone}</p>
+            <p>{this.props.contact.email}</p>
           </div>
         </div>
-        <Inventory/>
+        <Inventory />
       </div>
       </>
     );
