@@ -1,5 +1,6 @@
 import React from 'react'; 
 import arrow from "../assets/Icons/SVG/Icon-back-arrow.svg"
+import { Link } from "react-router-dom";
 
 function Product() {
     let instock = true;
@@ -16,7 +17,10 @@ function Product() {
         <div className="product">
             <div className="product__header">
                 <div>
-                    <img src={arrow}/>
+                    <Link to="/inventory">
+                        <img src={arrow}/>
+                    </Link>
+                    
                     <h1>Product Name</h1>
                 </div>
                 {indicator}
