@@ -13,13 +13,13 @@ class App extends React.Component {
     return (
       <>
         <BrowserRouter>
-        <Nav />
+          <Nav />
           <Switch>
-            <Redirect from="/" exact to="/warehouses"></Redirect>
-            <Route path="/warehouses" exact component={LocationPage}></Route>
-            <Route path="/inventory" exact component={InventoryPage}></Route>
-            <Route path="/inventory/:id" component={Product}></Route>
-            <Route path="/warehouses/:id" component={WarehouseName}></Route>
+            <Redirect from="/" exact to="/warehouses" />
+            <Route path="/warehouses" exact component={LocationPage} />
+            <Route path="/inventory" exact component={InventoryPage} />
+            <Route path="/inventory/:id" component={Product} />
+            <Route path="/warehouses/:id" component={WarehouseName} />
           </Switch>
         </BrowserRouter>
       </>
