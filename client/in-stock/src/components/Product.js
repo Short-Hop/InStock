@@ -1,8 +1,9 @@
 import React from 'react'; 
 import arrow from "../assets/Icons/SVG/Icon-back-arrow.svg"
 import { Link } from "react-router-dom";
+import Nav from "./Nav"
 
-function Product() {
+function Product(props) {
     let instock = true;
     let indicator;
     
@@ -14,6 +15,8 @@ function Product() {
 
 
     return(
+        <>
+        <Nav page={props.match.path}/>
         <div className="product">
             <div className="product__header">
                 <div>
@@ -79,6 +82,7 @@ function Product() {
             </button>
             
         </div>
+        </>
     )
 }
 
