@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
 import Inventory from "./Inventory";
+import Nav from "./Nav"
+
 
 export default class WarehouseName extends Component {
   render() {
     return (
+      <>
+      <Nav page={this.props.match.path}/>
       <div className="warehouseName">
         <div className="warehouseName__title">
           <img src={Arrow} />
@@ -28,6 +32,7 @@ export default class WarehouseName extends Component {
         </div>
         <Inventory />
       </div>
+      </>
     );
   }
 }

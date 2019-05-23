@@ -13,7 +13,6 @@ class App extends React.Component {
     return (
       <>
         <BrowserRouter>
-          <Nav />
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
             <Route path="/warehouses" exact component={LocationPage} />
