@@ -8,6 +8,7 @@ class InventoryPage extends React.Component {
     render() {
         return (
             <>
+                <Nav page={this.props.match.path}/>
                 <Header title="Inventory" />
                 <Inventory/>
                 <CreateProduct/>
