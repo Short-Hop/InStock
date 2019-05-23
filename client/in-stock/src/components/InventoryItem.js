@@ -1,5 +1,7 @@
 import React from 'react';
 import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
+import { Link } from "react-router-dom";
+import App from '../App';
 
 class InventoryItem extends React.Component {
 
@@ -15,8 +17,10 @@ class InventoryItem extends React.Component {
             })
             let mobileKebab = document.querySelector('.inventory__mobile--kebab');
             let kebab = document.querySelector('.inventory__kebab');
-            mobileKebab.childNodes[0].style.filter = 'brightness(1)';
-            kebab.childNodes[0].style.filter = 'brightness(1)';
+            if (mobileKebab && kebab) {
+                mobileKebab.childNodes[0].style.filter = 'brightness(1)';
+                kebab.childNodes[0].style.filter = 'brightness(1)';
+            }
         })
     }
 
@@ -33,6 +37,9 @@ class InventoryItem extends React.Component {
 
 
     render() {
+        
+
+
         let removeButton;
         if (this.state.displayRemove) {
             removeButton = <button className="inventory__remove">Remove</button>;
@@ -50,8 +57,10 @@ class InventoryItem extends React.Component {
                     </td>
                     <td className="inventory__mobile--label">ITEM</td>
                     <td className="inventory__item">
-                        <h3>Product Name Here</h3>
-                        <h4>Here is a very brief description of the product in the inventory…</h4>
+                        <Link className="link" to="/inventory/ID_GOES_HERE">
+                            <h3>Product Name Here</h3>
+                            <h4>Here is a very brief description of the product in the inventory…</h4>
+                        </Link>
                     </td>
                     <td className="inventory__mobile--label">LAST ORDERED</td>
                     <td className="inventory__date">
