@@ -28,9 +28,18 @@
       text-align: center;
 
       &:hover {
-        border-bottom: solid #ffffff;
-        font-family: myDemi;
+        border-bottom: solid #ffffff 5px;
       }
+    }
+
+    .inventory__selected {
+      @extend .nav__menu--inventory;
+      border-bottom: solid #ffffff 5px;
+    }
+
+    .location__selected {
+      @extend .nav__menu--location;
+      border-bottom: solid #ffffff 5px;
     }
   }
 }

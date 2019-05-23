@@ -1,5 +1,5 @@
 .header {
-  margin: 32px 16px;
+  margin: 32px 5vw;
   display: flex;
   flex-direction: column;
 
@@ -15,16 +15,17 @@
     background-repeat: no-repeat;
     background-position: 16px 50%;
     text-indent: 43px;
-    font-size: 1.1em;
-    font-family: Regular;
+    font-family: AvenirNextRegular;
+    font-size: 4.1vw;
     color: #323232;
     border: 1px solid #e1e1e1;
+    height: 15vw;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .header {
-    margin: 48px 24px;
+    margin: 48px 3vw;
     flex-direction: row;
     justify-content: space-between;
 
@@ -34,6 +35,8 @@
 
     &__search {
       width: 249px;
+      height: 48px;
+      font-size: 14px;
     }
   }
 }
