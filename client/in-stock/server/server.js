@@ -11,17 +11,17 @@ const bodyParser = require("body-parser");
 app.use(bodyParser());
 app.use(cors());
 app.use(express.json());
-
 app.use("/inventory", Router);
 app.use("/location", Router);
 app.use("/location/warehouseId", Router);
 
 //data
-const warehouses = [];
+const warehouses = data;
 
 // get routes
 app.get("/", (req, res) => {
   res.json(warehouses);
+  console.log(warehouses);
 });
 
 app.get("/inventory", (req, res) => {
@@ -29,6 +29,10 @@ app.get("/inventory", (req, res) => {
 });
 
 app.get("/location", (req, res) => {
+  res.json(warehouses);
+});
+
+app.get("/warehouses", (req, res) => {
   res.json(warehouses);
 });
 
