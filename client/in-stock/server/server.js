@@ -11,7 +11,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser());
 app.use(cors());
 app.use(express.json());
-
 app.use("/inventory", Router);
 app.use("/location", Router);
 app.use("/location/warehouseId", Router);

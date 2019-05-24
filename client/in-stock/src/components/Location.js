@@ -3,17 +3,56 @@ import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
 import axios from "axios";
 
 export default class Location extends React.Component {
-
   state = {
-    warehouse: [],
-  }
-    axios
-          .get(`http://localhost:8080/`)
-          .then(response => {
-             (response.data)
-            console.log(response.data)
+    warehouses: []
+  };
+
+  componentDidMount() {
+    axios.get(`http://localhost:8080/warehouses`).then(response => {
+    const warehousesArray = response.data.map(warehouse => {
+      return {
+        name: response.data.name,
+        number: response.data.number,
+        address: reponse.data.address {
+          buildingNumber: response.data.address.buildingNumber,
+          street: response.data.address.street,
+          city: response.data.address.city,
+          province: response.data.address.province,
+          postalCode: response.data.address.postalCode,
+          country: response.data.address.country
+        }
+        contact: response.data.contact {
+          name: response.data.contact.name,
+          position: response.data.contact.position,
+          phone: response.data.contact.phone,
+          email: response.data.contact.email
+        }
+        products: response.data.products [{
+          id : response.data.products.id,
+          name: response.data.products.name,
+          shortDescription: response.data.products.shortDescription,
+          longDescription: response.data.products.longDescription,
+          refNumber: response.data.products.refNumber,
+          location: response.data.products.location {
+            city: response.data.products.location.city,
+            country: response.data.products.location.country,
           }
-      
+          orderDate: response.data.products.orderDate,
+          orderBy: response.data.products.orderBy,
+          quantity: response.data.products.quantity,
+          categories: response.data.products.categories,
+          inStock: response.data.products.inStock,
+          
+        }]
+
+      }
+    })
+    this.setState(
+      warehouses : warehousesArray
+      }
+    });
+    )
+  }
   render() {
     return (
       <section className="location">
@@ -22,10 +61,15 @@ export default class Location extends React.Component {
             <div>
               <tr className="row-level-row1">
                 <tr className="row-level-main">
+                  {}
                   <h5>WAREHOUSE</h5>
                 </tr>
                 <div className="location-content">
-                  <h3 className="title">Warehouse Number 1</h3>
+                  <h3 className="title">
+                    {response.data[0].name}
+                    {name}
+                    {/* {data.number} */}
+                  </h3>
                   <img className="rightArrowImg" src={rightArrow} />
                 </div>
               </tr>
@@ -217,5 +261,4 @@ export default class Location extends React.Component {
       </section>
     );
   }
-}
 }
