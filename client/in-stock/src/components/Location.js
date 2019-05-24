@@ -28,14 +28,14 @@ export default class Location extends React.Component {
           id: warehouse.products.id,
           productsname: warehouse.products.name,
           shortDescription: warehouse.products.shortDescription,
-          refNumber: warehouse.products.refNumber
-          // city: warehouse.products.location
-          // country: warehouse.products.location.country,
-          // orderDate: warehouse.products.orderDate,
-          // orderBy: warehouse.products.orderBy,
-          // quantity: warehouse.products.quantity,
-          // categories: warehouse.products.categories,
-          // inStock: warehouse.products.inStock
+          refNumber: warehouse.products.refNumber,
+          productscity: warehouse.products[0].location.city,
+          productscountry: warehouse.products[0].location.country,
+          productsorderDate: warehouse.products[0].orderDate,
+          productsorderBy: warehouse.products[0].orderBy,
+          productsquantity: warehouse.products[0].quantity,
+          productscategories: warehouse.products[0].categories,
+          productsinStock: warehouse.products[0].inStock
         };
       });
 

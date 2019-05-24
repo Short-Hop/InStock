@@ -22,7 +22,8 @@ function WarehouseList(props) {
                 <tr>
                   <h4>
                     {warehouse.buildingNumber} {warehouse.street}{" "}
-                    {warehouse.city} {warehouse.province} {warehouse.postalCode}                {warehouse.country}
+                    {warehouse.city} {warehouse.province} {warehouse.postalCode}{" "}
+                    {warehouse.country}
                   </h4>
                 </tr>
               </div>
@@ -57,7 +58,7 @@ function WarehouseList(props) {
                     <h5>CATEGORIES</h5>
                   </tr>
                   <tr className="row-level-content__arrow">
-                    <h4>Industrial, Automotive, Heavy, Mechanical,</h4>
+                    <h4>{warehouse.productscategories}</h4>
                     <div>
                       <img className="rightArrowImg" src={rightArrow} />
                     </div>
