@@ -11,38 +11,35 @@ export default class Location extends React.Component {
     axios.get(`http://localhost:8080/warehouses`).then(response => {
     const warehousesArray = response.data.map(warehouse => {
       return {
-        name: response.data.name,
+        name: warehouse.name,
         number: response.data.number,
-        address: reponse.data.address {
-          buildingNumber: response.data.address.buildingNumber,
+          address.buildingNumber: warehouse.address.buildingNumber,
           street: response.data.address.street,
           city: response.data.address.city,
           province: response.data.address.province,
           postalCode: response.data.address.postalCode,
           country: response.data.address.country
-        }
-        contact: response.data.contact {
-          name: response.data.contact.name,
+      
+          contact.name: warehouse.contact.name,
           position: response.data.contact.position,
           phone: response.data.contact.phone,
           email: response.data.contact.email
         }
         products: response.data.products [{
-          id : response.data.products.id,
+          id: response.data.products.id,
           name: response.data.products.name,
           shortDescription: response.data.products.shortDescription,
           longDescription: response.data.products.longDescription,
           refNumber: response.data.products.refNumber,
           location: response.data.products.location {
-            city: response.data.products.location.city,
-            country: response.data.products.location.country,
+          city: response.data.products.location.city,
+          country: response.data.products.location.country
           }
           orderDate: response.data.products.orderDate,
           orderBy: response.data.products.orderBy,
           quantity: response.data.products.quantity,
           categories: response.data.products.categories,
           inStock: response.data.products.inStock,
-          
         }]
 
       }
@@ -68,7 +65,7 @@ export default class Location extends React.Component {
                   <h3 className="title">
                     {response.data[0].name}
                     {name}
-                    {/* {data.number} */}
+                    { {data.number} */}
                   </h3>
                   <img className="rightArrowImg" src={rightArrow} />
                 </div>
