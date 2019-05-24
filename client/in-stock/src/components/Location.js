@@ -13,7 +13,7 @@ export default class Location extends React.Component {
       return {
         name: warehouse.name,
         number: response.data.number,
-          address.buildingNumber: warehouse.address.buildingNumber,
+          // address.buildingNumber: warehouse.address.buildingNumber,
           street: response.data.address.street,
           city: response.data.address.city,
           province: response.data.address.province,
