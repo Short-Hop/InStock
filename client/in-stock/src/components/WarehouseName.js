@@ -1,19 +1,13 @@
 import React, { Component } from "react";
 import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
 import Inventory from "./Inventory";
-import Nav from "./Nav"
+import Nav from "./Nav";
 
-
+const warehouseUrl = `http://localhost:8080/location/warehouseId`;
 export default class WarehouseName extends Component {
   state = {
     uniqueWarehouse: []
   };
-
-axios.get(url).then(response => {
-  this.setState({
-    uniqueWarehouse: response.data,
-  });
-});
 
   render() {
     return (

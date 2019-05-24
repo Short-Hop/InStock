@@ -13,7 +13,7 @@ router.route("/location").get((req, res) => {
 });
 
 router.route("/location/:warehouseId", (req, res) => {
-  res.json(warehouseIdData);
+  res.json(warehouseIdData.getContents(req.params.id));
 });
 
 module.exports = router;
