@@ -4,7 +4,7 @@ import Add from "../assets/Icons/SVG/Icon-add.svg";
 
 class CreateWarehouse extends React.Component {
   state = {
-    newwarehouse: {
+    newWarehouse: {
       warehouse: "",
       address: "",
       location: "",
@@ -12,7 +12,7 @@ class CreateWarehouse extends React.Component {
       position: "",
       phone: "",
       email: "",
-      description: "Description"
+      description: ""
     },
     fields: {},
     erros: {}
