@@ -43,20 +43,20 @@ app.get("/warehouses", (req, res) => {
 });
 
 //post routes
-app.post("/warehouses", (req, res) => {
-  let newWarehouse = {
-    warehouse: "",
-    address: "",
-    location: "",
-    name: "",
-    position: "",
-    phone: "",
-    email: "",
-    description: ""
-  };
-  warehouses.push(newWarehouse);
-  res.json(newWarehouse);
-});
+// app.post("/warehouses", (req, res) => {
+//   let newWarehouse = {
+//     warehouse: "",
+//     address: "",
+//     location: "",
+//     name: "",
+//     position: "",
+//     phone: "",
+//     email: "",
+//     description: ""
+//   };
+//   warehouses.push(newWarehouse);
+//   res.json(newWarehouse);
+// });
 
 // listening
 app.listen(8080, (req, res) => {
