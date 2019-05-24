@@ -15,7 +15,9 @@ class CreateProduct extends React.Component {
       description: "Description"
     },
     fields: {},
-    erros: {}
+    erros: {},
+
+    displayForm: false,
   };
   handleValidation() {
     let fields = this.state.fields;
@@ -73,55 +75,73 @@ class CreateProduct extends React.Component {
     fields[field] = e.target.value;
     this.setState({ fields });
   }
+
+  toggleForm = () => {
+
+    if(!this.state.displayForm) {
+      this.setState({
+        displayForm: true,
+      })
+    } else {
+      this.setState({
+        displayForm: false,
+      })
+    }
+      
+  }
+
+
+  submitHandler = (event) => {
+    event.preventDefault();
+    const product = event.target.product;
+    let productinput = product.value;
+    const ordered = event.target.ordered;
+    let orderedinput = ordered.value;
+    const city = event.target.city;
+    let cityinput = city.value;
+    const country = event.target.country;
+    let countryinput = country.value;
+    const quantity = event.target.quantity;
+    let quantityinput = quantity.value;
+    const status = event.target.status;
+    // let statusinput = status.value;
+    const description = event.target.description;
+    let descriptioninput = description.value;
+
+    axios.post(`http://localhost`, {
+      product: productinput,
+      ordered: orderedinput,
+      city: cityinput,
+      country: countryinput,
+      quantity: quantityinput,
+      // status: statusinput,
+      description: descriptioninput
+  });
+
+  product.value = "";
+  ordered.value = "";
+  city.value = "";
+  country.value = "";
+  quantity.value = "";
+  // status.value = "";
+  description.value = "";
+
+    // if (this.handleValidation()) {
+    //   alert("Form submitted");
+    // } else {
+    //   alert("Form has errors.");
+    // }
+
+}
   render() {
-    const submitHandler = event => {
-      event.preventDefault();
-      const product = event.target.product;
-      let productinput = product.value;
-      const ordered = event.target.ordered;
-      let orderedinput = ordered.value;
-      const city = event.target.city;
-      let cityinput = city.value;
-      const country = event.target.country;
-      let countryinput = country.value;
-      const quantity = event.target.quantity;
-      let quantityinput = quantity.value;
-      const status = event.target.status;
-      // let statusinput = status.value;
-      const description = event.target.description;
-      let descriptioninput = description.value;
-
-      axios.post(`http://localhost`, {
-        product: productinput,
-        ordered: orderedinput,
-        city: cityinput,
-        country: countryinput,
-        quantity: quantityinput,
-        // status: statusinput,
-        description: descriptioninput
-      });
-
-      product.value = "";
-      ordered.value = "";
-      city.value = "";
-      country.value = "";
-      quantity.value = "";
-      // status.value = "";
-      description.value = "";
-
-      // if (this.handleValidation()) {
-      //   alert("Form submitted");
-      // } else {
-      //   alert("Form has errors.");
-      // }
-    };
-
-    return (
-      <>
+    let form;
+    if (this.state.displayForm) {
+      form = 
+      <div className="shadow">
         <div className="createnew">
           <h1 className="createnew__title">Create New</h1>
           <div className="createnew__form">
-            <form onSubmit={submitHandler}>
+            <form onSubmit={this.submitHandler}>
               <div className="row">
                 <div className="column">
                   <label>Product</label>
@@ -165,7 +185,7 @@ class CreateProduct extends React.Component {
                   >
                     <option value="Canada" selected>
                       Canada
-                    </option>
+                      </option>
                     <option value="USA">USA</option>
                     <option value="France">France</option>
                   </select>
@@ -200,12 +220,20 @@ class CreateProduct extends React.Component {
               />
               <div className="form__buttons">
                 <button id="Save">Save</button>
-                <button id="Cancel">Cancel</button>
+                <button id="Cancel" onClick={this.toggleForm}>Cancel</button>
               </div>
             </form>
           </div>
         </div>
-        <AddButton Popup={this.state} />
+      </div>
+    }
+
+    
+
+    return (
+      <>
+        {form}
+        <AddButton Popup={this.toggleForm} />
       </>
     );
   }

@@ -15,7 +15,7 @@ class AddButton extends React.Component {
     const Popup = this.props.state;
     return (
       <>
-        <button className="AddButton" onClick={this.togglePopup.bind(this)}>
+        <button className="AddButton" onClick={this.props.Popup}>
           <img src={Add} alt="Add New" />
         </button>
       </>

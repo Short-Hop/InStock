@@ -18,12 +18,28 @@ textarea {
 
 //Mobile version @320
 @media (min-width: 320px) {
+  .shadow {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
   .createnew {
-    width: 69vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    
+    padding: 5vw;
+    overflow:hidden; 
+    overflow-y:scroll;
+    
 
     .createnew__title {
       margin-top: 32px;
@@ -97,7 +113,10 @@ textarea {
     }
   }
   .AddButton {
-    float: right;
+    position: fixed;
+    z-index: 1;
+    right: 7vw;
+    bottom: 7vw;
     background-color: #004892;
     width: 60px;
     height: 60px;
@@ -105,13 +124,19 @@ textarea {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
+  .shadow {
+    box-sizing: border-box;
+    padding: 10vw;
+    justify-content: center;
+  }
+
   .createnew {
-    width: 70vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    max-height: 596px;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
 
     .createnew__form {
       form {
@@ -179,16 +204,30 @@ textarea {
       }
     }
   }
+
+  .AddButton {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media (min-width: 1440px) {
+  .shadow {
+    padding: 0px;
+    align-items: center;
+  }
+
   .createnew {
+    padding: 48px;
     width: 576px;
     height: 624px;
-    margin-left: 48px;
-    margin-right: 48px;
     display: flex;
     flex-direction: column;
+    overflow: visible;
+
+    .createnew__title {
+      margin-top: 8px;
+    }
 
     .createnew__form {
       width: 576px;
@@ -196,6 +235,17 @@ textarea {
         .row {
           .column {
             margin-right: 40px;
+          }
+
+          input,
+          #country,
+          #location {
+
+            width: auto;
+          }
+
+          #status {
+            width: 200px;
           }
         }
 
