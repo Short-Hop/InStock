@@ -21,7 +21,7 @@ export default class Location extends React.Component {
           province: warehouse.address.province,
           postalCode: warehouse.address.postalCode,
           country: warehouse.address.country,
-          contactname: warehouse.contact.name, //contact.name
+          contactname: warehouse.contact.name,
           contactposition: warehouse.contact.position,
           contactphone: warehouse.contact.phone,
           contactemail: warehouse.contact.email,
@@ -42,7 +42,6 @@ export default class Location extends React.Component {
       this.setState({
         warehouses: warehousesArray
       });
-      console.log(warehousesArray);
     });
   }
 
