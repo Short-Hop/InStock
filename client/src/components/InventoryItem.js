@@ -2,6 +2,7 @@ import React from 'react';
 import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
 import App from '../App';
+import axios from 'axios';
 
 class InventoryItem extends React.Component {
 
@@ -12,33 +13,44 @@ class InventoryItem extends React.Component {
     componentDidMount() {
         let body = document.querySelector('body');
         body.addEventListener('click', () => {
+            
+
+            let mobileKebab = document.querySelectorAll('.kebab');
+            let kebab = document.querySelectorAll('.kebab');
+
+            if (mobileKebab && kebab) {
+                kebab.forEach(node => {
+                    node.style.filter = 'brightness(1)';
+                })
+                mobileKebab.forEach(node => {
+                    node.style.filter = 'brightness(1)';
+                })
+
+            }
+            
             this.setState({
                 displayRemove: false
             })
-            let mobileKebab = document.querySelector('.inventory__mobile--kebab');
-            let kebab = document.querySelector('.inventory__kebab');
-            if (mobileKebab && kebab) {
-                mobileKebab.childNodes[0].style.filter = 'brightness(1)';
-                kebab.childNodes[0].style.filter = 'brightness(1)';
-            }
         })
     }
 
-    displayRemoveButton = () => {
+    displayRemoveButton = (event) => {
         this.setState({
             displayRemove: true
         })
-        let mobileKebab = document.querySelector('.inventory__mobile--kebab');
-        let kebab = document.querySelector('.inventory__kebab');
-        mobileKebab.childNodes[0].style.filter = 'brightness(0.5)';
-        kebab.childNodes[0].style.filter = 'brightness(0.5)';
+
+        console.log(event.target);
+        // let mobileKebab = document.querySelector('.inventory__mobile--kebab');
+        // let kebab = document.querySelector('.inventory__kebab');
+        event.target.style.filter = 'brightness(0.5)';
+        event.target.style.filter = 'brightness(0.5)';
     }
+
+    
 
 
 
     render() {
-        console.log(this.props.product)
-
         let status = this.props.product.inStock ? "IN STOCK" : "OUT OF STOCK";
 
         let removeButton;
@@ -52,7 +64,7 @@ class InventoryItem extends React.Component {
                 <tr>
                     <td className="inventory__mobile--kebab">
                         <button onClick={this.displayRemoveButton}>
-                            <img src={kebab} alt={'more'} />
+                            <img src={kebab} alt={'more'} className="kebab" />
                         </button>
                         {removeButton}
                     </td>
@@ -80,7 +92,7 @@ class InventoryItem extends React.Component {
                         <h4>{status}</h4>
                         <div className="inventory__kebab" >
                             <button onClick={this.displayRemoveButton}>
-                                <img src={kebab} alt={'more'} />
+                                <img src={kebab} alt={'more'} className="kebab" />
                             </button>
                             {removeButton}
                         </div>
