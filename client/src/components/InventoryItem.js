@@ -37,8 +37,9 @@ class InventoryItem extends React.Component {
 
 
     render() {
-        
+        console.log(this.props.product)
 
+        let status = this.props.product.inStock ? "IN STOCK" : "OUT OF STOCK";
 
         let removeButton;
         if (this.state.displayRemove) {
@@ -57,26 +58,26 @@ class InventoryItem extends React.Component {
                     </td>
                     <td className="inventory__mobile--label">ITEM</td>
                     <td className="inventory__item">
-                        <Link className="link" to="/inventory/ID_GOES_HERE">
-                            <h3>Product Name Here</h3>
-                            <h4>Here is a very brief description of the product in the inventory…</h4>
+                        <Link className="link" to={"/inventory/" + this.props.product.id }>
+                            <h3>{this.props.product.name}</h3>
+                            <h4>{this.props.product.shortDescription}</h4>
                         </Link>
                     </td>
                     <td className="inventory__mobile--label">LAST ORDERED</td>
                     <td className="inventory__date">
-                        <h4>05/24/2018</h4>
+                        <h4>{this.props.product.orderDate}</h4>
                     </td>
                     <td className="inventory__mobile--label">LOCATION</td>
                     <td className="inventory__location">
-                        <h4>Toronto, CAN</h4>
+                        <h4>{this.props.product.location.city + ', ' + this.props.product.location.country}</h4>
                     </td>
                     <td className="inventory__mobile--label">QUANTITY</td>
                     <td className="inventory__quantity">
-                        <h4>12,000</h4>
+                        <h4>{this.props.product.quantity}</h4>
                     </td>
                     <td className="inventory__mobile--label">STATUS</td>
                     <td className="inventory__status">
-                        <h4>In Stock</h4>
+                        <h4>{status}</h4>
                         <div className="inventory__kebab" >
                             <button onClick={this.displayRemoveButton}>
                                 <img src={kebab} alt={'more'} />
