@@ -12,7 +12,7 @@ class InventoryPage extends React.Component {
             <>
                 <Nav page={this.props.match.path}/>
                 <Header title="Inventory" />
-                <Inventory warehouseArray={this.props.warehouseArray}/>
+                <Inventory warehouseArray={this.props.warehouseArray} deleteProduct={this.props.deleteProduct} />} />
                 <CreateProduct/>
             </>
         )

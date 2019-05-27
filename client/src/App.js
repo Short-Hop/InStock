@@ -10,8 +10,6 @@ import InventoryPage from "./components/InventoryPage";
 import axios from "axios";
 
 class App extends React.Component {
-
-
   state = {
     warehouseArray: []
   }
@@ -26,8 +24,8 @@ class App extends React.Component {
     })
   }
 
-  deleteProduct = (WAREid) => {
-    axios.delete('http://localhost:8080/api/warehouses//product/' + id).then(response => {
+  deleteProduct = (warehouseId, productId) => {
+    axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
       console.log(response);
 
       axios.get('http://localhost:8080/api/warehouses').then(response => {
@@ -46,8 +44,8 @@ class App extends React.Component {
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
             <Route path="/warehouses" exact component={LocationPage} />
-            <Route path="/inventory" exact render={({ match }) => <InventoryPage warehouseArray={this.state.warehouseArray} match={match}/>} />
-            <Route path="/inventory/:id" render={({ match }) => <Product warehouseArray={this.state.warehouseArray} match={match} />} />
+            <Route path="/inventory" exact render={({ match }) => <InventoryPage warehouseArray={this.state.warehouseArray} match={match} deleteProduct={this.deleteProduct} />} />
+            <Route path="warehouses/:warehouseid/inventory/:id" render={({ match }) => <Product warehouseArray={this.state.warehouseArray} match={match}/>} />
             <Route path="/warehouses/:id" component={WarehouseName} />
           </Switch>
         </BrowserRouter>
