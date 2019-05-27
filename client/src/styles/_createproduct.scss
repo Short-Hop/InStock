@@ -16,6 +16,12 @@ textarea {
   border: 0px;
 }
 
+textarea {
+  font-family: AvenirNextRegular;
+  box-sizing: border-box;
+  padding: 5vw;
+}
+
 //Mobile version @320
 @media (min-width: 320px) {
   .shadow {
@@ -168,6 +174,7 @@ textarea {
         #description {
           height: 80px;
           width: 62.5vw;
+          padding: 1vw;
         }
         #status {
           text-align: left;
@@ -223,7 +230,8 @@ textarea {
     height: 624px;
     display: flex;
     flex-direction: column;
-    overflow: visible;
+    overflow:hidden; 
+    overflow-y:scroll;
 
     .createnew__title {
       margin-top: 8px;
@@ -253,6 +261,7 @@ textarea {
           height: 80px;
           width: 480px;
           margin-bottom: 40px;
+          padding: 14px;
         }
         #status {
           text-align: left;
@@ -274,7 +283,6 @@ textarea {
         .form__buttons {
           display: flex;
           flex-direction: row-reverse;
-          margin-bottom: 40px;
           width: 100%;
         }
         button {

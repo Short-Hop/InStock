@@ -2,6 +2,7 @@ import React from 'react';
 import arrow from "../assets/Icons/SVG/Icon-back-arrow.svg"
 import { Link } from "react-router-dom";
 import Nav from "./Nav"
+import axios from 'axios';
 
 function Product(props) {
     let instock = true;
@@ -12,6 +13,12 @@ function Product(props) {
     } else {
         indicator = <div className="product__outStock">Out of Stock</div>
     }
+
+    let product;
+    // axios.get('http://localhost:8080/api/warehouses/' + props.match.params.id).then(response => {
+    //     console.log(response);
+    // })
+    
 
 
     return(

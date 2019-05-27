@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default class nav extends Component {
   render() {
-    console.log(this.props.page)
 
     let inventoryLink;
     let locationLink
