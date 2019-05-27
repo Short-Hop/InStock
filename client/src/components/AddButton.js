@@ -13,7 +13,6 @@ class AddButton extends React.Component {
   }
   render() {
     const Popup = this.props.state;
-    console.log(this.props.state);
     return (
       <>
         <button className="AddButton" onClick={this.props.Popup}>

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Switch from "react-switch";
+import Status from "./Status";
 import AddButton from "./AddButton";
 
 class CreateProduct extends React.Component {
@@ -101,26 +102,26 @@ class CreateProduct extends React.Component {
     const quantity = event.target.quantity;
     let quantityinput = quantity.value;
     const status = event.target.status;
-    // let statusinput = status.value;
+    let statusinput = status.value;
     const description = event.target.description;
     let descriptioninput = description.value;
+    console.log(productinput);
 
-    axios.post("/inventory", {
-      product: productinput,
-      ordered: orderedinput,
-      city: cityinput,
-      country: countryinput,
-      quantity: quantityinput,
-      // status: statusinput,
-      description: descriptioninput
-    });
+    // axios.post("/inventory", {
+    //   product: productinput,
+    //   ordered: orderedinput,
+    //   city: cityinput,
+    //   country: countryinput,
+    //   quantity: quantityinput,
+    //    status: statusinput,
+    //   description: descriptioninput
+    // });
 
     product.value = "";
     ordered.value = "";
     city.value = "";
     country.value = "";
     quantity.value = "";
-    // status.value = "";
     description.value = "";
   };
   render() {
@@ -230,29 +231,4 @@ class CreateProduct extends React.Component {
   }
 }
 
-// class Switch extends Component {
-//   constructor() {
-//     super();
-//     this.state = { checked: false };
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-
-//   handleChange(checked) {
-//     this.setState({ checked });
-//   }
-
-//   render() {
-//     return (
-//       <label>
-//         <Switch
-//           uncheckedIcon={false}
-//           checkedIcon={false}
-//           onChange={this.handleChange}
-//           checked={this.state.checked}
-//           onColor={"#00B200"}
-//         />
-//       </label>
-//     );
-//   }
-// }
 export default CreateProduct;

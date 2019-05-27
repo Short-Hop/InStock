@@ -116,6 +116,7 @@ class CreateWarehouse extends React.Component {
     const description = event.target.description;
     let descriptioninput = description.value;
 
+
     axios.post("/warehouses", {
       // warehouse: warehouseinput,
       address: addressinput,
