@@ -1,68 +1,103 @@
 // Needs to be improved
 .location {
   margin: 32px 16px;
-  .row-level-main {
-    display: none;
-  }
-  .location_table {
+
+  &__table {
     width: 100%;
-    .row-level {
-      .row-level-row1 {
-        .location-content {
+    display: flex;
+    flex-direction: column;
+
+    .main-row {
+      display: none;
+    }
+    .row1 {
+      display: contents;
+      &__col-mobile {
+        .main-col {
+          display: none;
+        }
+        .arrow-control {
           display: flex;
           flex-direction: row;
-          width: 90vw;
-          .title {
-          }
           .rightArrowImg1 {
             margin-left: auto;
           }
         }
       }
-      .row-level-container {
-        .row-level-content {
-          &__arrow {
-            .rightArrowImg2 {
-              // margin-left: 10vw;
-              display: none;
-            }
+    }
+    .row2 {
+      display: flex;
+      flex-direction: column;
+      // width: 90vw;
+      // &__first {
+      // display: flex;
+      // flex-direction: row;
+      &__col-desk {
+        display: none;
+        .arrow-control {
+          display: flex;
+          flex-direction: row;
+          .rightArrowImg1 {
+            margin-left: auto;
           }
         }
       }
+      &__col-last {
+        display: none;
+        // .arrow-control2 {
+        //display: flex;
+        flex-direction: row;
+        .rightArrowImg2 {
+          display: none;
+        }
+        // }
+      }
+      .main-col {
+        display: none;
+      }
     }
   }
+  // }
 }
 
 @media (min-width: 600px) {
   .location {
     margin: 32px 24px;
-    .location_table {
+    &__table {
       width: 100%;
-      .row-level {
-        .row-level-row1 {
-          .location-content {
+      .main-row {
+        display: none;
+      }
+      .row1 {
+        display: contents;
+      }
+      .row2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        //width: 90vw;
+        &__col-desk {
+          display: none;
+
+          .arrow-control {
             display: flex;
-            flex-direction: row;
-            width: 92vw;
-            .title {
-            }
+            flex-direction: column;
             .rightArrowImg1 {
-              margin-left: auto;
+              display: none;
             }
           }
         }
-        .row-level-container {
+        &__col-last {
+          // .arrow-control2 {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
-          .row-level-content {
-            &__arrow {
-              .rightArrowImg2 {
-                // margin-left: 10vw;
-                display: none;
-              }
-            }
+          .rightArrowImg2 {
+            display: none;
           }
+          // }
+        }
+        .main-col {
+          display: contents;
         }
       }
     }
@@ -71,41 +106,37 @@
 @media (min-width: 1440px) {
   .location {
     margin: 32px 180px;
-    .row-level-main {
-      display: contents;
-      margin-top: 48px;
-    }
-    .location_table {
-      width: 100%;
-      .row-level {
+    &__table {
+      .main-row {
+        display: contents;
+        margin-top: 48px;
         display: flex;
         flex-direction: row;
-        .row-level-row1 {
-          .location-content {
-            display: flex;
-            flex-direction: row;
-            width: 230px;
-            .title {
-            }
-            .rightArrowImg1 {
-              display: none;
-            }
+        justify-content: space-between;
+      }
+      .row1 {
+        display: none;
+      }
+      .row2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        //width: 90vw;
+        &__col-desk {
+          display: contents;
+          .rightArrowImg2 {
+            display: contents;
           }
         }
-        .row-level-container {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          justify-content: space-evenly;
-          .row-level-content {
-            &__arrow {
-              display: flex;
-              flex-direction: row;
-              .rightArrowImg2 {
-                margin-left: 10vw;
-              }
-            }
+        &__col-last {
+          // .arrow-control2 {
+          display: contents;
+          flex-direction: column;
+          .rightArrowImg2 {
+            display: flex;
+            //align-self: self-start;
           }
+          // }
         }
       }
     }
