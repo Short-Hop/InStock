@@ -5,16 +5,15 @@ export default class Location extends React.Component {
   render() {
     return (
       <>
-        <WarehouseList warehouses={this.state.warehouses} />;
+        {/* <WarehouseList warehouses={this.state.warehouses} />; */}
         <section className="location">
           <table className="location__table">
             <tbody>
               {/* <MainRow /> */}
-              <LocationEntry />
-              <hr className="divider" />
-              <LocationEntry />
-              <hr className="divider" />
-              <LocationEntry />
+
+              {this.props.warehouseArray.map(warehouse => (
+                <LocationEntry warehouses={this.props.warehouseArray} />
+              ))}
             </tbody>
           </table>
         </section>
@@ -60,7 +59,7 @@ export default class Location extends React.Component {
           <tr className="row2">
             <td className="row2__col-desk">
               <div className="arrow-control">
-                <h5 className="row2__main-col">WAREHOUSE</h5>
+                <h5 className="main-col">WAREHOUSE</h5>
                 <h3 className="title">Warehouse Number 1</h3>
                 <img className="rightArrowImg1" src={rightArrow} />
                 <h4>469 King St W, Toronto, ON</h4>
@@ -86,6 +85,7 @@ export default class Location extends React.Component {
               <img className="rightArrowImg2" src={rightArrow} />
             </td>
           </tr>
+          <hr />
         </>
       );
     }
