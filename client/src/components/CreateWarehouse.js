@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Add from "../assets/Icons/SVG/Icon-add.svg";
-import AddButton from "./AddButton"
+import AddButton from "./AddButton";
 
 class CreateWarehouse extends React.Component {
   state = {
@@ -113,55 +113,39 @@ class CreateWarehouse extends React.Component {
         email: emailinput,
         description: descriptioninput
       });
+      // warehouse.value = "";
+      address.value = "";
+      location.value = "";
+      name.value = "";
+      position.value = "";
+      phone.value = "";
+      email.value = "";
+      description.value = "";
 
-    axios.post(`http://localhost`, {
-      warehouse: warehouseinput,
-      address: addressinput,
-      location: locationinput,
-      name: nameinput,
-      position: positioninput,
-      phone: phoneinput,
-      email: emailinput,
-      description: descriptioninput
-    });
+      // if (this.handleValidation()) {
+      //   alert("Form submitted");
+      // } else {
+      //   alert("Form has errors.");
+      // }
+    };
 
-    warehouse.value = "";
-    address.value = "";
-    location.value = "";
-    name.value = "";
-    position.value = "";
-    phone.value = "";
-    email.value = "";
-    description.value = "";
+    // toggleForm = () => {
+    //   console.log("Toggle called");
 
-    // if (this.handleValidation()) {
-    //   alert("Form submitted");
-    // } else {
-    //   alert("Form has errors.");
-    // }
-  };
+    //   if (!this.state.displayForm) {
+    //     this.setState({
+    //       displayForm: true
+    //     });
+    //   } else {
+    //     this.setState({
+    //       displayForm: false
+    //     });
+    //   }
+    // };
 
-  toggleForm = () => {
-
-    console.log("Toggle called")
-
-    if (!this.state.displayForm) {
-      this.setState({
-        displayForm: true,
-      })
-    } else {
-      this.setState({
-        displayForm: false,
-      })
-    }
-
-  }
-
-  render() {
     let form;
     if (this.state.displayForm) {
-
-      form = 
+      form = (
         <div className="shadow">
           <div className="createnew">
             <h1 className="createnew__title">Add New</h1>
@@ -200,7 +184,7 @@ class CreateWarehouse extends React.Component {
                     >
                       <option value="Toronto" selected>
                         Toronto, CAN
-                        </option>
+                      </option>
                       <option value="Vancouver">Vancouver, CAN</option>
                       <option value="Ontario">Ontario, CAN</option>
                     </select>
@@ -261,15 +245,16 @@ class CreateWarehouse extends React.Component {
                 </div>
                 <div className="form__buttons">
                   <button id="Save">Save</button>
-                  <button id="Cancel" onClick={this.toggleForm}>Cancel</button>
+                  <button id="Cancel" onClick={this.toggleForm}>
+                    Cancel
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-      
+      );
     }
-
 
     return (
       <>
