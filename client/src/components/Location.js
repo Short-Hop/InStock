@@ -11,11 +11,10 @@ export default class Location extends React.Component {
           <table className="location__table">
             <tbody>
               {/* <MainRow /> */}
-              <LocationEntry />
-              <hr className="divider" />
-              <LocationEntry />
-              <hr className="divider" />
-              <LocationEntry />
+
+              {this.props.warehouseArray.map(warehouse => (
+                <LocationEntry warehouse={warehouse} />
+              ))}
             </tbody>
           </table>
         </section>
@@ -45,37 +44,49 @@ export default class Location extends React.Component {
       );
     }
 
-    function LocationEntry() {
+    function LocationEntry(props) {
       return (
         <>
           <tr className="row1">
             <td className="row1__col-mobile">
               <h5 className="main-col">WAREHOUSE</h5>
               <div className="arrow-control">
-                <h3 className="title">Warehouse Number 1</h3>
+                <h3 className="title">
+                  {props.warehouse.name} {props.warehouse.number}
+                </h3>
                 <img className="rightArrowImg1" src={rightArrow} />
               </div>
-              <h4>469 King St W, Toronto, ON</h4>
+              <h4>
+                {props.warehouse.buildingNumber}, {props.warehouse.street},{" "}
+                {props.warehouse.city}, {props.warehouse.province}
+              </h4>
             </td>
           </tr>
           <tr className="row2">
             <td className="row2__col-desk">
               <div className="arrow-control">
-                <h5 className="row2__main-col">WAREHOUSE</h5>
-                <h3 className="title">Warehouse Number 1</h3>
+                <h5 className="main-col">WAREHOUSE</h5>
+                <h3 className="title">
+                  {props.warehouse.name} {props.warehouse.number + 1}
+                </h3>
                 <img className="rightArrowImg1" src={rightArrow} />
-                <h4>469 King St W, Toronto, ON</h4>
+                <h4>
+                  {props.warehouse.address.buildingNumber},{" "}
+                  {props.warehouse.address.street},{" "}
+                  {props.warehouse.address.city},{" "}
+                  {props.warehouse.address.province}
+                </h4>
               </div>
             </td>
             <td>
               <h5 className="main-col">CONTACT</h5>
-              <h4>Warehouse Manager</h4>
-              <h4>Mara Weinberg</h4>
+              <h4>{props.warehouse.contact.position}</h4>
+              <h4>{props.warehouse.contact.name}</h4>
             </td>
             <td>
               <h5 className="main-col">CONTACT INFORMATION</h5>
-              <h4>+1 416 678 2345</h4>
-              <h4>weinberg@instack.com</h4>
+              <h4>{props.warehouse.contact.phone}</h4>
+              <h4>{props.warehouse.contact.email}</h4>
             </td>
             <td>
               <h5 className="main-col">CATEGORIES</h5>
@@ -87,6 +98,7 @@ export default class Location extends React.Component {
               <img className="rightArrowImg2" src={rightArrow} />
             </td>
           </tr>
+          <hr />
         </>
       );
     }
