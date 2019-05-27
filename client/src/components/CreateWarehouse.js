@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Add from "../assets/Icons/SVG/Icon-add.svg";
-import AddButton from "./AddButton";
+import AddButtonWs from "./AddButtonWs";
 
 class CreateWarehouse extends React.Component {
   state = {
@@ -83,66 +83,60 @@ class CreateWarehouse extends React.Component {
     fields[field] = e.target.value;
     this.setState({ fields });
   }
-  render() {
-    const submitHandler = event => {
-      event.preventDefault();
-      // const warehouse = event.target.warehouse; // backend
-      // let warehouseinput = warehouse.value;
-      const address = event.target.address;
-      let addressinput = address.value;
-      const location = event.target.location;
-      let locationinput = location.value;
-      const name = event.target.name;
-      let nameinput = name.value;
-      const position = event.target.position;
-      let positioninput = position.value;
-      const phone = event.target.phone;
-      let phoneinput = phone.value;
-      const email = event.target.email;
-      let emailinput = email.value;
-      const description = event.target.description;
-      let descriptioninput = description.value;
+  toggleForm = () => {
+    console.log("Toggle called");
 
-      axios.post("/warehouses", {
-        // warehouse: warehouseinput,
-        address: addressinput,
-        location: locationinput,
-        name: nameinput,
-        position: positioninput,
-        phone: phoneinput,
-        email: emailinput,
-        description: descriptioninput
+    if (!this.state.displayForm) {
+      this.setState({
+        displayForm: true
       });
-      // warehouse.value = "";
-      address.value = "";
-      location.value = "";
-      name.value = "";
-      position.value = "";
-      phone.value = "";
-      email.value = "";
-      description.value = "";
+    } else {
+      this.setState({
+        displayForm: false
+      });
+    }
+  };
 
-      // if (this.handleValidation()) {
-      //   alert("Form submitted");
-      // } else {
-      //   alert("Form has errors.");
-      // }
-    };
+  submitHandler = event => {
+    event.preventDefault();
+    // const warehouse = event.target.warehouse; // backend
+    // let warehouseinput = warehouse.value;
+    const address = event.target.address;
+    let addressinput = address.value;
+    const location = event.target.location;
+    let locationinput = location.value;
+    const name = event.target.name;
+    let nameinput = name.value;
+    const position = event.target.position;
+    let positioninput = position.value;
+    const phone = event.target.phone;
+    let phoneinput = phone.value;
+    const email = event.target.email;
+    let emailinput = email.value;
+    const description = event.target.description;
+    let descriptioninput = description.value;
 
-    // toggleForm = () => {
-    //   console.log("Toggle called");
+    axios.post("/warehouses", {
+      // warehouse: warehouseinput,
+      address: addressinput,
+      location: locationinput,
+      name: nameinput,
+      position: positioninput,
+      phone: phoneinput,
+      email: emailinput,
+      description: descriptioninput
+    });
+    // warehouse.value = "";
+    address.value = "";
+    location.value = "";
+    name.value = "";
+    position.value = "";
+    phone.value = "";
+    email.value = "";
+    description.value = "";
+  };
 
-    //   if (!this.state.displayForm) {
-    //     this.setState({
-    //       displayForm: true
-    //     });
-    //   } else {
-    //     this.setState({
-    //       displayForm: false
-    //     });
-    //   }
-    // };
-
+  render() {
     let form;
     if (this.state.displayForm) {
       form = (
@@ -259,7 +253,7 @@ class CreateWarehouse extends React.Component {
     return (
       <>
         {form}
-        <AddButton Popup={this.toggleForm} />
+        <AddButtonWs Popup={this.toggleForm} />
       </>
     );
   }

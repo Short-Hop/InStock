@@ -2,7 +2,7 @@ import React from "react";
 import App from "../App";
 import Add from "../assets/Icons/SVG/Icon-add.svg";
 
-class AddButton extends React.Component {
+class AddButtonWs extends React.Component {
   state = {
     showPopup: false
   };
@@ -13,7 +13,6 @@ class AddButton extends React.Component {
   }
   render() {
     const Popup = this.props.state;
-    console.log(this.props.state);
     return (
       <>
         <button className="AddButton" onClick={this.props.Popup}>
@@ -23,4 +22,4 @@ class AddButton extends React.Component {
     );
   }
 }
-export default AddButton;
+export default AddButtonWs;

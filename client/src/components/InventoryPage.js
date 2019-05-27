@@ -15,7 +15,6 @@ class InventoryPage extends React.Component {
         <Header title="Inventory" />
         <Inventory warehouseArray={this.props.warehouseArray} />
         <CreateProduct />
-        <CreateWarehouse />
       </>
     );
   }
