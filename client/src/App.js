@@ -24,18 +24,18 @@ class App extends React.Component {
     });
   }
 
-  deleteProduct = (WAREid) => {
-    axios.delete('http://localhost:8080/api/warehouses//product/' + id).then(response => {
-      console.log(response);
+  // deleteProduct = (WAREid) => {
+  //   axios.delete('http://localhost:8080/api/warehouses//product/' + id).then(response => {
+  //     console.log(response);
 
-      axios.get('http://localhost:8080/api/warehouses').then(response => {
-        this.setState({
-          warehouseArray: response.data
-        })
+  //     axios.get('http://localhost:8080/api/warehouses').then(response => {
+  //       this.setState({
+  //         warehouseArray: response.data
+  //       })
 
-      })
-    })
-  }
+  //     })
+  //   })
+  // }
 
   render() {
     return (
