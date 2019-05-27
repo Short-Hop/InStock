@@ -3,7 +3,21 @@ import InventoryItem from "./InventoryItem";
 
 
 class Inventory extends React.Component {
+
+    getAllProducts = () => {
+        let allProducts = [];
+        this.props.warehouseArray.forEach(warehouse => {
+            warehouse.products.forEach(product => {
+                allProducts.push(product)
+            })
+        })
+
+        return allProducts;
+    }
+
     render() {
+
+        console.log(this.props.productArray)
         return (
             <div className="inventory">
                 <table >
@@ -16,9 +30,10 @@ class Inventory extends React.Component {
                             <th>STATUS</th>
                         </tr>
                     
-                    <InventoryItem></InventoryItem>
-                    <InventoryItem></InventoryItem>
-                    <InventoryItem></InventoryItem>
+                    {this.getAllProducts().map(product => 
+                        <InventoryItem product={product} key={product.id}/>
+                    )}
+                    
                     </tbody>
                 </table>
             </div>
