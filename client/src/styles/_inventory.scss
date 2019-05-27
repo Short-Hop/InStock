@@ -145,6 +145,9 @@ button {
 
         &__status {
             width: 16vw;
+            h4 {
+                width: 10vw;
+            }
         }
 
         &__remove {
@@ -188,6 +191,8 @@ button {
         }
 
         &__kebab {
+
+            margin-right: 30px;
             img {
                 width: 4px
             }
@@ -218,6 +223,10 @@ button {
 
         &__status {
             width: 161px;
+            h4 {
+                width: auto;
+            }
+            
         }
 
         &__remove {

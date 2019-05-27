@@ -8,7 +8,7 @@ class Inventory extends React.Component {
         let allProducts = [];
         this.props.warehouseArray.forEach(warehouse => {
             warehouse.products.forEach(product => {
-                allProducts.push(product)
+                allProducts.push(product);
             })
         })
 
@@ -17,7 +17,6 @@ class Inventory extends React.Component {
 
     render() {
 
-        console.log(this.props.productArray)
         return (
             <div className="inventory">
                 <table >
