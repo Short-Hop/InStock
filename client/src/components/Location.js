@@ -1,11 +1,12 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
+import WarehouseList from "./WarehouseList";
 
 export default class Location extends React.Component {
   render() {
     return (
       <>
-        <WarehouseList warehouses={this.state.warehouses} />;
+        {/* <WarehouseList warehouses={this.state.warehouses} />; */}
         <section className="location">
           <table className="location__table">
             <tbody>

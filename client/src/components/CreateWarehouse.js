@@ -5,6 +5,7 @@ import Add from "../assets/Icons/SVG/Icon-add.svg";
 class CreateWarehouse extends React.Component {
   state = {
     newWarehouse: {
+      id: "", //create id in backend
       warehouse: "",
       address: "",
       location: "",
@@ -82,8 +83,8 @@ class CreateWarehouse extends React.Component {
   render() {
     const submitHandler = event => {
       event.preventDefault();
-      const warehouse = event.target.warehouse;
-      let warehouseinput = warehouse.value;
+      // const warehouse = event.target.warehouse; // backend
+      // let warehouseinput = warehouse.value;
       const address = event.target.address;
       let addressinput = address.value;
       const location = event.target.location;
@@ -99,8 +100,8 @@ class CreateWarehouse extends React.Component {
       const description = event.target.description;
       let descriptioninput = description.value;
 
-      axios.post(`http://localhost`, {
-        warehouse: warehouseinput,
+      axios.post("/warehouses", {
+        // warehouse: warehouseinput,
         address: addressinput,
         location: locationinput,
         name: nameinput,
