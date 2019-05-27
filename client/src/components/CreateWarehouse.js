@@ -5,17 +5,6 @@ import AddButtonWs from "./AddButtonWs";
 
 class CreateWarehouse extends React.Component {
   state = {
-    newWarehouse: {
-      id: "", //create id in backend
-      warehouse: "",
-      address: "",
-      location: "",
-      name: "",
-      position: "",
-      phone: "",
-      email: "",
-      description: ""
-    },
     fields: {},
     erros: {},
 
@@ -115,7 +104,6 @@ class CreateWarehouse extends React.Component {
     let emailinput = email.value;
     const description = event.target.description;
     let descriptioninput = description.value;
-
 
     axios.post("/warehouses", {
       // warehouse: warehouseinput,
@@ -249,6 +237,7 @@ class CreateWarehouse extends React.Component {
           </div>
         </div>
       );
+      console.log(this.state.fields);
     }
 
     return (
