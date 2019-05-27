@@ -57,8 +57,9 @@ export default class Location extends React.Component {
                 <img className="rightArrowImg1" src={rightArrow} />
               </div>
               <h4>
-                {props.warehouse.buildingNumber}, {props.warehouse.street},{" "}
-                {props.warehouse.city}, {props.warehouse.province}
+                {props.warehouse.address.buildingNumber},{" "}
+                {props.warehouse.address.street}, {props.warehouse.address.city}
+                , {props.warehouse.address.province}
               </h4>
             </td>
           </tr>
@@ -90,9 +91,14 @@ export default class Location extends React.Component {
             </td>
             <td>
               <h5 className="main-col">CATEGORIES</h5>
-              <h4>Industrial, Automotive, Heavy, Mechanical,</h4>
-
-              <h4>Engineering, Transportation</h4>
+              <h4>
+                {props.warehouse.categories[0]}, {props.warehouse.categories[1]}
+                , {props.warehouse.categories[2]},{" "}
+                {props.warehouse.categories[3]},
+              </h4>
+              <h4>
+                {props.warehouse.categories[4]}, {props.warehouse.categories[5]}
+              </h4>
             </td>
             <td className="row2__col-last">
               <img className="rightArrowImg2" src={rightArrow} />
