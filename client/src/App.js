@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
+import ProductEdit from "./components/ProductEdit"
 import WarehouseName from "./components/WarehouseName";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LocationPage from "./components/LocationPage";
@@ -11,38 +12,45 @@ import axios from "axios";
 
 class App extends React.Component {
   state = {
-    warehouseArray: []
+    warehouseArray: [],
+    allProducts: []
   };
 
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
-      
-        warehouseArray: response.data
+        warehouseArray: response.data,
+        allProducts: this.getAllProducts(response.data),
       });
+
+      console.log(this.state.allProducts);
     });
   }
 
-  // deleteProduct = (warehouseId, productId) => {
-  //   axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
-  //     console.log(response);
+  deleteProduct = (warehouseId, productId) => {
+    axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
+      console.log(response);
 
-  //     axios.get('http://localhost:8080/api/warehouses').then(response => {
-  //       this.setState({
-  //         warehouseArray: response.data
-  //       })
+      axios.get('http://localhost:8080/api/warehouses').then(response => {
+        this.setState({
+          warehouseArray: response.data
+        })
+      })
+    })
+  }
 
-  //     })
-  //   })
-  // }
+  getAllProducts = (array) => {
+    let allProducts = [];
+    array.forEach(warehouse => {
+      warehouse.products.forEach(product => {
+        allProducts.push(product);
+      })
+    })
+
+    return allProducts;
+  }
 
   render() {
-
-    console.log(this.state.warehouseArray.length)
-
-    if(this.state.warehouseArray === 0){
-      return(<div></div>)
-    } else 
 
     return (
       <>
@@ -64,13 +72,14 @@ class App extends React.Component {
               exact
               render={({ match }) => (
                 <InventoryPage
-                  warehouseArray={this.state.warehouseArray}
+                  productArray={this.state.allProducts} deleteProduct={this.deleteProduct}
                   match={match}
                 />
               )}
             />
             <Route
               path="/warehouse/:warehouseId/inventory/:id"
+              exact
               render={({ match }) => (
                 <Product
                   warehouseArray={this.state.warehouseArray}
@@ -78,7 +87,25 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path="/warehouses/:id" exact component={WarehouseName} />
+            <Route
+              path="/warehouse/:warehouseId/inventory/:id/edit"
+              render={({ match }) => (
+                <ProductEdit
+                  warehouseArray={this.state.warehouseArray}
+                  match={match}
+                />
+              )}
+            />
+            <Route
+              path="/warehouse/:id"
+              exact
+              render={({ match }) => (
+                <WarehouseName
+                  warehouseArray={this.state.warehouseArray}
+                  match={match}
+                />
+              )}
+            />
           </Switch>
         </BrowserRouter>
       </>

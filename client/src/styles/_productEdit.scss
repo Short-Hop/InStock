@@ -1,20 +1,29 @@
 
-
-.product {
+.productEdit {
     padding: 0px 5vw 5vw 5vw;
     
-    input,textarea {
+    input,textarea,select {
+        @extend h4;
         box-sizing: border-box;
         background-color: $Alabaster;
         border: solid 1px $Mercury;
-        border-radius: 4px;
+        border-radius: 3px;
         width: 100%;
         height: 15vw;
         padding: 5vw;
+        
     }
 
     textarea {
         height: 35vw;
+    }
+
+    .productEdit__categories {
+        height: 30vw;
+    }
+
+    input,select {
+        margin-bottom: 7.5vw;
     }
 
     
@@ -68,16 +77,17 @@
         margin-bottom: 10vw;
     }
 
-    h5 {
-        margin-bottom: 5vw;
-    }
-
-    h4 {
-        margin-bottom: 7.5vw;
-    }
+    
 
     &__description {
         margin-bottom: 10vw;
+    }
+
+    &__switch--container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3vw;
     }
 
     button {
@@ -100,15 +110,64 @@
         }
     }
 
-
+    .cancel {
+        background-color: white;
+        color: $Instock-blue;
+    }
 }
 
 @media (min-width: 600px) {
-    .product {
+    .productEdit {
         padding: 0px 3vw 3vw 3vw;
         display: flex;
         flex-direction: column;
+
+
+
+        input,textarea,select {
+            box-sizing: border-box;
+            background-color: $Alabaster;
+            border: solid 1px $Mercury;
+            border-radius: 4px;
+            width: 30vw;
+            height: 5vw;
+            padding: 0px 2vw;
+        }
+
+        textarea {
+            height: 18vw;
+            width: 100%;
+            padding: 2vw;
+        }
+
+        input,select {
+            margin-bottom: 2vw;
+        }
+
+        .productEdit__categories {
+            height: 10vw;
+            margin-bottom: 5vw;
+        }
+
+        &__description {
+            margin-bottom: 2vw;
+        }
+
+        &__button--container {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        &__switch--container {
+            padding: 0px;
+            width: 30vw;
+            height: 5vw;
+        }
         
+        &__details {
+            width: 65vw;
+        }
+
         &__header {
             margin: 5vw 0px;
             flex-direction: row;
@@ -120,10 +179,10 @@
                 margin-top: 0.3vw;
             }
         
-            h1 {
-                margin-bottom: 0px;
-            }
+            
         }
+        
+        
 
         .divider {
             display: block;
@@ -146,27 +205,21 @@
             margin-left: 4vw;
         }
 
-        h5 {
-            margin-bottom: 1.5vw;
-        }
-
-        h4 {
-            margin-bottom: 5vw;
-        }
-
-        &__description {
-            margin-bottom: 6vw;
-            width: 80vw;
-        }
-
         &__info {
             display: flex;
             flex-direction: column;
             & > div {
                 display: flex;
+                
+                
                 div:nth-child(1) {
-                    width: 47vw;
+                    width: 35vw;
                 }
+
+
+            }
+            section {
+                width: 100%;
             }
         }
 
@@ -184,10 +237,31 @@
 
 @media (min-width: 1440px) {
 
-    .product {
+    .productEdit {
         padding: 0px 180px 180px 180px;
         display: flex;
         flex-direction: column;
+
+        input,textarea,select {
+            box-sizing: border-box;
+            background-color: $Alabaster;
+            border: solid 1px $Mercury;
+            border-radius: 4px;
+            width: 512px;
+            height: 124px;
+            padding: 14px;
+        }
+        
+        input,select {
+            margin-bottom: 24px;
+            width: 245px;
+            height: 40px;
+            padding: 0px 14px;
+        }
+
+        .productEdit__categories {
+            height: 80px;
+        }
         
         &__header {
             margin: 48px 0px 0px 0px;
@@ -224,16 +298,16 @@
             margin-left: 24px;
         }
 
-        h5 {
-            margin-bottom: 16px;
-        }
-
-        h4 {
-            margin-bottom: 56px;
+        &__switch--container {
+            padding: 0px;
+            width: 245px;
+            height: 40px;
         }
 
         &__details {
             display: flex;
+            justify-content: space-between;
+            width: 1080px
         }
 
         &__description {
@@ -248,6 +322,7 @@
             & > div {
                 
                 display: flex;
+                justify-content: space-between;
                 div:nth-child(1) {
                     width: 276px;
                 }

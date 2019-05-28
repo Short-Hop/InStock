@@ -1,5 +1,14 @@
+.background {
+  background-color: $Alabaster;
+  padding-top: 5vw;
+}
+
+
 .warehouseName {
-  margin: 0px 16px;
+  margin: 0px 5vw 5vw 5vw;
+  
+
+
   p {
     color: #323232;
     margin: 0px;
@@ -18,7 +27,7 @@
   &__title {
     display: flex;
     flex-direction: row;
-    padding: 24px 0px;
+    padding-top: 24px;
 
     img {
       padding-top: 4px;
@@ -32,8 +41,13 @@
 }
 
 @media screen and (min-width: 600px) {
+
+  .background {
+    padding-top: 3vw;
+  }
+
   .warehouseName {
-    margin: 0px 24px;
+    margin: 0px 3vw 3vw 3vw;
     p {
       font-size: 12px;
     }
@@ -56,7 +70,22 @@
 }
 
 @media screen and (min-width: 1440px) {
+
+  .background {
+    padding-top: 24px;
+  }
+
   .warehouseName {
-    margin: 0px 180px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    & > div {
+      width: 1080px;
+    }
+
+    &__detail {
+      width: 676px;
+    }
   }
 }

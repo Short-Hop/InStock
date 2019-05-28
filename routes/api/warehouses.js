@@ -18,7 +18,7 @@ router.get("/:id", (req, res) => {
     res.json(
       warehouseData.filter(
         warehouse => warehouse.id === parseInt(req.params.id)
-      )
+      )[0]
     );
   } else {
     res
@@ -57,7 +57,7 @@ router.delete("/:id/product/:productId", (req, res) => {
     position = newData.indexOf(found);
     found.products = found.products.filter(product => req.params.productId != product.id);
     
-    newData[0] = found;
+    newData[position] = found;
 
     warehouseData = [newData];
 
