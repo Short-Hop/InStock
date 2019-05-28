@@ -35,8 +35,6 @@ class App extends React.Component {
   // }
 
   render() {
-    console.log(this.state.warehouseArray.length);
-
     if (this.state.warehouseArray === 0) {
       return <div />;
     } else

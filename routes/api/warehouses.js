@@ -18,6 +18,10 @@ router.route("/").post((req, res) => {
 // Get all warehouses
 router.route("/").get((req, res) => {
   res.json(warehouseData);
+  //    ONLY FOR TEST FOR CREATING WAREHOUSEID
+  const newWarehouseId = helper.createNewId(warehouseData);
+  console.log(newWarehouseId);
+  //    ONLY FOR TEST FOR CREATING WAREHOUSEID
 });
 
 // Get one warehouse using the id
@@ -26,6 +30,10 @@ router.get("/:id", (req, res) => {
     warehouse => warehouse.id === parseInt(req.params.id)
   );
   if (found) {
+    //    ONLY FOR TEST FOR CREATING PRODUCTID
+    const newProductId = helper.createNewId(found.products);
+    console.log(newProductId);
+    //    ONLY FOR TEST FOR CREATING PRODUCTID
     res.json(
       warehouseData.filter(
         warehouse => warehouse.id === parseInt(req.params.id)

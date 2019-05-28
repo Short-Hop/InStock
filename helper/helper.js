@@ -10,6 +10,15 @@ function writeJSONFile(filename, content) {
   console.log(`changes saved to file ${filename}....`);
 }
 
+const createNewId = input => {
+  if (input.length > 0) {
+    return input.length - 1 + 1;
+  } else {
+    return 1;
+  }
+};
+
 module.exports = {
-  writeJSONFile
+  writeJSONFile,
+  createNewId
 };
