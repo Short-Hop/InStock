@@ -4,16 +4,27 @@ const fileName = __dirname + "/warehouseData.json";
 let warehouseData = require(fileName);
 const helper = require("../../helper/helper");
 
-const DataController = {
-  addWareHose: (id, newWarehouseData) => {
-    warehouseData.push(newWarehouseData);
-    return warehouseData;
-  }
-};
+// Get all warehouses
+router.get("/", (req, res) => {
+  res.json(warehouseData);
+});
 
-router.route("/").post((req, res) => {
-  let warehouseId = "11111111111";
-  res.json(DataController.addWareHose(warehouseId, req.body));
+// Get one warehouse using the id
+router.get("/:id", (req, res) => {
+  const found = warehouseData.find(
+    warehouse => warehouse.id === parseInt(req.params.id)
+  );
+  if (found) {
+    res.json(
+      warehouseData.filter(
+        warehouse => warehouse.id === parseInt(req.params.id)
+      )
+    );
+  } else {
+    res
+      .status(400)
+      .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
+  }
 });
 
 router.route("/product").post((req, res) => {
@@ -43,37 +54,6 @@ router.route("/product").post((req, res) => {
     console.log(newProduct);
     found.products.push(newProduct);
     helper.writeJSONFile(fileName, warehouseData);
-  }
-});
-
-// Get all warehouses
-router.route("/").get((req, res) => {
-  res.json(warehouseData);
-  //    ONLY FOR TEST FOR CREATING WAREHOUSEID
-  const newWarehouseId = helper.createNewId(warehouseData);
-  console.log(newWarehouseId);
-  //    ONLY FOR TEST FOR CREATING WAREHOUSEID
-});
-
-// Get one warehouse using the id
-router.get("/:id", (req, res) => {
-  const found = warehouseData.find(
-    warehouse => warehouse.id === parseInt(req.params.id)
-  );
-  if (found) {
-    //    ONLY FOR TEST FOR CREATING PRODUCTID
-    const newProductId = helper.createNewId(found.products);
-    console.log(newProductId);
-    //    ONLY FOR TEST FOR CREATING PRODUCTID
-    res.json(
-      warehouseData.filter(
-        warehouse => warehouse.id === parseInt(req.params.id)
-      )
-    );
-  } else {
-    res
-      .status(400)
-      .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
   }
 });
 
