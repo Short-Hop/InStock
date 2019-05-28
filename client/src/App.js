@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./components/Nav";
-import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -19,8 +18,6 @@ class App extends React.Component {
       this.setState({
         warehouseArray: response.data
       });
-
-      console.log(this.state);
     });
   }
 
@@ -28,14 +25,14 @@ class App extends React.Component {
     axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
       console.log(response);
 
-      axios.get('http://localhost:8080/api/warehouses').then(response => {
-        this.setState({
-          warehouseArray: response.data
-        })
+  //     axios.get('http://localhost:8080/api/warehouses').then(response => {
+  //       this.setState({
+  //         warehouseArray: response.data
+  //       })
 
-      })
-    })
-  }
+  //     })
+  //   })
+  // }
 
   render() {
     return (
@@ -43,16 +40,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
-            <Route
-              path="/warehouses"
-              exact
-              render={({ match }) => (
-                <LocationPage
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
+            <Route path="/warehouses" exact component={LocationPage} />
             <Route
               path="/inventory"
               exact

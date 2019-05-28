@@ -1,20 +1,10 @@
 import React from "react";
 import axios from "axios";
 import Add from "../assets/Icons/SVG/Icon-add.svg";
-import AddButton from "./AddButton"
+import AddButtonWs from "./AddButtonWs";
 
 class CreateWarehouse extends React.Component {
   state = {
-    newwarehouse: {
-      warehouse: "",
-      address: "",
-      location: "",
-      name: "",
-      position: "",
-      phone: "",
-      email: "",
-      description: "Description"
-    },
     fields: {},
     erros: {},
 
@@ -82,11 +72,24 @@ class CreateWarehouse extends React.Component {
     fields[field] = e.target.value;
     this.setState({ fields });
   }
+  toggleForm = () => {
+    console.log("Toggle called");
+
+    if (!this.state.displayForm) {
+      this.setState({
+        displayForm: true
+      });
+    } else {
+      this.setState({
+        displayForm: false
+      });
+    }
+  };
 
   submitHandler = event => {
     event.preventDefault();
-    const warehouse = event.target.warehouse;
-    let warehouseinput = warehouse.value;
+    // const warehouse = event.target.warehouse; // backend
+    // let warehouseinput = warehouse.value;
     const address = event.target.address;
     let addressinput = address.value;
     const location = event.target.location;
@@ -102,8 +105,8 @@ class CreateWarehouse extends React.Component {
     const description = event.target.description;
     let descriptioninput = description.value;
 
-    axios.post(`http://localhost`, {
-      warehouse: warehouseinput,
+    axios.post("/warehouses", {
+      // warehouse: warehouseinput,
       address: addressinput,
       location: locationinput,
       name: nameinput,
@@ -112,8 +115,7 @@ class CreateWarehouse extends React.Component {
       email: emailinput,
       description: descriptioninput
     });
-
-    warehouse.value = "";
+    // warehouse.value = "";
     address.value = "";
     location.value = "";
     name.value = "";
@@ -121,35 +123,12 @@ class CreateWarehouse extends React.Component {
     phone.value = "";
     email.value = "";
     description.value = "";
-
-    // if (this.handleValidation()) {
-    //   alert("Form submitted");
-    // } else {
-    //   alert("Form has errors.");
-    // }
   };
-
-  toggleForm = () => {
-
-    console.log("Toggle called")
-
-    if (!this.state.displayForm) {
-      this.setState({
-        displayForm: true,
-      })
-    } else {
-      this.setState({
-        displayForm: false,
-      })
-    }
-
-  }
 
   render() {
     let form;
     if (this.state.displayForm) {
-
-      form = 
+      form = (
         <div className="shadow">
           <div className="createnew">
             <h1 className="createnew__title">Add New</h1>
@@ -188,7 +167,7 @@ class CreateWarehouse extends React.Component {
                     >
                       <option value="Toronto" selected>
                         Toronto, CAN
-                        </option>
+                      </option>
                       <option value="Vancouver">Vancouver, CAN</option>
                       <option value="Ontario">Ontario, CAN</option>
                     </select>
@@ -249,20 +228,22 @@ class CreateWarehouse extends React.Component {
                 </div>
                 <div className="form__buttons">
                   <button id="Save">Save</button>
-                  <button id="Cancel" onClick={this.toggleForm}>Cancel</button>
+                  <button id="Cancel" onClick={this.toggleForm}>
+                    Cancel
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-      
+      );
+      console.log(this.state.fields);
     }
-
 
     return (
       <>
         {form}
-        <AddButton Popup={this.toggleForm} />
+        <AddButtonWs Popup={this.toggleForm} />
       </>
     );
   }

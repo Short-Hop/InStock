@@ -1,8 +1,14 @@
-import React from 'react';
+import React from "react";
 import InventoryItem from "./InventoryItem";
 
-
 class Inventory extends React.Component {
+  getAllProducts = () => {
+    let allProducts = [];
+    this.props.warehouseArray.forEach(warehouse => {
+      warehouse.products.forEach(product => {
+        allProducts.push(product);
+      });
+    });
 
     getAllProducts = () => {
         let allProducts = [];
@@ -15,7 +21,18 @@ class Inventory extends React.Component {
         return allProducts;
     }
 
-    render() {
+  render() {
+    return (
+      <div className="inventory">
+        <table>
+          <tbody>
+            <tr>
+              <th>ITEM</th>
+              <th>LAST ORDERED</th>
+              <th>LOCATION</th>
+              <th>QUANTITY</th>
+              <th>STATUS</th>
+            </tr>
 
         return (
             <div className="inventory">
