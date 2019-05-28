@@ -39,23 +39,33 @@ class CreateWarehouse extends React.Component {
     const description = event.target.description;
     let descriptioninput = description.value;
 
-    if (
-      warehouseinput ||
-      addressinput ||
-      locationinput ||
-      nameinput ||
-      positioninput ||
-      phoneinput ||
-      emailinput === ""
-    ) {
-      return alert(
-        "Please check that all mandatory fields have been filled before submitting your form"
-      );
+    const regex = /[0-9]|\./;
+
+    if (warehouseinput === "") {
+      return alert("Please enter a warehouse Name");
+    }
+
+    if (addressinput === "") {
+      return alert("Please enter a warehouse address");
+    }
+    if (locationinput === "") {
+      return alert("Please enter a warehouse location");
+    }
+    if (nameinput === "") {
+      return alert("Please enter a contact name");
+    }
+    if (positioninput === "") {
+      return alert("Please enter a position entry");
+    }
+    if (phoneinput === "") {
+      return alert("Please enter a phone number");
+    }
+    if (emailinput === "") {
+      return alert("Please enter an email");
     }
 
     axios
       .post("http://localhost:8080/api/warehouses", {
-        id: "",
         warehouse: warehouseinput,
         address: {
           street: addressinput,
