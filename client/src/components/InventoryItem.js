@@ -1,13 +1,10 @@
-import React from "react";
-import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg";
+import React from 'react';
+import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
 import App from '../App';
 import axios from 'axios';
 
 class InventoryItem extends React.Component {
-  state = {
-    displayRemove: false
-  };
 
     state = {
         displayRemove: false,
@@ -51,8 +48,6 @@ class InventoryItem extends React.Component {
 
     
 
-  render() {
-    let status = this.props.product.inStock ? "IN STOCK" : "OUT OF STOCK";
 
 
     render() {
@@ -111,56 +106,6 @@ class InventoryItem extends React.Component {
             </>
         )
     }
-    return (
-      <>
-        <tr>
-          <td className="inventory__mobile--kebab">
-            <button onClick={this.displayRemoveButton}>
-              <img src={kebab} alt={"more"} />
-            </button>
-            {removeButton}
-          </td>
-          <td className="inventory__mobile--label">ITEM</td>
-          <td className="inventory__item">
-            <Link className="link" to={"/inventory/" + this.props.product.id}>
-              <h3>{this.props.product.name}</h3>
-              <h4>{this.props.product.shortDescription}</h4>
-            </Link>
-          </td>
-          <td className="inventory__mobile--label">LAST ORDERED</td>
-          <td className="inventory__date">
-            <h4>{this.props.product.orderDate}</h4>
-          </td>
-          <td className="inventory__mobile--label">LOCATION</td>
-          <td className="inventory__location">
-            <h4>
-              {this.props.product.location.city +
-                ", " +
-                this.props.product.location.country}
-            </h4>
-          </td>
-          <td className="inventory__mobile--label">QUANTITY</td>
-          <td className="inventory__quantity">
-            <h4>{this.props.product.quantity}</h4>
-          </td>
-          <td className="inventory__mobile--label">STATUS</td>
-          <td className="inventory__status">
-            <h4>{status}</h4>
-            <div className="inventory__kebab">
-              <button onClick={this.displayRemoveButton}>
-                <img src={kebab} alt={"more"} />
-              </button>
-              {removeButton}
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td colSpan="6" className="divider" />
-        </tr>
-      </>
-    );
-  }
 }
 
 export default InventoryItem;

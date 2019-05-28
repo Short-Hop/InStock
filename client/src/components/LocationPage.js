@@ -10,7 +10,7 @@ class LocationPage extends React.Component {
       <>
         <Nav page={this.props.match.path} />
         <Header title="Location" />
-        <Location />
+        <Location warehouseArray={this.props.warehouseArray} />
         <CreateWarehouse />
       </>
     );

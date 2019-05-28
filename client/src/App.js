@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./components/Nav";
+import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -18,6 +19,8 @@ class App extends React.Component {
       this.setState({
         warehouseArray: response.data
       });
+
+      console.log(this.state);
     });
   }
 
@@ -40,7 +43,16 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
-            <Route path="/warehouses" exact component={LocationPage} />
+            <Route
+              path="/warehouses"
+              exact
+              render={({ match }) => (
+                <LocationPage
+                  warehouseArray={this.state.warehouseArray}
+                  match={match}
+                />
+              )}
+            />
             <Route
               path="/inventory"
               exact
