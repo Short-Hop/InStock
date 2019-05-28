@@ -1,9 +1,11 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
-import WarehouseList from "./WarehouseList";
+import WarehouseList from "./WarehouseList"
 
 export default class Location extends React.Component {
   render() {
+
+    console.log(this.props.warehouseArray);
     return (
       <>
         {/* <WarehouseList warehouses={this.state.warehouses} />; */}

@@ -17,15 +17,14 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
+      
         warehouseArray: response.data
       });
-
-      console.log(this.state);
     });
   }
 
-  // deleteProduct = (WAREid) => {
-  //   axios.delete('http://localhost:8080/api/warehouses//product/' + id).then(response => {
+  // deleteProduct = (warehouseId, productId) => {
+  //   axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
   //     console.log(response);
 
   //     axios.get('http://localhost:8080/api/warehouses').then(response => {
@@ -38,49 +37,6 @@ class App extends React.Component {
   // }
 
   render() {
-<<<<<<< Updated upstream
-    return (
-      <>
-        <BrowserRouter>
-          <Switch>
-            <Redirect from="/" exact to="/warehouses" />
-            <Route
-              path="/warehouses"
-              exact
-              render={({ match }) => (
-                <LocationPage
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route
-              path="/inventory"
-              exact
-              render={({ match }) => (
-                <InventoryPage
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route
-              path="/inventory/:id"
-              render={({ match }) => (
-                <Product
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route path="/warehouses/:id" component={WarehouseName} />
-          </Switch>
-        </BrowserRouter>
-      </>
-    );
-=======
-    console.log(this.state.warehouseArray.length);
-
     if (this.state.warehouseArray === 0) {
       return <div />;
     } else
@@ -123,7 +79,6 @@ class App extends React.Component {
           </BrowserRouter>
         </>
       );
->>>>>>> Stashed changes
   }
 }
 
