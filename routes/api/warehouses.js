@@ -12,7 +12,38 @@ const DataController = {
 };
 
 router.route("/").post((req, res) => {
+  let warehouseId = "11111111111";
   res.json(DataController.addWareHose(warehouseId, req.body));
+});
+
+router.route("/product").post((req, res) => {
+  let product = req.body;
+  const found = warehouseData.find(
+    warehouse => warehouse.id === warehouseData.length - 1
+  );
+  console.log(warehouseData.length - 1);
+  if (found) {
+    const newProduct = {
+      id: helper.createNewId(found.products),
+      warehouseId: found.id,
+      name: product.product,
+      shortDescription: product.description,
+      longDescription: product.description,
+      refNumber: "2222222",
+      location: {
+        city: product.city,
+        country: product.country
+      },
+      orderDate: product.ordered,
+      orderBy: "",
+      quantity: product.quantity,
+      categories: ""
+      // status: statusinput,
+    };
+    console.log(newProduct);
+    found.products.push(newProduct);
+    helper.writeJSONFile(fileName, warehouseData);
+  }
 });
 
 // Get all warehouses
@@ -98,13 +129,6 @@ router.delete("/:id/product/:productId", (req, res) => {
   }
 });
 
-const DataController = {
-  addWarehouse: (id, newWarehouse) => {
-    warehouseData.push(newWarehouse);
-    return warehouseData;
-  }
-};
-
 router.route("/").post((req, res) => {
   let warehouseId = "1111";
   res.json(DataController.addWarehouse(warehouseId, req.body));
@@ -112,6 +136,5 @@ router.route("/").post((req, res) => {
   // res.send("Warehouse correctly added.");
   res.redirect("/inventory");
 });
-
 
 module.exports = router;
