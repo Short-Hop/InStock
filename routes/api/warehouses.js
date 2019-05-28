@@ -79,23 +79,19 @@ router.delete("/:id/product/:productId", (req, res) => {
   }
 });
 
-router.post("/api/warehouses", (req, res) => {
-  let newWarehouse = {
-    // id: generateUniqueId(),
-    name: req.warehouse,
-    address: {
-      location: req.location
-    },
-    contact: {
-      name: req.name,
-      position: req.position,
-      phone: req.phone,
-      email: req.email
-    }
-  };
-  warehouseData.push(newWarehouse);
-  res.json(warehouseData);
-  console.log(warehouseData);
+const DataController = {
+  addWarehouse: (id, newWarehouse) => {
+    warehouseData.push(newWarehouse);
+    return warehouseData;
+  }
+};
+
+router.route("/").post((req, res) => {
+  let warehouseId = "1111";
+  res.json(DataController.addWarehouse(warehouseId, req.body));
+  console.log(req.body);
+  // res.send("Warehouse correctly added.");
+  res.redirect("/inventory");
 });
 
 module.exports = router;

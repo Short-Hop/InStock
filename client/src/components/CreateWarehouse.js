@@ -115,15 +115,29 @@ class CreateWarehouse extends React.Component {
     console.log(warehouseinput);
 
     axios
-      .post("http://localhost/8080/api/warehouses", {
+      .post("http://localhost:8080/api/warehouses", {
+        id: "",
         warehouse: warehouseinput,
-        address: addressinput,
-        location: locationinput,
-        name: nameinput,
-        position: positioninput,
-        phone: phoneinput,
-        email: emailinput,
-        description: descriptioninput
+        address: {
+          street: addressinput,
+          location: locationinput
+        },
+        contact: {
+          name: nameinput,
+          position: positioninput,
+          phone: phoneinput,
+          email: emailinput
+        },
+        description: descriptioninput,
+        categories: [
+          "Industrial",
+          "Automotive",
+          "Heavy",
+          "Mechanical",
+          "Engineering",
+          "Transportation",
+          "Sales"
+        ]
       })
       .then(function(response) {
         console.log(response);
@@ -133,7 +147,7 @@ class CreateWarehouse extends React.Component {
       });
 
     this.setState({
-      displayForm: true
+      displayForm: false
     });
   };
 
