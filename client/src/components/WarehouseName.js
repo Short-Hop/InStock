@@ -6,6 +6,7 @@ import axios from "axios"
 import { Link } from "react-router-dom";
 
 
+const warehouseUrl = `http://localhost:8080/location/warehouseId`;
 export default class WarehouseName extends Component {
   state = {
     warehouse: {
@@ -68,6 +69,7 @@ export default class WarehouseName extends Component {
               <p>{this.state.warehouse.contact.email}</p>
             </div>
           </div>
+          <Inventory />
         </div>
       </div>
       <div className="background">

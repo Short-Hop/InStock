@@ -17,7 +17,7 @@ class CreateProduct extends React.Component {
     fields: {},
     erros: {},
 
-    displayForm: false,
+    displayForm: false
   };
   handleValidation() {
     let fields = this.state.fields;
@@ -77,21 +77,18 @@ class CreateProduct extends React.Component {
   }
 
   toggleForm = () => {
-
-    if(!this.state.displayForm) {
+    if (!this.state.displayForm) {
       this.setState({
-        displayForm: true,
-      })
+        displayForm: true
+      });
     } else {
       this.setState({
-        displayForm: false,
-      })
+        displayForm: false
+      });
     }
-      
-  }
+  };
 
-
-  submitHandler = (event) => {
+  submitHandler = event => {
     event.preventDefault();
     const product = event.target.product;
     let productinput = product.value;
@@ -108,7 +105,7 @@ class CreateProduct extends React.Component {
     const description = event.target.description;
     let descriptioninput = description.value;
 
-    axios.post(`http://localhost`, {
+    axios.post("http://localhost:8080/api/warehouses/product", {
       product: productinput,
       ordered: orderedinput,
       city: cityinput,
@@ -116,119 +113,113 @@ class CreateProduct extends React.Component {
       quantity: quantityinput,
       // status: statusinput,
       description: descriptioninput
-  });
+    });
 
-  product.value = "";
-  ordered.value = "";
-  city.value = "";
-  country.value = "";
-  quantity.value = "";
-  // status.value = "";
-  description.value = "";
-
-    // if (this.handleValidation()) {
-    //   alert("Form submitted");
-    // } else {
-    //   alert("Form has errors.");
-    // }
-
-}
+    product.value = "";
+    ordered.value = "";
+    city.value = "";
+    country.value = "";
+    quantity.value = "";
+    // status.value = "";
+    description.value = "";
+  };
   render() {
     let form;
     if (this.state.displayForm) {
-      form = 
-      <div className="shadow">
-        <div className="createnew">
-          <h1 className="createnew__title">Create New</h1>
-          <div className="createnew__form">
-            <form onSubmit={this.submitHandler}>
-              <div className="row">
-                <div className="column">
-                  <label>Product</label>
-                  <input
-                    type="text"
-                    id="product"
-                    placeholder="Item Name"
-                    onChange={this.handleChange.bind(this, "product")}
-                    value={this.state.fields["product"]}
-                  />
-                </div>
-                <div className="column">
-                  <label>Last Ordered</label>
-                  <input
-                    type="text"
-                    id="ordered"
-                    placeholder="yyyy-mm-dd"
-                    onChange={this.handleChange.bind(this, "ordered")}
-                    value={this.state.fields["ordered"]}
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="column">
-                  <label>City</label>
-                  <input
-                    type="text"
-                    id="city"
-                    placeholder="City"
-                    onChange={this.handleChange.bind(this, "city")}
-                    value={this.state.fields["city"]}
-                  />
-                </div>
-                <div className="column" id="selectdiv">
-                  <label>Country</label>
-                  <select
-                    name="country"
-                    id="country"
-                    onChange={this.handleChange.bind(this, "country")}
-                    value={this.state.fields["country"]}
-                  >
-                    <option value="Canada" selected>
-                      Canada
-                      </option>
-                    <option value="USA">USA</option>
-                    <option value="France">France</option>
-                  </select>
-                </div>
-              </div>
-              <div className="row">
-                <div className="column">
-                  <label>Quantity</label>
-                  <input
-                    type="text"
-                    id="quantity"
-                    placeholder="0"
-                    onChange={this.handleChange.bind(this, "quantity")}
-                    value={this.state.fields["quantity"]}
-                  />
-                </div>
-                <div className="column">
-                  <label>Status</label>
-                  <div id="status">
-                    <p>In stock</p>
-                    <Switch />
+      form = (
+        <div className="shadow">
+          <div className="createnew">
+            <h1 className="createnew__title">Create New</h1>
+            <div className="createnew__form">
+              <form onSubmit={this.submitHandler}>
+                <div className="row">
+                  <div className="column">
+                    <label>Product</label>
+                    <input
+                      type="text"
+                      id="product"
+                      placeholder="Item Name"
+                      onChange={this.handleChange.bind(this, "product")}
+                      value={this.state.fields["product"]}
+                    />
+                  </div>
+                  <div className="column">
+                    <label>Last Ordered</label>
+                    <input
+                      type="text"
+                      id="ordered"
+                      placeholder="yyyy-mm-dd"
+                      onChange={this.handleChange.bind(this, "ordered")}
+                      value={this.state.fields["ordered"]}
+                    />
                   </div>
                 </div>
-              </div>
-              <label>Item Description</label>
-              <input
-                type="text"
-                id="description"
-                placeholder="(Optional)"
-                onChange={this.handleChange.bind(this, "description")}
-                value={this.state.fields["description"]}
-              />
-              <div className="form__buttons">
-                <button id="Save">Save</button>
-                <button id="Cancel" onClick={this.toggleForm}>Cancel</button>
-              </div>
-            </form>
+                <div className="row">
+                  <div className="column">
+                    <label>City</label>
+                    <input
+                      type="text"
+                      id="city"
+                      placeholder="City"
+                      onChange={this.handleChange.bind(this, "city")}
+                      value={this.state.fields["city"]}
+                    />
+                  </div>
+                  <div className="column" id="selectdiv">
+                    <label>Country</label>
+                    <select
+                      name="country"
+                      id="country"
+                      onChange={this.handleChange.bind(this, "country")}
+                      value={this.state.fields["country"]}
+                    >
+                      <option value="Canada" selected>
+                        Canada
+                      </option>
+                      <option value="USA">USA</option>
+                      <option value="France">France</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="column">
+                    <label>Quantity</label>
+                    <input
+                      type="text"
+                      id="quantity"
+                      placeholder="0"
+                      onChange={this.handleChange.bind(this, "quantity")}
+                      value={this.state.fields["quantity"]}
+                    />
+                  </div>
+                  <div className="column">
+                    <label>Status</label>
+                    <div id="status">
+                      <p>In stock</p>
+                      <Switch />
+                    </div>
+                  </div>
+                </div>
+                <label>Item Description</label>
+                <input
+                  type="text"
+                  id="description"
+                  placeholder="(Optional)"
+                  onChange={this.handleChange.bind(this, "description")}
+                  value={this.state.fields["description"]}
+                />
+                <div className="form__buttons">
+                  <button id="Save">Save</button>
+                  <button id="Cancel" onClick={this.toggleForm}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      );
     }
-
-    
 
     return (
       <>
