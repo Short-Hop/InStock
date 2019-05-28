@@ -104,10 +104,8 @@ class CreateProduct extends React.Component {
     // let statusinput = status.value;
     const description = event.target.description;
     let descriptioninput = description.value;
-    let warehouseId = Math.floor(Math.random() * 10000);
 
-    axios.post("http://localhost:8080/api/warehouses", {
-      id: warehouseId,
+    axios.post("http://localhost:8080/api/warehouses/product", {
       product: productinput,
       ordered: orderedinput,
       city: cityinput,
@@ -124,12 +122,6 @@ class CreateProduct extends React.Component {
     quantity.value = "";
     // status.value = "";
     description.value = "";
-
-    // if (this.handleValidation()) {
-    //   alert("Form submitted");
-    // } else {
-    //   alert("Form has errors.");
-    // }
   };
   render() {
     let form;
