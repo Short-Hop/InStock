@@ -111,6 +111,7 @@ class CreateWarehouse extends React.Component {
     let emailinput = email.value;
     const description = event.target.description;
     let descriptioninput = description.value;
+
     console.log(locationinput);
     console.log(warehouseinput);
 
@@ -146,12 +147,15 @@ class CreateWarehouse extends React.Component {
         console.log(error);
       });
 
+
     this.setState({
       displayForm: false
     });
   };
 
   toggleForm = () => {
+    console.log("Toggle called");
+
     if (!this.state.displayForm) {
       this.setState({
         displayForm: true
