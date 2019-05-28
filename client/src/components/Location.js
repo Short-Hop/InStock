@@ -4,6 +4,8 @@ import WarehouseList from "./WarehouseList"
 
 export default class Location extends React.Component {
   render() {
+
+    console.log(this.props.warehouseArray);
     return (
       <>
         {/* <WarehouseList warehouses={this.state.warehouses} />; */}

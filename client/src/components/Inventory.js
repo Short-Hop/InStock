@@ -16,7 +16,6 @@ class Inventory extends React.Component {
     }
 
     render() {
-
         return (
             <div className="inventory">
                 <table >
@@ -42,3 +41,4 @@ class Inventory extends React.Component {
 }
 
 export default Inventory;
+

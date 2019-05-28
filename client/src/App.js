@@ -17,16 +17,15 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
+      
         warehouseArray: response.data
       });
-
-      console.log(this.state);
     });
   }
 
-  deleteProduct = (warehouseId, productId) => {
-    axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
-      console.log(response);
+  // deleteProduct = (warehouseId, productId) => {
+  //   axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
+  //     console.log(response);
 
   //     axios.get('http://localhost:8080/api/warehouses').then(response => {
   //       this.setState({
@@ -38,6 +37,13 @@ class App extends React.Component {
   // }
 
   render() {
+
+    console.log(this.state.warehouseArray.length)
+
+    if(this.state.warehouseArray === 0){
+      return(<div></div>)
+    } else 
+
     return (
       <>
         <BrowserRouter>
