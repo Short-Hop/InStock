@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "./components/Nav";
+import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -19,7 +20,6 @@ class App extends React.Component {
       
         warehouseArray: response.data
       });
-      console.log(response.data);
     });
   }
 

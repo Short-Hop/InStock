@@ -1,13 +1,10 @@
-import React from "react";
-import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg";
+import React from 'react';
+import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
 import App from '../App';
 import axios from 'axios';
 
 class InventoryItem extends React.Component {
-  state = {
-    displayRemove: false
-  };
 
   state = {
       displayRemove: false,
@@ -109,3 +106,4 @@ class InventoryItem extends React.Component {
 
 
 export default InventoryItem;
+

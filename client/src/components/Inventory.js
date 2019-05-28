@@ -1,16 +1,8 @@
-import React from "react";
+import React from 'react';
 import InventoryItem from "./InventoryItem";
 
-class Inventory extends React.Component {
-    getAllProducts = () => {
-        let allProducts = [];
-        this.props.warehouseArray.forEach(warehouse => {
-            warehouse.products.forEach(product => {
-                allProducts.push(product);
-            });
 
-        });
-    };
+class Inventory extends React.Component {
 
     getAllProducts = () => {
         let allProducts = [];
@@ -48,5 +40,5 @@ class Inventory extends React.Component {
     }
 }
 
-
 export default Inventory;
+
