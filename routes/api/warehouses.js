@@ -110,11 +110,30 @@ router.delete("/:id/product/:productId", (req, res) => {
 });
 
 router.route("/").post((req, res) => {
-  let warehouseId = "1111";
-  res.json(DataController.addWarehouse(warehouseId, req.body));
-  console.log(req.body);
-  // res.send("Warehouse correctly added.");
-  res.redirect("/inventory");
+  let warehouseId = helper.createNewId(warehouseData);
+  const newWarehouse = {
+    id: warehouseId,
+    name: req.body.warehouse,
+    number: warehouseId,
+    address: req.body.address,
+    contact: req.body.contact,
+    description: req.body.description,
+    categories: [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Transportation",
+      "Sales"
+    ],
+    products: []
+  };
+  warehouseData.push(newWarehouse);
+  helper.writeJSONFile(fileName, warehouseData);
+  res.send("Warehouse correctly added.");
+  res.redirect("/warehouses");
+  console.log(req.body.warehouse);
 });
 
 module.exports = router;
