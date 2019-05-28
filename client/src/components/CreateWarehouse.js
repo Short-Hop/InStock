@@ -42,7 +42,7 @@ class CreateWarehouse extends React.Component {
     const regex = /[0-9]|\./;
 
     if (warehouseinput === "") {
-      return alert("Please enter a warehouse Name");
+      warehouseinput = "Warehouse Number";
     }
 
     if (addressinput === "") {
@@ -66,7 +66,8 @@ class CreateWarehouse extends React.Component {
 
     axios
       .post("http://localhost:8080/api/warehouses", {
-        warehouse: warehouseinput,
+        name: warehouseinput,
+        number: warehouseinput,
         address: {
           street: addressinput,
           location: locationinput
@@ -77,7 +78,7 @@ class CreateWarehouse extends React.Component {
           phone: phoneinput,
           email: emailinput
         },
-        description: descriptioninput,
+        description: descriptioninput
       })
       .then(function(response) {
         console.log(response);

@@ -121,7 +121,8 @@ router.route("/").post((req, res) => {
   let warehouseId = helper.createNewId(warehouseData);
   const newWarehouse = {
     id: warehouseId,
-    warehouse: req.body.warehouse,
+    name: req.body.warehouse,
+    number: warehouseId,
     address: req.body.address,
     contact: req.body.contact,
     description: req.body.description,
@@ -140,6 +141,7 @@ router.route("/").post((req, res) => {
   helper.writeJSONFile(fileName, warehouseData);
   res.send("Warehouse correctly added.");
   res.redirect("/warehouses");
+  console.log(req.body.warehouse);
 });
 
 module.exports = router;
