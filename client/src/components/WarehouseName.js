@@ -5,10 +5,6 @@ import Nav from "./Nav";
 
 const warehouseUrl = `http://localhost:8080/location/warehouseId`;
 export default class WarehouseName extends Component {
-  state = {
-    uniqueWarehouse: []
-  };
-
   render() {
     return (
       <>
@@ -16,7 +12,7 @@ export default class WarehouseName extends Component {
         <div className="warehouseName">
           <div className="warehouseName__title">
             <img src={Arrow} />
-            <h1>{this.state.name}</h1>
+            <h1>{this.props.id.name}</h1>
           </div>
           <div className="warehouseName__detail">
             <div className="warehouseName__detail--address">
