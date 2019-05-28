@@ -4,18 +4,6 @@ const fileName = __dirname + "/warehouseData.json";
 let warehouseData = require(fileName);
 const helper = require("../../helper/helper");
 
-const DataController = {
-  addWareHose: (id, newWarehouseData) => {
-    warehouseData.push(newWarehouseData);
-    return warehouseData;
-  }
-};
-
-router.route("/").post((req, res) => {
-  let warehouseId = "11111111111";
-  res.json(DataController.addWareHose(warehouseId, req.body));
-});
-
 router.route("/product").post((req, res) => {
   let product = req.body;
   const found = warehouseData.find(
@@ -130,11 +118,28 @@ router.delete("/:id/product/:productId", (req, res) => {
 });
 
 router.route("/").post((req, res) => {
-  let warehouseId = "1111";
-  res.json(DataController.addWarehouse(warehouseId, req.body));
-  console.log(req.body);
-  // res.send("Warehouse correctly added.");
-  res.redirect("/");
+  let warehouseId = helper.createNewId(warehouseData);
+  const newWarehouse = {
+    id: warehouseId,
+    warehouse: req.body.warehouse,
+    address: req.body.address,
+    contact: req.body.contact,
+    description: req.body.description,
+    categories: [
+      "Industrial",
+      "Automotive",
+      "Heavy",
+      "Mechanical",
+      "Engineering",
+      "Transportation",
+      "Sales"
+    ],
+    products: []
+  };
+  warehouseData.push(newWarehouse);
+  helper.writeJSONFile(fileName, warehouseData);
+  res.send("Warehouse correctly added.");
+  res.redirect("/warehouses");
 });
 
 module.exports = router;

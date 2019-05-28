@@ -78,15 +78,6 @@ class CreateWarehouse extends React.Component {
           email: emailinput
         },
         description: descriptioninput,
-        categories: [
-          "Industrial",
-          "Automotive",
-          "Heavy",
-          "Mechanical",
-          "Engineering",
-          "Transportation",
-          "Sales"
-        ]
       })
       .then(function(response) {
         console.log(response);
