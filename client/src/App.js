@@ -21,9 +21,9 @@ class App extends React.Component {
     });
   }
 
-  // deleteProduct = (WAREid) => {
-  //   axios.delete('http://localhost:8080/api/warehouses//product/' + id).then(response => {
-  //     console.log(response);
+  deleteProduct = (warehouseId, productId) => {
+    axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
+      console.log(response);
 
   //     axios.get('http://localhost:8080/api/warehouses').then(response => {
   //       this.setState({
@@ -52,7 +52,7 @@ class App extends React.Component {
               )}
             />
             <Route
-              path="/inventory/:id"
+              path="/warehouse/:warehouseId/inventory/:id"
               render={({ match }) => (
                 <Product
                   warehouseArray={this.state.warehouseArray}
@@ -60,7 +60,7 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path="/warehouses/:id" component={WarehouseName} />
+            <Route path="/warehouses/:id" exact component={WarehouseName} />
           </Switch>
         </BrowserRouter>
       </>
