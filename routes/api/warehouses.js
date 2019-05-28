@@ -134,7 +134,7 @@ router.route("/").post((req, res) => {
   res.json(DataController.addWarehouse(warehouseId, req.body));
   console.log(req.body);
   // res.send("Warehouse correctly added.");
-  res.redirect("/inventory");
+  res.redirect("/");
 });
 
 module.exports = router;
