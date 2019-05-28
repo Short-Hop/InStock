@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./components/Nav";
-import "./App.css";
+//import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -38,6 +38,7 @@ class App extends React.Component {
   // }
 
   render() {
+<<<<<<< Updated upstream
     return (
       <>
         <BrowserRouter>
@@ -77,6 +78,52 @@ class App extends React.Component {
         </BrowserRouter>
       </>
     );
+=======
+    console.log(this.state.warehouseArray.length);
+
+    if (this.state.warehouseArray === 0) {
+      return <div />;
+    } else
+      return (
+        <>
+          <BrowserRouter>
+            <Switch>
+              <Redirect from="/" exact to="/warehouses" />
+              <Route
+                path="/warehouses"
+                exact
+                render={({ match }) => (
+                  <LocationPage
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route
+                path="/inventory"
+                exact
+                render={({ match }) => (
+                  <InventoryPage
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route
+                path="/warehouse/:warehouseId/inventory/:id"
+                render={({ match }) => (
+                  <Product
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route path="/warehouses/:id" exact component={WarehouseName} />
+            </Switch>
+          </BrowserRouter>
+        </>
+      );
+>>>>>>> Stashed changes
   }
 }
 
