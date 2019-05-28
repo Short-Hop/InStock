@@ -1,11 +1,21 @@
 import React from "react";
 import axios from "axios";
 import Add from "../assets/Icons/SVG/Icon-add.svg";
-import AddButton from "./AddButton"
+import AddButton from "./AddButton";
 
 class CreateWarehouse extends React.Component {
   state = {
-    newwarehouse: {
+    // newwarehouse: {
+    //   warehouse: "",
+    //   address: "",
+    //   location: "",
+    //   name: "",
+    //   position: "",
+    //   phone: "",
+    //   email: "",
+    //   description: "Description"
+    // },
+    fields: {
       warehouse: "",
       address: "",
       location: "",
@@ -13,9 +23,8 @@ class CreateWarehouse extends React.Component {
       position: "",
       phone: "",
       email: "",
-      description: "Description"
+      description: ""
     },
-    fields: {},
     erros: {},
 
     displayForm: false
@@ -28,6 +37,7 @@ class CreateWarehouse extends React.Component {
     if (!fields["warehouse"]) {
       formIsValid = false;
       errors["warehouse"] = "Cannot be empty";
+      return console.log("Cannot be empty");
     }
 
     if (!fields["address"]) {
@@ -90,7 +100,7 @@ class CreateWarehouse extends React.Component {
     const address = event.target.address;
     let addressinput = address.value;
     const location = event.target.location;
-    let locationinput = location.value;
+    let locationinput = location.options[location.selectedIndex].value;
     const name = event.target.name;
     let nameinput = name.value;
     const position = event.target.position;
@@ -101,55 +111,48 @@ class CreateWarehouse extends React.Component {
     let emailinput = email.value;
     const description = event.target.description;
     let descriptioninput = description.value;
+    console.log(locationinput);
+    console.log(warehouseinput);
 
-    axios.post(`http://localhost`, {
-      warehouse: warehouseinput,
-      address: addressinput,
-      location: locationinput,
-      name: nameinput,
-      position: positioninput,
-      phone: phoneinput,
-      email: emailinput,
-      description: descriptioninput
+    axios
+      .post("http://localhost/8080/api/warehouses", {
+        warehouse: warehouseinput,
+        address: addressinput,
+        location: locationinput,
+        name: nameinput,
+        position: positioninput,
+        phone: phoneinput,
+        email: emailinput,
+        description: descriptioninput
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    this.setState({
+      displayForm: true
     });
-
-    warehouse.value = "";
-    address.value = "";
-    location.value = "";
-    name.value = "";
-    position.value = "";
-    phone.value = "";
-    email.value = "";
-    description.value = "";
-
-    // if (this.handleValidation()) {
-    //   alert("Form submitted");
-    // } else {
-    //   alert("Form has errors.");
-    // }
   };
 
   toggleForm = () => {
-
-    console.log("Toggle called")
-
     if (!this.state.displayForm) {
       this.setState({
-        displayForm: true,
-      })
+        displayForm: true
+      });
     } else {
       this.setState({
-        displayForm: false,
-      })
+        displayForm: false
+      });
     }
-
-  }
+  };
 
   render() {
     let form;
     if (this.state.displayForm) {
-
-      form = 
+      form = (
         <div className="shadow">
           <div className="createnew">
             <h1 className="createnew__title">Add New</h1>
@@ -188,7 +191,7 @@ class CreateWarehouse extends React.Component {
                     >
                       <option value="Toronto" selected>
                         Toronto, CAN
-                        </option>
+                      </option>
                       <option value="Vancouver">Vancouver, CAN</option>
                       <option value="Ontario">Ontario, CAN</option>
                     </select>
@@ -209,7 +212,7 @@ class CreateWarehouse extends React.Component {
                     <label>Position</label>
                     <input
                       type="text"
-                      id="name"
+                      id="position"
                       placeholder="Enter Position"
                       onChange={this.handleChange.bind(this, "position")}
                       value={this.state.fields["position"]}
@@ -249,15 +252,16 @@ class CreateWarehouse extends React.Component {
                 </div>
                 <div className="form__buttons">
                   <button id="Save">Save</button>
-                  <button id="Cancel" onClick={this.toggleForm}>Cancel</button>
+                  <button id="Cancel" onClick={this.toggleForm}>
+                    Cancel
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-      
+      );
     }
-
 
     return (
       <>

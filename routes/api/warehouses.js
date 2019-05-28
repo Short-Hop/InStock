@@ -32,19 +32,27 @@ router.get("/:id/product/:productId", (req, res) => {
     warehouse => warehouse.id === parseInt(req.params.id)
   );
   if (found) {
-    found = found.products.filter(product => req.params.productId == product.id);
-    
-    if(found[0]) {
+    found = found.products.filter(
+      product => req.params.productId == product.id
+    );
+
+    if (found[0]) {
       res.send(found[0]);
     } else {
-      res.status(400).send(`Product with ID:${req.params.productId} not found in Warehouse ${req.params.id}`)
+      res
+        .status(400)
+        .send(
+          `Product with ID:${req.params.productId} not found in Warehouse ${
+            req.params.id
+          }`
+        );
     }
   } else {
     res
       .status(400)
       .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
   }
-})
+});
 
 router.delete("/:id/product/:productId", (req, res) => {
   let newData = warehouseData;
@@ -55,12 +63,13 @@ router.delete("/:id/product/:productId", (req, res) => {
 
   if (found) {
     position = newData.indexOf(found);
-    found.products = found.products.filter(product => req.params.productId != product.id);
-    
+    found.products = found.products.filter(
+      product => req.params.productId != product.id
+    );
+
     newData[0] = found;
 
     warehouseData = [newData];
-
 
     res.send("Product Deleted!");
   } else {
@@ -68,7 +77,25 @@ router.delete("/:id/product/:productId", (req, res) => {
       .status(400)
       .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
   }
-})
+});
 
+router.post("/api/warehouses", (req, res) => {
+  let newWarehouse = {
+    // id: generateUniqueId(),
+    name: req.warehouse,
+    address: {
+      location: req.location
+    },
+    contact: {
+      name: req.name,
+      position: req.position,
+      phone: req.phone,
+      email: req.email
+    }
+  };
+  warehouseData.push(newWarehouse);
+  res.json(warehouseData);
+  console.log(warehouseData);
+});
 
 module.exports = router;
