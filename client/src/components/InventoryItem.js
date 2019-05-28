@@ -70,7 +70,7 @@ class InventoryItem extends React.Component {
                     </td>
                     <td className="inventory__mobile--label">ITEM</td>
                     <td className="inventory__item">
-                        <Link className="link" to={"/inventory/" + this.props.product.id }>
+                        <Link className="link" to={"warehouse/" + this.props.product.warehouseId + "/inventory/" + this.props.product.id }>
                             <h3>{this.props.product.name}</h3>
                             <h4>{this.props.product.shortDescription}</h4>
                         </Link>

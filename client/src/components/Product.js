@@ -25,7 +25,7 @@ class Product extends React.Component {
     }
     
     componentDidMount() {
-        axios.get('http://localhost:8080/api/warehouses/' + this.props.match.params.id.charAt(0) + "/product/" + this.props.match.params.id).then(response => {
+        axios.get('http://localhost:8080/api/warehouses/' + this.props.match.params.warehouseId + "/product/" + this.props.match.params.id).then(response => {
             this.setState({
                 product: response.data
             })
