@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./components/Nav";
-//import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -17,7 +16,6 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
-      
         warehouseArray: response.data
       });
     });

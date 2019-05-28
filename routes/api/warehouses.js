@@ -4,6 +4,17 @@ const fileName = __dirname + "/warehouseData.json";
 let warehouseData = require(fileName);
 const helper = require("../../helper/helper");
 
+const DataController = {
+  addWareHose: (id, newWarehouseData) => {
+    warehouseData.push(newWarehouseData);
+    return warehouseData;
+  }
+};
+
+router.route("/").post((req, res) => {
+  res.json(DataController.addWareHose(warehouseId, req.body));
+});
+
 // Get all warehouses
 router.route("/").get((req, res) => {
   res.json(warehouseData);
