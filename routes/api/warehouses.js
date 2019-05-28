@@ -4,6 +4,17 @@ const fileName = __dirname + "/warehouseData.json";
 let warehouseData = require(fileName);
 const helper = require("../../helper/helper");
 
+const DataController = {
+  addWareHose: (id, newWarehouseData) => {
+    warehouseData.push(newWarehouseData);
+    return warehouseData;
+  }
+};
+
+router.route("/").post((req, res) => {
+  res.json(DataController.addWareHose(warehouseId, req.body));
+});
+
 // Get all warehouses
 router.route("/").get((req, res) => {
   res.json(warehouseData);
@@ -32,19 +43,27 @@ router.get("/:id/product/:productId", (req, res) => {
     warehouse => warehouse.id === parseInt(req.params.id)
   );
   if (found) {
-    found = found.products.filter(product => req.params.productId == product.id);
-    
-    if(found[0]) {
+    found = found.products.filter(
+      product => req.params.productId == product.id
+    );
+
+    if (found[0]) {
       res.send(found[0]);
     } else {
-      res.status(400).send(`Product with ID:${req.params.productId} not found in Warehouse ${req.params.id}`)
+      res
+        .status(400)
+        .send(
+          `Product with ID:${req.params.productId} not found in Warehouse ${
+            req.params.id
+          }`
+        );
     }
   } else {
     res
       .status(400)
       .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
   }
-})
+});
 
 router.delete("/:id/product/:productId", (req, res) => {
   let newData = warehouseData;
@@ -55,12 +74,13 @@ router.delete("/:id/product/:productId", (req, res) => {
 
   if (found) {
     position = newData.indexOf(found);
-    found.products = found.products.filter(product => req.params.productId != product.id);
-    
+    found.products = found.products.filter(
+      product => req.params.productId != product.id
+    );
+
     newData[0] = found;
 
     warehouseData = [newData];
-
 
     res.send("Product Deleted!");
   } else {
@@ -68,7 +88,6 @@ router.delete("/:id/product/:productId", (req, res) => {
       .status(400)
       .json({ errorMessage: `Warehouse with ID:${req.params.id} not found` });
   }
-})
-
+});
 
 module.exports = router;

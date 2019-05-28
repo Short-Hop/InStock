@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./components/Nav";
-import "./App.css";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import WarehouseName from "./components/WarehouseName";
@@ -17,7 +16,6 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
-      
         warehouseArray: response.data
       });
     });
@@ -37,52 +35,50 @@ class App extends React.Component {
   // }
 
   render() {
+    console.log(this.state.warehouseArray.length);
 
-    console.log(this.state.warehouseArray.length)
-
-    if(this.state.warehouseArray === 0){
-      return(<div></div>)
-    } else 
-
-    return (
-      <>
-        <BrowserRouter>
-          <Switch>
-            <Redirect from="/" exact to="/warehouses" />
-            <Route
-              path="/warehouses"
-              exact
-              render={({ match }) => (
-                <LocationPage
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route
-              path="/inventory"
-              exact
-              render={({ match }) => (
-                <InventoryPage
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route
-              path="/warehouse/:warehouseId/inventory/:id"
-              render={({ match }) => (
-                <Product
-                  warehouseArray={this.state.warehouseArray}
-                  match={match}
-                />
-              )}
-            />
-            <Route path="/warehouses/:id" exact component={WarehouseName} />
-          </Switch>
-        </BrowserRouter>
-      </>
-    );
+    if (this.state.warehouseArray === 0) {
+      return <div />;
+    } else
+      return (
+        <>
+          <BrowserRouter>
+            <Switch>
+              <Redirect from="/" exact to="/warehouses" />
+              <Route
+                path="/warehouses"
+                exact
+                render={({ match }) => (
+                  <LocationPage
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route
+                path="/inventory"
+                exact
+                render={({ match }) => (
+                  <InventoryPage
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route
+                path="/warehouse/:warehouseId/inventory/:id"
+                render={({ match }) => (
+                  <Product
+                    warehouseArray={this.state.warehouseArray}
+                    match={match}
+                  />
+                )}
+              />
+              <Route path="/warehouses/:id" exact component={WarehouseName} />
+            </Switch>
+          </BrowserRouter>
+        </>
+      );
   }
 }
 
