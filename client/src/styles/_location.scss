@@ -6,9 +6,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    .hr {
-      margin-top: 24px;
-      margin-bottom: 24px;
+    .hrContainer {
+      width: 90vw;
+      .hr {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        width: 100%;
+      }
     }
 
     .main-row {
@@ -72,9 +76,11 @@
   .location {
     margin: 32px 24px;
     &__table {
-      .hr {
-        margin-top: -5px;
-        margin-bottom: 10px;
+      .hrContainer {
+        .hr {
+          margin-top: -5px;
+          margin-bottom: 10px;
+        }
       }
       width: 100%;
       .main-row {
@@ -121,9 +127,6 @@
   }
 }
 @media (min-width: 1440px) {
-
-
-
   table {
     max-width: 1080px;
   }
@@ -134,10 +137,12 @@
     justify-content: center;
 
     &__table {
-      .hr {
-        margin-top: -15px;
-        margin-bottom: 20px;
-        
+      .hrContainer {
+        .hr {
+          margin-top: -15px;
+          margin-bottom: 20px;
+          // width: 1080px;
+        }
       }
       .main-row {
         display: contents;

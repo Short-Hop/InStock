@@ -18,9 +18,15 @@ class App extends React.Component {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
         warehouseArray: response.data,
-        allProducts: this.getAllProducts(response.data)
       });
     });
+
+    axios.get("http://localhost:8080/api/inventories").then(response => {
+      console.log(response.data)
+      this.setState({
+        allProducts: response.data
+      })
+    })
   }
 
   deleteProduct = (warehouseId, productId) => {
@@ -34,21 +40,31 @@ class App extends React.Component {
       .then(response => {
         this.setState({
           warehouseArray: response.data,
-          allProducts: this.getAllProducts(response.data)
         });
+
+        axios.get("http://localhost:8080/api/inventories").then(response => {
+          console.log(response.data)
+          this.setState({
+            allProducts: response.data
+          })
+        })
       });
   };
 
-  getAllProducts = array => {
-    let allProducts = [];
-    array.forEach(warehouse => {
-      warehouse.products.forEach(product => {
-        allProducts.push(product);
-      });
-    });
+  editProduct = (product) => {
+    axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
+      this.setState({
+        warehouseArray: response.data,
+      })
 
-    return allProducts;
-  };
+      axios.get("http://localhost:8080/api/inventories").then(response => {
+        console.log(response.data)
+        this.setState({
+          allProducts: response.data
+        })
+      })
+    })
+  }
 
   onProductAdd = newProduct => {
     this.setState({
@@ -111,7 +127,7 @@ class App extends React.Component {
               render={({ match }) => (
                 <ProductEdit
                   warehouseArray={this.state.warehouseArray}
-                  match={match}
+                  match={match} editProduct={this.editProduct}
                 />
               )}
             />
