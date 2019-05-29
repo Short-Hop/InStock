@@ -19,6 +19,7 @@ class CreateProduct extends React.Component {
 
     displayForm: false
   };
+
   handleValidation() {
     let fields = this.state.fields;
     let errors = {};
@@ -90,6 +91,7 @@ class CreateProduct extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
+
     const product = event.target.product;
     let productinput = product.value;
     const ordered = event.target.ordered;
@@ -100,8 +102,8 @@ class CreateProduct extends React.Component {
     let countryinput = country.value;
     const quantity = event.target.quantity;
     let quantityinput = quantity.value;
-    const status = event.target.status;
-    // let statusinput = status.value;
+    let status = this.state.newProduct.status;
+    console.log(this.state.newProduct.status)
     const description = event.target.description;
     let descriptioninput = description.value;
 
@@ -111,7 +113,7 @@ class CreateProduct extends React.Component {
       city: cityinput,
       country: countryinput,
       quantity: quantityinput,
-      // status: statusinput,
+      status: status,
       description: descriptioninput
     });
 
@@ -196,7 +198,7 @@ class CreateProduct extends React.Component {
                     <label>Status</label>
                     <div id="status">
                       <p>In stock</p>
-                      <Switch checked={this.state.product.inStock} onColor="#6BB01A" checkedIcon={false} uncheckedIcon={false}/>
+                      <Switch name="inStock" checked={this.state.status} onColor="#6BB01A" checkedIcon={false} uncheckedIcon={false} onChange={(checked) => { this.setState({ newProduct: {status: checked} })}}/>
                     </div>
                   </div>
                 </div>

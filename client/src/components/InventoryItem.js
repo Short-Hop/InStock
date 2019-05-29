@@ -1,8 +1,6 @@
 import React from 'react';
 import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
-import App from '../App';
-import axios from 'axios';
 
 class InventoryItem extends React.Component {
 
@@ -18,7 +16,7 @@ class InventoryItem extends React.Component {
         let kebab = document.querySelectorAll('.kebab');
         let removeButton = document.querySelector('.inventory__remove')
 
-        if (removeButton != event.target) {
+        if (removeButton !== event.target) {
             if (mobileKebab && kebab) {
                 kebab.forEach(node => {
                     node.style.filter = 'brightness(1)';
@@ -27,11 +25,9 @@ class InventoryItem extends React.Component {
                     node.style.filter = 'brightness(1)';
                 })
             }
-            
             this.setState({
                 displayRemove: false
             })
-            //console.log("state changed")
         } 
       })
     }

@@ -5,8 +5,6 @@ import Nav from "./Nav"
 import axios from "axios"
 import { Link } from "react-router-dom";
 
-
-const warehouseUrl = `http://localhost:8080/location/warehouseId`;
 export default class WarehouseName extends Component {
   state = {
     warehouse: {
@@ -48,7 +46,7 @@ export default class WarehouseName extends Component {
         <div>
           <div className="warehouseName__title">
             <Link className="link" to="/warehouses">
-              <img src={Arrow} />
+              <img src={Arrow} alt="arrow" />
             </Link>
             
             <h1>{this.state.warehouse.name + " " + (this.state.warehouse.number + 1)}</h1>

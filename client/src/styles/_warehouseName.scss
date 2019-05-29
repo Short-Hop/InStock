@@ -1,6 +1,7 @@
 .background {
   background-color: $Alabaster;
   padding-top: 5vw;
+  height: 100vh;
 }
 
 
@@ -73,6 +74,10 @@
 
   .background {
     padding-top: 24px;
+  }
+
+  h3 {
+    font-size: 12px;
   }
 
   .warehouseName {

@@ -60,7 +60,7 @@ export default class Location extends React.Component {
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number + 1}
                 </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
+                <img className="rightArrowImg1" src={rightArrow} alt="arrow" />
               </div>
               </Link>
               
@@ -82,7 +82,7 @@ export default class Location extends React.Component {
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number + 1}
                 </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
+                <img className="rightArrowImg1" src={rightArrow} alt="arrow" />
                 <h4>
                   {props.warehouse.address.buildingNumber},{" "}
                   {props.warehouse.address.street},{" "}
@@ -110,8 +110,9 @@ export default class Location extends React.Component {
               </h4>
             </td>
             <td className="row2__col-last row2__item">
-              <img className="rightArrowImg2" src={rightArrow} />
-
+              <Link className="link" to={"/warehouse/" + props.warehouse.id}>
+              <img className="rightArrowImg2" src={rightArrow} alt="arrow"/>
+              </Link>
             </td>
             
           </tr>

@@ -121,12 +121,23 @@
   }
 }
 @media (min-width: 1440px) {
+
+
+
+  table {
+    max-width: 1080px;
+  }
+
   .location {
-    margin: 32px 180px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+
     &__table {
       .hr {
         margin-top: -15px;
         margin-bottom: 20px;
+        
       }
       .main-row {
         display: contents;

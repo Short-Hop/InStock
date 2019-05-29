@@ -46,19 +46,19 @@ class Product extends React.Component {
 
         console.log(value);
         let updatedProduct = this.state.product;
-        if (name == 'description') {
+        if (name === 'description') {
             updatedProduct.longDescription = value;
-        } else if (name == 'orderBy') {
+        } else if (name === 'orderBy') {
             updatedProduct.orderBy = value;
-        } else if (name == 'refNumber') {
+        } else if (name === 'refNumber') {
             updatedProduct.refNumber = value;
-        } else if (name == 'orderDate') {
+        } else if (name === 'orderDate') {
             updatedProduct.orderDate = value;
-        } else if (name == 'location') {
+        } else if (name === 'location') {
             updatedProduct.location = JSON.parse(value);
-        } else if (name == 'quantity') {
+        } else if (name === 'quantity') {
             updatedProduct.quantity = value;
-        }  else if (name == 'categories') {
+        }  else if (name === 'categories') {
             updatedProduct.categories = value.split(", ")
         }  else if (value) {
             updatedProduct.inStock = value;
@@ -98,7 +98,7 @@ class Product extends React.Component {
                     <div className="productEdit__header">
                         <div>
                             <Link to="/inventory">
-                                <img src={arrow} />
+                                <img src={arrow} alt='arrow' />
                             </Link>
 
                             <h1>{this.state.product.name}</h1>
