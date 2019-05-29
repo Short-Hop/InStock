@@ -18,9 +18,15 @@ class App extends React.Component {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
         warehouseArray: response.data,
-        allProducts: this.getAllProducts(response.data)
       });
     });
+
+    axios.get("http://localhost:8080/api/inventories").then(response => {
+      console.log(response.data)
+      this.setState({
+        allProducts: response.data
+      })
+    })
   }
 
   deleteProduct = (warehouseId, productId) => {
@@ -34,30 +40,28 @@ class App extends React.Component {
       .then(response => {
         this.setState({
           warehouseArray: response.data,
-          allProducts: this.getAllProducts(response.data)
         });
-      });
-  };
 
-  getAllProducts = array => {
-    let allProducts = [];
-    array.forEach(warehouse => {
-      warehouse.products.forEach(product => {
-        allProducts.push(product);
+        axios.get("http://localhost:8080/api/inventories").then(response => {
+          console.log(response.data)
+          this.setState({
+            allProducts: response.data
+          })
+        })
       });
-    });
-
-    return allProducts;
   };
 
   editProduct = (product) => {
-
-    console.log("Gonna call that put")
     axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
-      console.log(response);
       this.setState({
         warehouseArray: response.data,
-        allProducts: this.getAllProducts(response.data)
+      })
+
+      axios.get("http://localhost:8080/api/inventories").then(response => {
+        console.log(response.data)
+        this.setState({
+          allProducts: response.data
+        })
       })
     })
   }
