@@ -124,6 +124,10 @@ class CreateProduct extends React.Component {
     quantity.value = "";
     // status.value = "";
     description.value = "";
+
+    this.setState({
+      displayForm: false
+    });
   };
   render() {
     let form;
@@ -198,7 +202,16 @@ class CreateProduct extends React.Component {
                     <label>Status</label>
                     <div id="status">
                       <p>In stock</p>
+<<<<<<< HEAD
+                      {/* <Switch
+                        checked={this.state.product.inStock}
+                        onColor="#6BB01A"
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                      /> */}
+=======
                       <Switch name="inStock" checked={this.state.status} onColor="#6BB01A" checkedIcon={false} uncheckedIcon={false} onChange={(checked) => { this.setState({ newProduct: {status: checked} })}}/>
+>>>>>>> 94162bc4fd1c5fe31daef45294c9dd4f51eef2e8
                     </div>
                   </div>
                 </div>
@@ -232,29 +245,4 @@ class CreateProduct extends React.Component {
   }
 }
 
-// class Switch extends Component {
-//   constructor() {
-//     super();
-//     this.state = { checked: false };
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-
-//   handleChange(checked) {
-//     this.setState({ checked });
-//   }
-
-//   render() {
-//     return (
-//       <label>
-//         <Switch
-//           uncheckedIcon={false}
-//           checkedIcon={false}
-//           onChange={this.handleChange}
-//           checked={this.state.checked}
-//           onColor={"#00B200"}
-//         />
-//       </label>
-//     );
-//   }
-// }
 export default CreateProduct;
