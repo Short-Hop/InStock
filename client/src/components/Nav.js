@@ -20,7 +20,7 @@ export default class nav extends Component {
       <nav className="nav">
         <div className="nav__logo">
           <Link to="/warehouses">
-            <img src={logo} />
+            <img src={logo} alt="logo" />
           </Link>
         </div>
         <div className="nav__menu">

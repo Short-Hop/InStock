@@ -46,7 +46,7 @@ export default class WarehouseName extends Component {
         <div>
           <div className="warehouseName__title">
             <Link className="link" to="/warehouses">
-              <img src={Arrow} />
+              <img src={Arrow} alt="arrow" />
             </Link>
             
             <h1>{this.state.warehouse.name + " " + (this.state.warehouse.number + 1)}</h1>

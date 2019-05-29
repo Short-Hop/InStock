@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
-router.route("/product").post((req, res) => {
+router.post("/product", (req, res) => {
   let product = req.body;
   const found = warehouseData.find(
     warehouse => warehouse.id === warehouseData.length - 1
@@ -49,7 +49,7 @@ router.route("/product").post((req, res) => {
       orderDate: product.ordered,
       orderBy: "",
       quantity: product.quantity,
-      categories: "",
+      categories: [],
       status: product.status,
     };
     console.log(newProduct);
