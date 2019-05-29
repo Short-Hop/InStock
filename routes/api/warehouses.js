@@ -52,9 +52,9 @@ router.post("/product", (req, res) => {
       categories: [],
       status: product.inStock
     };
-    console.log(newProduct);
     found.products.push(newProduct);
     helper.writeJSONFile(fileName, warehouseData);
+    res.json(newProduct);
   }
 });
 

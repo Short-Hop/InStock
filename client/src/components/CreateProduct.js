@@ -14,9 +14,6 @@ class CreateProduct extends React.Component {
       inStock: false,
       description: ""
     },
-    fields: {},
-    erros: {},
-
     displayForm: false
   };
 
@@ -57,19 +54,23 @@ class CreateProduct extends React.Component {
       return alert("Please enter a quantity");
     }
 
-    axios.post("http://localhost:8080/api/warehouses/product", {
-      product: productinput,
-      ordered: orderedinput,
-      city: cityinput,
-      country: countryinput,
-      quantity: quantityinput,
-      inStock: inStock,
-      description: descriptioninput
-    });
-
-    this.setState({
-      displayForm: false
-    });
+    axios
+      .post("http://localhost:8080/api/warehouses/product", {
+        product: productinput,
+        ordered: orderedinput,
+        city: cityinput,
+        country: countryinput,
+        quantity: quantityinput,
+        inStock: inStock,
+        description: descriptioninput
+      })
+      .then(response => {
+        this.setState({
+          displayForm: false,
+          newProduct: response.data
+        });
+        this.props.onSuccess(this.state.newProduct);
+      });
   };
 
   statusUpdate = checked => {
