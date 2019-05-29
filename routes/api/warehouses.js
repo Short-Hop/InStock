@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
-router.route("/product").post((req, res) => {
+router.post("/product", (req, res) => {
   let product = req.body;
   const found = warehouseData.find(
     warehouse => warehouse.id === warehouseData.length - 1
@@ -49,7 +49,7 @@ router.route("/product").post((req, res) => {
       orderDate: product.ordered,
       orderBy: "",
       quantity: product.quantity,
-      categories: "",
+      categories: [],
       status: product.inStock
     };
     console.log(newProduct);
@@ -104,9 +104,9 @@ router.delete("/:id/product/:productId", (req, res) => {
 
     newData[position] = found;
 
-    console.log(newData);
-
     warehouseData = newData;
+
+    helper.writeJSONFile(fileName, warehouseData);
 
     res.send(warehouseData);
   } else {

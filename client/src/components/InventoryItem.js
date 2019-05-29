@@ -1,39 +1,20 @@
 import React from 'react';
 import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
-import App from '../App';
-import axios from 'axios';
 
 class InventoryItem extends React.Component {
-
     state = {
         displayRemove: false,
     }
 
     componentDidMount() {
-      let body = document.querySelector('body');
-      body.addEventListener('click', (event) => {
-        
-        let mobileKebab = document.querySelectorAll('.kebab');
-        let kebab = document.querySelectorAll('.kebab');
-        let removeButton = document.querySelector('.inventory__remove')
+        let body = document.querySelector('body');
+        body.addEventListener('click', this.hideRemoveButton)
+    }
 
-        if (removeButton != event.target) {
-            if (mobileKebab && kebab) {
-                kebab.forEach(node => {
-                    node.style.filter = 'brightness(1)';
-                })
-                mobileKebab.forEach(node => {
-                    node.style.filter = 'brightness(1)';
-                })
-            }
-            
-            this.setState({
-                displayRemove: false
-            })
-            //console.log("state changed")
-        } 
-      })
+    componentWillUnmount() {
+        let body = document.querySelector('body');
+        body.removeEventListener('click', this.hideRemoveButton)
     }
 
     displayRemoveButton = (event) => {
@@ -44,8 +25,31 @@ class InventoryItem extends React.Component {
         event.target.style.filter = 'brightness(0.5)';
     }
 
+    hideRemoveButton = (event) => {
+        let mobileKebab = document.querySelectorAll('.kebab');
+        let kebab = document.querySelectorAll('.kebab');
+        let removeButton = document.querySelector('.inventory__remove')
+
+        if (removeButton !== event.target) {
+            if (mobileKebab && kebab) {
+                kebab.forEach(node => {
+                    node.style.filter = 'brightness(1)';
+                })
+                mobileKebab.forEach(node => {
+                    node.style.filter = 'brightness(1)';
+                })
+            }
+            this.setState({
+                displayRemove: false
+            })
+        }
+    }
+
     delete = () => {
         this.props.deleteProduct(this.props.product.warehouseId, this.props.product.id)
+        this.setState({
+            displayRemove: false,
+        })
     }
 
     render() {
@@ -97,7 +101,6 @@ class InventoryItem extends React.Component {
                     
                 </td>
             </tr>
-
             <tr>
                 <td colSpan="6" className="divider"></td>
             </tr>

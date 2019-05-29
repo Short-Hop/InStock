@@ -43,9 +43,6 @@ class Product extends React.Component {
         return string;
     }
     
-    
-    
-
     render() {
         let indicator;
         if (this.state.product.inStock) {
@@ -61,7 +58,7 @@ class Product extends React.Component {
                 <div className="product__header">
                     <div>
                         <Link to="/inventory">
-                            <img src={arrow}/>
+                                <img src={arrow} alt="arrow"/>
                         </Link>
                         
                         <h1>{this.state.product.name}</h1>
@@ -121,8 +118,6 @@ class Product extends React.Component {
                         EDIT
                     </Link>
                 </button>
-                
-                
             </div>
             </>
         )

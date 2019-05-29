@@ -32,7 +32,7 @@ router.get("/:id", (req, res) => {
     );
   } else {
     res
-      .status(400)
+      .status(404)
       .json({ errorMessage: `Product with ID:${req.params.id} not found` });
   }
 });

@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "./components/Nav";
 import "./styles/styles.css";
 import Product from "./components/Product";
 import ProductEdit from "./components/ProductEdit"

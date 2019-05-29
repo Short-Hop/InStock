@@ -34,6 +34,7 @@ class CreateProduct extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
+
     const product = event.target.product;
     let productinput = product.value;
     const ordered = event.target.ordered;
