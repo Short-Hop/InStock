@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import CreateWarehouse from "./CreateWarehouse";
 
 class LocationPage extends React.Component {
-  render() {    
+  render() {
     return (
       <>
         <Nav page={this.props.match.path} />

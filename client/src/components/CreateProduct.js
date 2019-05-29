@@ -35,20 +35,13 @@ class CreateProduct extends React.Component {
   submitHandler = event => {
     event.preventDefault();
 
-    const product = event.target.product;
-    let productinput = product.value;
-    const ordered = event.target.ordered;
-    let orderedinput = ordered.value;
-    const city = event.target.city;
-    let cityinput = city.value;
-    const country = event.target.country;
-    let countryinput = country.value;
-    const quantity = event.target.quantity;
-    let quantityinput = quantity.value;
-    const inStock = this.state.newProduct.inStock;
-    // let inStockinput = this.state.inStock;
-    const description = event.target.description;
-    let descriptioninput = description.value;
+    let productinput = event.target.product.value;
+    let orderedinput = event.target.ordered.value;
+    let cityinput = event.target.city.value;
+    let countryinput = event.target.country.value;
+    let quantityinput = event.target.quantity.value;
+    let inStock = this.state.newProduct.inStock;
+    let descriptioninput = event.target.description.value;
 
     if (productinput === "") {
       return alert("Please enter a product name");
