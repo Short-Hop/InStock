@@ -94,7 +94,6 @@ router.delete("/:id/product/:productId", (req, res) => {
 
   if (found) {
     position = newData.indexOf(found);
-    console.log("index: " + position);
 
     remainingProducts = found.products.filter(product => req.params.productId != product.id);
 

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav"
 import axios from 'axios';
 import Switch from "react-switch";
+import { Redirect } from "react-router-dom";
 
 class Product extends React.Component {
     state = {
@@ -23,7 +24,11 @@ class Product extends React.Component {
             categories: [],
             inStock: false
         },
+
+        redirect: false
     }
+
+    
 
     componentDidMount() {
         axios.get('http://localhost:8080/api/warehouses/' + this.props.match.params.warehouseId + "/product/" + this.props.match.params.id).then(response => {
@@ -44,7 +49,6 @@ class Product extends React.Component {
 
     formUpdate = (value, name) => {
 
-        console.log(value);
         let updatedProduct = this.state.product;
         if (name === 'description') {
             updatedProduct.longDescription = value;
@@ -66,8 +70,6 @@ class Product extends React.Component {
             updatedProduct.inStock = false;
         }
 
-        console.log(updatedProduct);
-
         this.setState({
             product: updatedProduct
         })
@@ -75,11 +77,21 @@ class Product extends React.Component {
 
     submitForm = (event) => {
         event.preventDefault();
+        this.props.editProduct(this.state.product)
 
-        
+        setTimeout(() => {
+            this.setState({
+                redirect: true
+            })
+        }, 1000)
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect push to={"/warehouse/" + this.state.product.warehouseId + "/inventory/" + this.state.product.id} />
+        }
+
+
         if (this.refs.description) {
             console.log(this.refs.description.innerHTML);
         }
@@ -90,6 +102,8 @@ class Product extends React.Component {
         } else {
             indicator = 'Out of Stock'
         }
+
+
 
         return (
             <>
@@ -166,13 +180,16 @@ class Product extends React.Component {
                     <div className="divider"></div>
 
                     <div className="productEdit__button--container">
+                        
                         <button form="editProduct" type="submit">
                             SAVE
                         </button>
-                    
+                        
+                        <Link to={"/warehouse/" + this.state.product.warehouseId + "/inventory/" + this.state.product.id}>
                         <button className="cancel">
                             CANCEL
                         </button>
+                        </Link>
                     </div>
                 </div>
             </>
