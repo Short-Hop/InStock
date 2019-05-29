@@ -13,7 +13,7 @@ export default class Location extends React.Component {
               <MainRow />
 
               {this.props.warehouseArray.map(warehouse => (
-                <LocationEntry warehouse={warehouse} />
+                <LocationEntry warehouse={warehouse} key={warehouse.id} />
               ))}
             </tbody>
           </table>
@@ -41,9 +41,7 @@ export default class Location extends React.Component {
             </th>
             <th />
           </tr>
-          <tr>
-            <br />
-          </tr>
+          <tr />
         </>
       );
     }
@@ -118,7 +116,11 @@ export default class Location extends React.Component {
               </Link>
             </td>
           </tr>
-          <hr className="hr" />
+          <tr>
+            <td colSpan="5" className="hrContainer">
+              <hr className="hr" />
+            </td>
+          </tr>
         </>
       );
     }
