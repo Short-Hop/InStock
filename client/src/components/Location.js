@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export default class Location extends React.Component {
   render() {
 
-    console.log(this.props.warehouseArray);
     return (
       <>
         <section className="location">
@@ -67,10 +66,12 @@ export default class Location extends React.Component {
               </h4>
             </td>
           </tr>
-          <Link className="link" to={"/warehouse/" + props.warehouse.id}>
+          
           <tr className="row2">
             
+            
             <td className="row2__col-desk">
+              <Link className="link" to={"/warehouse/" + props.warehouse.id}>
               
               <div className="arrow-control">
                 <h5 className="main-col">WAREHOUSE</h5>
@@ -85,7 +86,7 @@ export default class Location extends React.Component {
                   {props.warehouse.address.province}
                 </h4>
               </div>
-              
+              </Link>
             </td>
             
             <td>
@@ -112,8 +113,9 @@ export default class Location extends React.Component {
             <td className="row2__col-last">
                 <img className="rightArrowImg2" src={rightArrow} />
             </td>
+            
           </tr>
-          </Link>
+          
           <hr />
         </>
       );

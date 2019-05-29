@@ -18,7 +18,7 @@ class Inventory extends React.Component {
                         </tr>
                     
                     {this.props.productArray.map(product => 
-                        <InventoryItem product={product} key={product.warehouseId + '-' + product.id}/>
+                        <InventoryItem product={product} key={product.warehouseId + '-' + product.id} deleteProduct={this.props.deleteProduct}/>
                     )}
                     
                     </tbody>

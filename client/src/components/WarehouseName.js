@@ -69,7 +69,6 @@ export default class WarehouseName extends Component {
               <p>{this.state.warehouse.contact.email}</p>
             </div>
           </div>
-          <Inventory />
         </div>
       </div>
       <div className="background">

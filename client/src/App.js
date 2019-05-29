@@ -22,19 +22,17 @@ class App extends React.Component {
         allProducts: this.getAllProducts(response.data),
       });
 
-      console.log(this.state.allProducts);
     });
   }
 
   deleteProduct = (warehouseId, productId) => {
     axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
-      console.log(response);
 
-      axios.get('http://localhost:8080/api/warehouses').then(response => {
         this.setState({
-          warehouseArray: response.data
+          warehouseArray: response.data,
+          allProducts: this.getAllProducts(response.data)
         })
-      })
+        
     })
   }
 
