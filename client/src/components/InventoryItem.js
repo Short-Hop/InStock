@@ -3,6 +3,7 @@ import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg";
 import { Link } from "react-router-dom";
 
 class InventoryItem extends React.Component {
+
   state = {
     displayRemove: false
   };
@@ -54,6 +55,7 @@ class InventoryItem extends React.Component {
       displayRemove: false
     });
   };
+
 
   render() {
     let status = this.props.product.inStock ? "IN STOCK" : "OUT OF STOCK";
