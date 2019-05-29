@@ -38,7 +38,6 @@ class CreateWarehouse extends React.Component {
     const description = event.target.description;
     let descriptioninput = description.value;
 
-
     if (warehouseinput === "") {
       warehouseinput = "Warehouse Number";
     }
