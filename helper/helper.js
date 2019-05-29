@@ -12,7 +12,7 @@ function writeJSONFile(filename, content) {
 
 const createNewId = input => {
   if (input.length > 0) {
-    return input.length - 1 + 1;
+    return input.length;
   } else {
     return 1;
   }
