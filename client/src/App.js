@@ -50,6 +50,18 @@ class App extends React.Component {
     return allProducts;
   };
 
+  editProduct = (product) => {
+
+    console.log("Gonna call that put")
+    axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
+      console.log(response);
+      this.setState({
+        warehouseArray: response.data,
+        allProducts: this.getAllProducts(response.data)
+      })
+    })
+  }
+
   render() {
     return (
       <>
@@ -104,7 +116,7 @@ class App extends React.Component {
               render={({ match }) => (
                 <ProductEdit
                   warehouseArray={this.state.warehouseArray}
-                  match={match}
+                  match={match} editProduct={this.editProduct}
                 />
               )}
             />

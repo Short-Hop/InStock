@@ -113,6 +113,10 @@
     .cancel {
         background-color: white;
         color: $Instock-blue;
+
+        &:hover {
+            background-color: white;
+        }
     }
 }
 
