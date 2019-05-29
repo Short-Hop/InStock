@@ -3,7 +3,7 @@ const router = express.Router();
 const fileName = __dirname + "/warehouseData.json";
 let warehouseData = require(fileName);
 const helper = require("../../helper/helper");
-const fs = require('fs')
+const fs = require("fs");
 
 // Get all warehouses
 router.get("/", (req, res) => {
@@ -49,8 +49,8 @@ router.route("/product").post((req, res) => {
       orderDate: product.ordered,
       orderBy: "",
       quantity: product.quantity,
-      categories: ""
-      // status: statusinput,
+      categories: "",
+      status: product.inStock
     };
     console.log(newProduct);
     found.products.push(newProduct);
@@ -96,17 +96,17 @@ router.delete("/:id/product/:productId", (req, res) => {
     position = newData.indexOf(found);
     console.log("index: " + position);
 
-    remainingProducts = found.products.filter(product => req.params.productId != product.id);
+    remainingProducts = found.products.filter(
+      product => req.params.productId != product.id
+    );
 
     found.products = remainingProducts;
-    
+
     newData[position] = found;
 
-    console.log(newData)
+    console.log(newData);
 
     warehouseData = newData;
-
-    
 
     res.send(warehouseData);
   } else {

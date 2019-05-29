@@ -44,8 +44,8 @@ class CreateProduct extends React.Component {
     let countryinput = country.value;
     const quantity = event.target.quantity;
     let quantityinput = quantity.value;
-    const inStock = event.target.inStock;
-    let inStockinput = inStock.value;
+    const inStock = this.state.newProduct.inStock;
+    // let inStockinput = this.state.inStock;
     const description = event.target.description;
     let descriptioninput = description.value;
 
@@ -69,31 +69,21 @@ class CreateProduct extends React.Component {
       city: cityinput,
       country: countryinput,
       quantity: quantityinput,
-      inStock: inStockinput,
+      inStock: inStock,
       description: descriptioninput
     });
 
     this.setState({
       displayForm: false
     });
-
-    console.log(productinput);
   };
 
-  statusUpdate = () => {
-    if (this.state.newProduct.inStock === false) {
-      this.setState({
-        newProduct: {
-          inStock: true
-        }
-      });
-    } else if (this.state.newProduct.inStock === true) {
-      this.setState({
-        newProduct: {
-          inStock: false
-        }
-      });
-    }
+  statusUpdate = checked => {
+    this.setState({
+      newProduct: {
+        inStock: checked
+      }
+    });
   };
 
   render() {
@@ -149,7 +139,7 @@ class CreateProduct extends React.Component {
                       <p>{indicator}</p>
                       <Switch
                         name="inStock"
-                        onChange={event => this.statusUpdate(event)}
+                        onChange={this.statusUpdate}
                         checked={this.state.newProduct.inStock}
                         onColor="#6BB01A"
                         checkedIcon={false}
