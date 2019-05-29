@@ -6,12 +6,19 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    .hr {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
 
     .main-row {
       display: none;
     }
     .row1 {
       display: contents;
+      td {
+        margin-bottom: 20px;
+      }
       &__col-mobile {
         .main-col {
           display: none;
@@ -29,10 +36,14 @@
     .row2 {
       display: flex;
       flex-direction: column;
-      // width: 90vw;
-      // &__first {
-      // display: flex;
-      // flex-direction: row;
+      td {
+        margin-bottom: 20px;
+      }
+      &__item {
+        .position {
+          font-style: italic;
+        }
+      }
       &__col-desk {
         display: none;
         .arrow-control {
@@ -45,26 +56,26 @@
       }
       &__col-last {
         display: none;
-        // .arrow-control2 {
-        //display: flex;
         flex-direction: row;
         .rightArrowImg2 {
           display: none;
         }
-        // }
       }
       .main-col {
         display: none;
       }
     }
   }
-  // }
 }
 
 @media (min-width: 600px) {
   .location {
     margin: 32px 24px;
     &__table {
+      .hr {
+        margin-top: -5px;
+        margin-bottom: 10px;
+      }
       width: 100%;
       .main-row {
         display: none;
@@ -76,7 +87,14 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        //width: 90vw;
+        td {
+          margin-bottom: 0px;
+        }
+        &__item {
+          .position {
+            font-style: italic;
+          }
+        }
         &__col-desk {
           display: none;
 
@@ -89,13 +107,11 @@
           }
         }
         &__col-last {
-          // .arrow-control2 {
           display: flex;
           flex-direction: row;
           .rightArrowImg2 {
             display: none;
           }
-          // }
         }
         .main-col {
           display: contents;
@@ -105,24 +121,46 @@
   }
 }
 @media (min-width: 1440px) {
+
+
+
+  table {
+    max-width: 1080px;
+  }
+
   .location {
-    margin: 32px 180px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+
     &__table {
+      .hr {
+        margin-top: -15px;
+        margin-bottom: 20px;
+        
+      }
       .main-row {
         display: contents;
         margin-top: 48px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        text-align: left;
       }
       .row1 {
         display: none;
       }
       .row2 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        //width: 90vw;
+        display: table-row;
+        vertical-align: baseline;
+        &__item {
+          width: 287px;
+          .position {
+            font-style: italic;
+          }
+        }
+        .arrow-control {
+          .title {
+            width: 287px;
+          }
+        }
         &__col-desk {
           display: contents;
           .rightArrowImg2 {
@@ -130,14 +168,11 @@
           }
         }
         &__col-last {
-          // .arrow-control2 {
           display: contents;
           flex-direction: column;
           .rightArrowImg2 {
             display: flex;
-            //align-self: self-start;
           }
-          // }
         }
       }
     }

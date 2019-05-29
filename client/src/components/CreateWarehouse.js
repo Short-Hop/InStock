@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Add from "../assets/Icons/SVG/Icon-add.svg";
 import AddButton from "./AddButton";
 
 class CreateWarehouse extends React.Component {
@@ -38,8 +37,6 @@ class CreateWarehouse extends React.Component {
     let emailinput = email.value;
     const description = event.target.description;
     let descriptioninput = description.value;
-
-    const regex = /[0-9]|\./;
 
     if (warehouseinput === "") {
       warehouseinput = "Warehouse Number";
