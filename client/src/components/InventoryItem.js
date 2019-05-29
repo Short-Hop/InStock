@@ -3,15 +3,29 @@ import kebab from "../assets/Icons/SVG/Icon-kebab-default.svg"
 import { Link } from "react-router-dom";
 
 class InventoryItem extends React.Component {
-
     state = {
         displayRemove: false,
     }
 
     componentDidMount() {
-      let body = document.querySelector('body');
-      body.addEventListener('click', (event) => {
-        
+        let body = document.querySelector('body');
+        body.addEventListener('click', this.hideRemoveButton)
+    }
+
+    componentWillUnmount() {
+        let body = document.querySelector('body');
+        body.removeEventListener('click', this.hideRemoveButton)
+    }
+
+    displayRemoveButton = (event) => {
+        this.setState({
+            displayRemove: true
+        })
+        event.target.style.filter = 'brightness(0.5)';
+        event.target.style.filter = 'brightness(0.5)';
+    }
+
+    hideRemoveButton = (event) => {
         let mobileKebab = document.querySelectorAll('.kebab');
         let kebab = document.querySelectorAll('.kebab');
         let removeButton = document.querySelector('.inventory__remove')
@@ -28,20 +42,14 @@ class InventoryItem extends React.Component {
             this.setState({
                 displayRemove: false
             })
-        } 
-      })
-    }
-
-    displayRemoveButton = (event) => {
-        this.setState({
-            displayRemove: true
-        })
-        event.target.style.filter = 'brightness(0.5)';
-        event.target.style.filter = 'brightness(0.5)';
+        }
     }
 
     delete = () => {
         this.props.deleteProduct(this.props.product.warehouseId, this.props.product.id)
+        this.setState({
+            displayRemove: false,
+        })
     }
 
     render() {
@@ -93,7 +101,6 @@ class InventoryItem extends React.Component {
                     
                 </td>
             </tr>
-
             <tr>
                 <td colSpan="6" className="divider"></td>
             </tr>
