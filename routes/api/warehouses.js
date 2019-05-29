@@ -121,7 +121,14 @@ router.route("/").post((req, res) => {
     id: warehouseId,
     name: req.body.warehouse,
     number: warehouseId,
-    address: req.body.address,
+    address: {
+      buildingNumber: "469",
+      street: req.body.address.street,
+      city: req.body.address.location,
+      province: "ON",
+      postalCode: "M65GB7",
+      country: "Canada"
+    },
     contact: req.body.contact,
     description: req.body.description,
     categories: [
@@ -137,7 +144,7 @@ router.route("/").post((req, res) => {
   };
   warehouseData.push(newWarehouse);
   helper.writeJSONFile(fileName, warehouseData);
-  res.send("Warehouse correctly added.");
+  res.json(newWarehouse);
   res.redirect("/warehouses");
   console.log(req.body.warehouse);
 });

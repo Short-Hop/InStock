@@ -16,6 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
+      console.log(response)
       this.setState({
         warehouseArray: response.data,
       });
@@ -72,6 +73,11 @@ class App extends React.Component {
     });
   };
 
+  onWarehouseAdd = newWarehouse => {
+    this.setState({
+      warehouseArray: [...this.state.warehouseArray, newWarehouse]
+    });
+  };
   render() {
     return (
       <>
@@ -97,6 +103,7 @@ class App extends React.Component {
                 <LocationPage
                   warehouseArray={this.state.warehouseArray}
                   match={match}
+                  onWarehouseAdd={this.onWarehouseAdd}
                 />
               )}
             />

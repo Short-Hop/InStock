@@ -4,7 +4,7 @@ import AddButton from "./AddButton";
 
 class CreateWarehouse extends React.Component {
   state = {
-    fields: {
+    newWarehouse: {
       warehouse: "",
       address: "",
       location: "",
@@ -14,29 +14,20 @@ class CreateWarehouse extends React.Component {
       email: "",
       description: ""
     },
-    erros: {},
-
     displayForm: false
   };
 
   submitHandler = event => {
     event.preventDefault();
-    const warehouse = event.target.warehouse;
-    let warehouseinput = warehouse.value;
-    const address = event.target.address;
-    let addressinput = address.value;
+    let warehouseinput = event.target.warehouse.value;
+    let addressinput = event.target.address.value;
     const location = event.target.location;
     let locationinput = location.options[location.selectedIndex].value;
-    const name = event.target.name;
-    let nameinput = name.value;
-    const position = event.target.position;
-    let positioninput = position.value;
-    const phone = event.target.phone;
-    let phoneinput = phone.value;
-    const email = event.target.email;
-    let emailinput = email.value;
-    const description = event.target.description;
-    let descriptioninput = description.value;
+    let nameinput = event.target.name.value;
+    let positioninput = event.target.position.value;
+    let phoneinput = event.target.phone.value;
+    let emailinput = event.target.email.value;
+    let descriptioninput = event.target.description.value;
 
     if (warehouseinput === "") {
       warehouseinput = "Warehouse Number";
@@ -60,14 +51,14 @@ class CreateWarehouse extends React.Component {
     if (emailinput === "") {
       return alert("Please enter an email");
     }
-
+    console.log(addressinput);
     axios
       .post("http://localhost:8080/api/warehouses", {
         name: warehouseinput,
         number: warehouseinput,
         address: {
           street: addressinput,
-          location: locationinput
+          city: locationinput
         },
         contact: {
           name: nameinput,
@@ -77,21 +68,17 @@ class CreateWarehouse extends React.Component {
         },
         description: descriptioninput
       })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
 
-    this.setState({
-      displayForm: false
-    });
+      .then(response => {
+        this.setState({
+          displayForm: false,
+          newWarehouse: response.data
+        });
+        this.props.onSuccess(this.state.newWarehouse);
+      });
   };
 
   toggleForm = () => {
-    console.log("Toggle called");
-
     if (!this.state.displayForm) {
       this.setState({
         displayForm: true
