@@ -100,7 +100,7 @@ class CreateProduct extends React.Component {
     let countryinput = country.value;
     const quantity = event.target.quantity;
     let quantityinput = quantity.value;
-    const status = event.target.status;
+    // const status = event.target.status;
     // let statusinput = status.value;
     const description = event.target.description;
     let descriptioninput = description.value;

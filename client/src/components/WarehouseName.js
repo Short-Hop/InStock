@@ -3,34 +3,40 @@ import Arrow from "../assets/Icons/SVG/Icon-back-arrow.svg";
 import Inventory from "./Inventory";
 import Nav from "./Nav";
 
-const warehouseUrl = `http://localhost:8080/location/warehouseId`;
 export default class WarehouseName extends Component {
   render() {
+    let Num = Number(this.props.warehouseId);
+    console.log(this.props.warehouseId);
+    console.log(this.props.warehouseArray[Num]);
+    const warehouse = this.props.warehouseArray[Num];
+
     return (
       <>
         <Nav page={this.props.match.path} />
         <div className="warehouseName">
           <div className="warehouseName__title">
             <img src={Arrow} />
-            <h1>{this.props.id.name}</h1>
+            <h1>{warehouse.name}</h1>
           </div>
           <div className="warehouseName__detail">
             <div className="warehouseName__detail--address">
               <h3>ADDRESS</h3>
-              <p>{this.state.address.street}</p>
-              <p>{this.state.address.buildingNumber}</p>
-              <p id="space">{this.props.city}</p>
-              <p>{this.state.postalCode}</p>
+              <p>{warehouse.address.street}</p>
+              <p>{warehouse.address.buildingNumber}</p>
+              <p id="space">{warehouse.address.city}</p>
+              <p>{warehouse.address.postalCode}</p>
             </div>
             <div className="warehouseName__detail--contact">
               <h3>CONTACT</h3>
-              <p>{this.state.contact.name}</p>
-              <p>{this.state.contact.position}</p>
-              <p id="space">{this.state.contact.phone}</p>
-              <p>{this.state.contact.email}</p>
+              <p>{warehouse.contact.name}</p>
+              <p>{warehouse.contact.position}</p>
+              <p id="space">{warehouse.contact.phone}</p>
+              <p>{warehouse.contact.email}</p>
             </div>
           </div>
-          <Inventory />
+          <div>
+            <Inventory />
+          </div>
         </div>
       </>
     );

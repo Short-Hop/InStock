@@ -1,5 +1,6 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
+import { Link } from "react-router-dom";
 
 function WarehouseList(props) {
   const { warehouses } = props;
@@ -16,7 +17,9 @@ function WarehouseList(props) {
                   </tr>
                   <div className="location-content">
                     <h3 className="title">{warehouse.name}</h3>
-                    <img className="rightArrowImg" src={rightArrow} />
+                    <Link to="/warehouseName">
+                      <img className="rightArrowImg" src={rightArrow} />
+                    </Link>
                   </div>
                 </tr>
                 <tr>
@@ -60,7 +63,9 @@ function WarehouseList(props) {
                   <tr className="row-level-content__arrow">
                     <h4>{warehouse.productscategories}</h4>
                     <div>
-                      <img className="rightArrowImg" src={rightArrow} />
+                      <Link to="/warehouseName">
+                        <img className="rightArrowImg" src={rightArrow} />
+                      </Link>
                     </div>
                   </tr>
                   <tr>

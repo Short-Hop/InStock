@@ -1,10 +1,9 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
-import WarehouseList from "./WarehouseList"
+import { Link } from "react-router-dom";
 
 export default class Location extends React.Component {
   render() {
-
     console.log(this.props.warehouseArray);
     return (
       <>
@@ -56,7 +55,9 @@ export default class Location extends React.Component {
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number}
                 </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
+                <Link to={`/warehouses/${props.warehouse.id}`}>
+                  <img className="rightArrowImg1" src={rightArrow} />
+                </Link>
               </div>
               <h4>
                 {props.warehouse.address.buildingNumber},{" "}
@@ -72,7 +73,9 @@ export default class Location extends React.Component {
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number + 1}
                 </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
+                <Link to={`/warehouses/${props.warehouse.id}`}>
+                  <img className="rightArrowImg1" src={rightArrow} />
+                </Link>
                 <h4>
                   {props.warehouse.address.buildingNumber},{" "}
                   {props.warehouse.address.street},{" "}
@@ -103,7 +106,9 @@ export default class Location extends React.Component {
               </h4>
             </td>
             <td className="row2__col-last">
-              <img className="rightArrowImg2" src={rightArrow} />
+              <Link to={`/warehouses/${props.warehouse.id}`}>
+                <img className="rightArrowImg2" src={rightArrow} />
+              </Link>
             </td>
           </tr>
           <hr />

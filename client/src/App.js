@@ -35,7 +35,7 @@ class App extends React.Component {
   // }
 
   render() {
-    if (this.state.warehouseArray === 0) {
+    if (this.state.warehouseArray.length === 0) {
       return <div />;
     } else
       return (
@@ -43,6 +43,18 @@ class App extends React.Component {
           <BrowserRouter>
             <Switch>
               <Redirect from="/" exact to="/warehouses" />
+              <Route
+                path="/warehouses/:id"
+                exact
+                render={({ match }) => (
+                  <WarehouseName
+                    warehouseArray={this.state.warehouseArray}
+                    warehouseId={match.params.id}
+                    match={match}
+                  />
+                )}
+              />
+              />
               <Route
                 path="/warehouses"
                 exact
