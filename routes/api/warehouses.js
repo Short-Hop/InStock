@@ -49,8 +49,8 @@ router.route("/product").post((req, res) => {
       orderDate: product.ordered,
       orderBy: "",
       quantity: product.quantity,
-      categories: ""
-      // status: statusinput,
+      categories: "",
+      status: product.status,
     };
     console.log(newProduct);
     found.products.push(newProduct);
@@ -102,11 +102,9 @@ router.delete("/:id/product/:productId", (req, res) => {
     
     newData[position] = found;
 
-    console.log(newData)
-
     warehouseData = newData;
 
-    
+    helper.writeJSONFile(fileName, warehouseData)
 
     res.send(warehouseData);
   } else {
