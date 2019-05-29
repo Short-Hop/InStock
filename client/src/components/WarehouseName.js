@@ -34,9 +34,7 @@ export default class WarehouseName extends Component {
               <p>{warehouse.contact.email}</p>
             </div>
           </div>
-          <div>
-            <Inventory />
-          </div>
+          <div>{/* <Inventory /> */}</div>
         </div>
       </>
     );
