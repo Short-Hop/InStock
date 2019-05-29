@@ -58,7 +58,7 @@ class InventoryItem extends React.Component {
 
 
   render() {
-    let status = this.props.product.inStock ? "IN STOCK" : "OUT OF STOCK";
+    let status = this.props.product.inStock ? "In Stock" : "Out of Stock";
 
     let removeButton;
     if (this.state.displayRemove) {
