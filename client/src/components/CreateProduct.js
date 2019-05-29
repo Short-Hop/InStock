@@ -196,7 +196,7 @@ class CreateProduct extends React.Component {
                     <label>Status</label>
                     <div id="status">
                       <p>In stock</p>
-                      <Switch />
+                      <Switch checked={this.state.product.inStock} onColor="#6BB01A" checkedIcon={false} uncheckedIcon={false}/>
                     </div>
                   </div>
                 </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import rightArrow from "../assets/Icons/SVG/Icon-arrow-right.svg";
 
+import { Link } from "react-router-dom";
+
 export default class Location extends React.Component {
   render() {
-    console.log(this.props.warehouseArray);
     return (
       <>
         <section className="location">
@@ -52,12 +53,17 @@ export default class Location extends React.Component {
         <>
           <tr className="row1">
             <td className="row1__col-mobile">
+
+              <Link className="link" to={"/warehouse/" + props.warehouse.id}>
+
               <div className="arrow-control">
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number + 1}
                 </h3>
                 <img className="rightArrowImg1" src={rightArrow} />
               </div>
+              </Link>
+              
               <h4>
                 {props.warehouse.address.buildingNumber},{" "}
                 {props.warehouse.address.street}, {props.warehouse.address.city}
@@ -65,8 +71,13 @@ export default class Location extends React.Component {
               </h4>
             </td>
           </tr>
+          
           <tr className="row2">
-            <td className="row2__col-desk row2__item">
+
+            <td className="row2__col-desk row2__item">            
+
+              <Link className="link" to={"/warehouse/" + props.warehouse.id}>
+
               <div className="arrow-control">
                 <h3 className="title">
                   {props.warehouse.name} {props.warehouse.number + 1}
@@ -79,6 +90,7 @@ export default class Location extends React.Component {
                   {props.warehouse.address.province}
                 </h4>
               </div>
+              </Link>
             </td>
             <td className="row2__item">
               <h4>{props.warehouse.contact.name}</h4>
@@ -99,7 +111,9 @@ export default class Location extends React.Component {
             </td>
             <td className="row2__col-last row2__item">
               <img className="rightArrowImg2" src={rightArrow} />
+
             </td>
+            
           </tr>
           <hr className="hr" />
         </>

@@ -22,6 +22,8 @@ class Product extends React.Component {
             categories: [],
             inStock: false
         },
+
+        editForm: false,
     }
     
     componentDidMount() {
@@ -30,6 +32,15 @@ class Product extends React.Component {
                 product: response.data
             })
         })
+    }
+
+    printCategories = () => {
+        let string = "";
+        this.state.product.categories.forEach(category => {
+            string += category + ", "
+        })
+        string = string.substr(0, (string.length - 2))
+        return string;
     }
     
     
@@ -42,6 +53,7 @@ class Product extends React.Component {
         } else {
             indicator = <div className="product__outStock">Out of Stock</div>
         }
+        
         return(
             <>
             <Nav page={this.props.match.path}/>
@@ -52,7 +64,7 @@ class Product extends React.Component {
                             <img src={arrow}/>
                         </Link>
                         
-                        <h1>Product Name</h1>
+                        <h1>{this.state.product.name}</h1>
                     </div>
                     {indicator}
                 </div>
@@ -61,35 +73,35 @@ class Product extends React.Component {
                 <div className="product__details">
                     <div className="product__description">
                         <h5>ITEM DESCRIPTION</h5>
-                        <h4>Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</h4>
+                        <h4>{this.state.product.longDescription}</h4>
                     </div>
                     <div className="product__info"> 
                         <div>
                             <div>
                                 <h5>ORDERED BY</h5>
-                                <h4>Mark Saunders</h4>
+                                <h4>{this.state.product.orderBy}</h4>
                             </div>
                             <div>
                                 <h5>REFERENCE NUMBER</h5>
-                                <h4>JK2020FD7811201</h4> 
+                                <h4>{this.state.product.refNumber}</h4> 
                             </div>
                         </div>
 
                         <div>
                             <div>
                                 <h5>LAST ORDERED</h5>
-                                <h4>2018-05-24</h4>
+                                <h4>{this.state.product.orderDate}</h4>
                             </div>
                             <div>
                                 <h5>LOCATION</h5>
-                                <h4>Toronto, CAN</h4>
+                                <h4> {this.state.product.location.city + ", " + this.state.product.location.country}</h4>
                             </div>
                         </div>
 
                         <div>
                             <div>
                                 <h5>QUANTITY</h5>
-                                <h4>12000</h4>
+                                <h4>{this.state.product.quantity}</h4>
                             </div>
                         </div>
                         
@@ -97,17 +109,19 @@ class Product extends React.Component {
                         <div>
                             <div>
                                 <h5>CATEGORIES</h5>
-                                <h4>Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation, Sales</h4>
+                                <h4>{this.printCategories()}</h4>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div className="divider"></div>
-                
                 <button>
-                    EDIT
+                    <Link className="link" to={"/warehouse/" + this.state.product.warehouseId + "/inventory/" + this.state.product.id + "/edit"}>
+                        EDIT
+                    </Link>
                 </button>
+                
                 
             </div>
             </>
