@@ -62,15 +62,15 @@ export default class WarehouseName extends Component {
                 <h3>ADDRESS</h3>
                 <p>{this.state.warehouse.address.street}</p>
                 <p>{this.state.warehouse.address.buildingNumber}</p>
-                <p id="space">{this.state.warehouse.address.city}</p>
-                <p>{this.state.warehouse.address.postalCode}</p>
+                <p className="italic" id="space">{this.state.warehouse.address.city + ' ' + this.state.warehouse.address.province}</p>
+                <p className="italic">{this.state.warehouse.address.postalCode + this.state.warehouse.address.country}</p>
               </div>
               <div className="warehouseName__detail--contact">
                 <h3>CONTACT</h3>
                 <p>{this.state.warehouse.contact.name}</p>
                 <p>{this.state.warehouse.contact.position}</p>
-                <p id="space">{this.state.warehouse.contact.phone}</p>
-                <p>{this.state.warehouse.contact.email}</p>
+                <p id="space" className="italic">{this.state.warehouse.contact.phone}</p>
+                <p className="italic">{this.state.warehouse.contact.email}</p>
               </div>
             </div>
           </div>

@@ -14,7 +14,9 @@ class InventoryPage extends React.Component {
           deleteProduct={this.props.deleteProduct}
           productArray={this.props.productArray}
         />
-        <CreateProduct />
+        <CreateProduct
+          onSuccess={newProduct => this.props.onProductAdd(newProduct)}
+        />
       </>
     );
   }

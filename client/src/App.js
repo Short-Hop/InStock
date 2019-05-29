@@ -66,6 +66,12 @@ class App extends React.Component {
     })
   }
 
+  onProductAdd = newProduct => {
+    this.setState({
+      allProducts: [...this.state.allProducts, newProduct]
+    });
+  };
+
   render() {
     return (
       <>
@@ -102,6 +108,7 @@ class App extends React.Component {
                   productArray={this.state.allProducts}
                   deleteProduct={this.deleteProduct}
                   match={match}
+                  onProductAdd={this.onProductAdd}
                 />
               )}
             />
