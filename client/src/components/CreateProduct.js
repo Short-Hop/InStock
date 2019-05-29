@@ -122,6 +122,10 @@ class CreateProduct extends React.Component {
     quantity.value = "";
     // status.value = "";
     description.value = "";
+
+    this.setState({
+      displayForm: false
+    });
   };
   render() {
     let form;
@@ -196,7 +200,12 @@ class CreateProduct extends React.Component {
                     <label>Status</label>
                     <div id="status">
                       <p>In stock</p>
-                      <Switch checked={this.state.product.inStock} onColor="#6BB01A" checkedIcon={false} uncheckedIcon={false}/>
+                      {/* <Switch
+                        checked={this.state.product.inStock}
+                        onColor="#6BB01A"
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -230,29 +239,4 @@ class CreateProduct extends React.Component {
   }
 }
 
-// class Switch extends Component {
-//   constructor() {
-//     super();
-//     this.state = { checked: false };
-//     this.handleChange = this.handleChange.bind(this);
-//   }
-
-//   handleChange(checked) {
-//     this.setState({ checked });
-//   }
-
-//   render() {
-//     return (
-//       <label>
-//         <Switch
-//           uncheckedIcon={false}
-//           checkedIcon={false}
-//           onChange={this.handleChange}
-//           checked={this.state.checked}
-//           onColor={"#00B200"}
-//         />
-//       </label>
-//     );
-//   }
-// }
 export default CreateProduct;

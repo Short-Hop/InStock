@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./components/Nav";
 import "./styles/styles.css";
 import Product from "./components/Product";
-import ProductEdit from "./components/ProductEdit"
+import ProductEdit from "./components/ProductEdit";
 import WarehouseName from "./components/WarehouseName";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LocationPage from "./components/LocationPage";
@@ -19,41 +19,56 @@ class App extends React.Component {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
       this.setState({
         warehouseArray: response.data,
-        allProducts: this.getAllProducts(response.data),
+        allProducts: this.getAllProducts(response.data)
       });
-
     });
   }
 
   deleteProduct = (warehouseId, productId) => {
-    axios.delete('http://localhost:8080/api/warehouses/' + warehouseId + '/product/' + productId).then(response => {
-
+    axios
+      .delete(
+        "http://localhost:8080/api/warehouses/" +
+          warehouseId +
+          "/product/" +
+          productId
+      )
+      .then(response => {
         this.setState({
           warehouseArray: response.data,
           allProducts: this.getAllProducts(response.data)
-        })
-        
-    })
-  }
+        });
+      });
+  };
 
-  getAllProducts = (array) => {
+  getAllProducts = array => {
     let allProducts = [];
     array.forEach(warehouse => {
       warehouse.products.forEach(product => {
         allProducts.push(product);
-      })
-    })
+      });
+    });
 
     return allProducts;
-  }
+  };
 
   render() {
-
     return (
       <>
         <BrowserRouter>
           <Switch>
             <Redirect from="/" exact to="/warehouses" />
+            <Route
+              path="/warehouses/:id"
+              exact
+              render={({ match }) => (
+                <WarehouseName
+                  warehouseArray={this.state.warehouseArray}
+                  warehouseId={match.params.id}
+                  match={match}
+                />
+              )}
+            />
+            />
             <Route
               path="/warehouses"
               exact
@@ -69,7 +84,8 @@ class App extends React.Component {
               exact
               render={({ match }) => (
                 <InventoryPage
-                  productArray={this.state.allProducts} deleteProduct={this.deleteProduct}
+                  productArray={this.state.allProducts}
+                  deleteProduct={this.deleteProduct}
                   match={match}
                 />
               )}

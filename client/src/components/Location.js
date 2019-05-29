@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default class Location extends React.Component {
   render() {
-
     return (
       <>
         <section className="location">
@@ -51,14 +50,16 @@ export default class Location extends React.Component {
             <td className="row1__col-mobile">
               <h5 className="main-col">WAREHOUSE</h5>
               <Link className="link" to={"/warehouse/" + props.warehouse.id}>
-              <div className="arrow-control">
-                <h3 className="title">
-                  {props.warehouse.name} {props.warehouse.number}
-                </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
-              </div>
+                <div className="arrow-control">
+                  <h3 className="title">
+                    {props.warehouse.name} {props.warehouse.number}
+                  </h3>
+                  <Link to={`/warehouses/${props.warehouse.id}`}>
+                    <img className="rightArrowImg1" src={rightArrow} />
+                  </Link>
+                </div>
               </Link>
-              
+
               <h4>
                 {props.warehouse.address.buildingNumber},{" "}
                 {props.warehouse.address.street}, {props.warehouse.address.city}
@@ -66,29 +67,28 @@ export default class Location extends React.Component {
               </h4>
             </td>
           </tr>
-          
+
           <tr className="row2">
-            
-            
             <td className="row2__col-desk">
               <Link className="link" to={"/warehouse/" + props.warehouse.id}>
-              
-              <div className="arrow-control">
-                <h5 className="main-col">WAREHOUSE</h5>
-                <h3 className="title">
-                  {props.warehouse.name} {props.warehouse.number + 1}
-                </h3>
-                <img className="rightArrowImg1" src={rightArrow} />
-                <h4>
-                  {props.warehouse.address.buildingNumber},{" "}
-                  {props.warehouse.address.street},{" "}
-                  {props.warehouse.address.city},{" "}
-                  {props.warehouse.address.province}
-                </h4>
-              </div>
+                <div className="arrow-control">
+                  <h5 className="main-col">WAREHOUSE</h5>
+                  <h3 className="title">
+                    {props.warehouse.name} {props.warehouse.number + 1}
+                  </h3>
+                  <Link to={`/warehouses/${props.warehouse.id}`}>
+                    <img className="rightArrowImg1" src={rightArrow} />
+                  </Link>
+                  <h4>
+                    {props.warehouse.address.buildingNumber},{" "}
+                    {props.warehouse.address.street},{" "}
+                    {props.warehouse.address.city},{" "}
+                    {props.warehouse.address.province}
+                  </h4>
+                </div>
               </Link>
             </td>
-            
+
             <td>
               <h5 className="main-col">CONTACT</h5>
               <h4>{props.warehouse.contact.position}</h4>
@@ -111,11 +111,12 @@ export default class Location extends React.Component {
               </h4>
             </td>
             <td className="row2__col-last">
+              <Link to={`/warehouses/${props.warehouse.id}`}>
                 <img className="rightArrowImg2" src={rightArrow} />
+              </Link>
             </td>
-            
           </tr>
-          
+
           <hr />
         </>
       );
