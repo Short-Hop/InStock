@@ -53,18 +53,18 @@ class App extends React.Component {
   };
 
   editProduct = (product) => {
-    axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
-      this.setState({
-        warehouseArray: response.data,
-      })
-
-      axios.get("http://localhost:8080/api/inventories").then(response => {
-        console.log(response.data)
+    return(
+      axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
         this.setState({
-          allProducts: response.data
+          warehouseArray: response.data,
         })
+          axios.get("http://localhost:8080/api/inventories").then(response => {
+            this.setState({
+              allProducts: response.data
+            })
+          })
       })
-    })
+    )
   }
 
   onProductAdd = newProduct => {

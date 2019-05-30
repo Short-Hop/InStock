@@ -31,6 +31,7 @@ class Product extends React.Component {
 
 
     componentDidMount() {
+        console.log("PorductEdit Mounted")
         axios.get('http://localhost:8080/api/warehouses/' + this.props.match.params.warehouseId + "/product/" + this.props.match.params.id).then(response => {
             this.setState({
                 product: response.data
@@ -77,13 +78,11 @@ class Product extends React.Component {
 
     submitForm = (event) => {
         event.preventDefault();
-        this.props.editProduct(this.state.product)
-
-        setTimeout(() => {
+        this.props.editProduct(this.state.product).then(response => {
             this.setState({
                 redirect: true
             })
-        }, 1000)
+        })
     }
 
     render() {
@@ -140,7 +139,7 @@ class Product extends React.Component {
                             <div>
                                 <div>
                                     <h5>LAST ORDERED</h5>
-                                    <input name="orderDate" value={this.state.product.orderDate} onChange={event => this.formUpdate(event.target.value, event.target.name)} ></input>
+                                    <input id="lastOrdered" name="orderDate" type="date" value={this.state.product.orderDate} onChange={event => this.formUpdate(event.target.value, event.target.name)} ></input>
                                 </div>
                                 <div>
                                     <h5>LOCATION</h5>

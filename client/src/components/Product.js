@@ -27,6 +27,7 @@ class Product extends React.Component {
   };
 
   componentDidMount() {
+    console.log("Porduct Mounted")
     axios
       .get(
         "http://localhost:8080/api/warehouses/" +
@@ -38,6 +39,8 @@ class Product extends React.Component {
         this.setState({
           product: response.data
         });
+
+        console.log("Product State Updated")
       });
   }
 

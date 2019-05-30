@@ -36,8 +36,22 @@ export default class WarehouseName extends Component {
         this.setState({
           warehouse: response.data
         });
-      });
+    });
   }
+
+  deleteProduct = (warehouseId, productId) => {
+    
+    axios.delete("http://localhost:8080/api/warehouses/" + warehouseId + "/product/" + productId).then(response =>{
+      
+
+      axios.get("http://localhost:8080/api/warehouses/" + this.props.match.params.id)
+        .then(response => {
+          this.setState({
+            warehouse: response.data
+          });
+      });
+    });
+  };
 
   render() {
     return (
@@ -76,7 +90,7 @@ export default class WarehouseName extends Component {
           </div>
         </div>
         <div className="background">
-          <Inventory productArray={this.state.warehouse.products} />
+          <Inventory productArray={this.state.warehouse.products} deleteProduct={this.deleteProduct} />
         </div>
       </>
     );
