@@ -155,7 +155,7 @@ class CreateWarehouse extends React.Component {
                   <div className="column">
                     <label>Email</label>
                     <input
-                      type="text"
+                      type="email"
                       id="email"
                       placeholder="email@instock.com"
                     />
