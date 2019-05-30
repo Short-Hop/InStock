@@ -50,7 +50,7 @@ router.post("/product", (req, res) => {
       orderBy: "",
       quantity: product.quantity,
       categories: [],
-      status: product.inStock
+      inStock: product.inStock
     };
     found.products.push(newProduct);
     helper.writeJSONFile(fileName, warehouseData);
@@ -119,7 +119,7 @@ router.post("/", (req, res) => {
   let warehouseId = helper.createNewId(warehouseData);
   const newWarehouse = {
     id: warehouseId,
-    name: req.body.warehouse,
+    name: req.body.name,
     number: warehouseId,
     address: {
       buildingNumber: "469",
