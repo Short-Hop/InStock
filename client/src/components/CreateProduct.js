@@ -103,7 +103,7 @@ class CreateProduct extends React.Component {
                   </div>
                   <div className="column">
                     <label>Last Ordered</label>
-                    <input type="text" id="ordered" placeholder="yyyy-mm-dd" />
+                    <input type="date" id="ordered" placeholder="yyyy-mm-dd" />
                   </div>
                 </div>
                 <div className="row">
