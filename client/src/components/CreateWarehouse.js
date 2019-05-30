@@ -121,7 +121,7 @@ class CreateWarehouse extends React.Component {
                   <div className="column" id="selectdiv">
                     <label>Location</label>
                     <select name="location" id="location">
-                      <option value="Toronto" selected>
+                      <option value="Toronto">
                         Toronto, CAN
                       </option>
                       <option value="Vancouver">Vancouver, CAN</option>

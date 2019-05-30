@@ -115,7 +115,7 @@ class CreateProduct extends React.Component {
                   <div className="column" id="selectdiv">
                     <label>Country</label>
                     <select name="country" id="country">
-                      <option value="Canada" selected>
+                      <option value="Canada">
                         Canada
                       </option>
                       <option value="USA">USA</option>
