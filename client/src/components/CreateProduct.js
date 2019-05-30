@@ -104,7 +104,7 @@ class CreateProduct extends React.Component {
                   </div>
                   <div className="column">
                     <label>Last Ordered</label>
-                    <input type="text" id="ordered" placeholder="yyyy-mm-dd" />
+                    <input type="date" id="ordered" placeholder="yyyy-mm-dd" />
                   </div>
                 </div>
                 <div className="row">
@@ -115,7 +115,7 @@ class CreateProduct extends React.Component {
                   <div className="column" id="selectdiv">
                     <label>Country</label>
                     <select name="country" id="country">
-                      <option value="Canada" selected>
+                      <option value="Canada">
                         Canada
                       </option>
                       <option value="USA">USA</option>

@@ -115,7 +115,7 @@ router.delete("/:id/product/:productId", (req, res) => {
   }
 });
 
-router.route("/").post((req, res) => {
+router.post("/", (req, res) => {
   let warehouseId = helper.createNewId(warehouseData);
   const newWarehouse = {
     id: warehouseId,
