@@ -37,4 +37,16 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.put("/:warehouseId/:id", (req, res) => {
+  let newData = warehouseData;
+
+  newData[req.params.warehouseId].products[req.params.id] = req.body;
+
+  helper.writeJSONFile(fileName, newData)
+
+  res.send(newData);
+})
+
+
+
 module.exports = router;

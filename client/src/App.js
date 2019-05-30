@@ -16,11 +16,18 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get("http://localhost:8080/api/warehouses").then(response => {
+      console.log(response)
       this.setState({
         warehouseArray: response.data,
-        allProducts: this.getAllProducts(response.data)
       });
     });
+
+    axios.get("http://localhost:8080/api/inventories").then(response => {
+      console.log(response.data)
+      this.setState({
+        allProducts: response.data
+      })
+    })
   }
 
   deleteProduct = (warehouseId, productId) => {
@@ -34,22 +41,43 @@ class App extends React.Component {
       .then(response => {
         this.setState({
           warehouseArray: response.data,
-          allProducts: this.getAllProducts(response.data)
         });
+
+        axios.get("http://localhost:8080/api/inventories").then(response => {
+          console.log(response.data)
+          this.setState({
+            allProducts: response.data
+          })
+        })
       });
   };
 
-  getAllProducts = array => {
-    let allProducts = [];
-    array.forEach(warehouse => {
-      warehouse.products.forEach(product => {
-        allProducts.push(product);
-      });
+  editProduct = (product) => {
+    axios.put('http://localhost:8080/api/inventories/' + product.warehouseId + "/" + product.id, product).then(response => {
+      this.setState({
+        warehouseArray: response.data,
+      })
+
+      axios.get("http://localhost:8080/api/inventories").then(response => {
+        console.log(response.data)
+        this.setState({
+          allProducts: response.data
+        })
+      })
+    })
+  }
+
+  onProductAdd = newProduct => {
+    this.setState({
+      allProducts: [...this.state.allProducts, newProduct]
     });
-
-    return allProducts;
   };
 
+  onWarehouseAdd = newWarehouse => {
+    this.setState({
+      warehouseArray: [...this.state.warehouseArray, newWarehouse]
+    });
+  };
   render() {
     return (
       <>
@@ -75,6 +103,7 @@ class App extends React.Component {
                 <LocationPage
                   warehouseArray={this.state.warehouseArray}
                   match={match}
+                  onWarehouseAdd={this.onWarehouseAdd}
                 />
               )}
             />
@@ -86,6 +115,7 @@ class App extends React.Component {
                   productArray={this.state.allProducts}
                   deleteProduct={this.deleteProduct}
                   match={match}
+                  onProductAdd={this.onProductAdd}
                 />
               )}
             />
@@ -104,7 +134,7 @@ class App extends React.Component {
               render={({ match }) => (
                 <ProductEdit
                   warehouseArray={this.state.warehouseArray}
-                  match={match}
+                  match={match} editProduct={this.editProduct}
                 />
               )}
             />

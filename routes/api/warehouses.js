@@ -52,9 +52,9 @@ router.post("/product", (req, res) => {
       categories: [],
       status: product.inStock
     };
-    console.log(newProduct);
     found.products.push(newProduct);
     helper.writeJSONFile(fileName, warehouseData);
+    res.json(newProduct);
   }
 });
 
@@ -94,7 +94,6 @@ router.delete("/:id/product/:productId", (req, res) => {
 
   if (found) {
     position = newData.indexOf(found);
-    console.log("index: " + position);
 
     remainingProducts = found.products.filter(
       product => req.params.productId != product.id
@@ -122,7 +121,14 @@ router.post("/", (req, res) => {
     id: warehouseId,
     name: req.body.warehouse,
     number: warehouseId,
-    address: req.body.address,
+    address: {
+      buildingNumber: "469",
+      street: req.body.address.street,
+      city: req.body.address.location,
+      province: "ON",
+      postalCode: "M65GB7",
+      country: "Canada"
+    },
     contact: req.body.contact,
     description: req.body.description,
     categories: [
@@ -138,7 +144,7 @@ router.post("/", (req, res) => {
   };
   warehouseData.push(newWarehouse);
   helper.writeJSONFile(fileName, warehouseData);
-  res.send("Warehouse correctly added.");
+  res.json(newWarehouse);
   res.redirect("/warehouses");
   console.log(req.body.warehouse);
 });
