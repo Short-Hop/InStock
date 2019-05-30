@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
   res.json(allProducts);
 });
 
+// Get details of specific product
 router.get("/:id", (req, res) => {
   let allProducts = [];
   warehouseData.forEach(warehouse => {
@@ -37,6 +38,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
+// Edits details of specific product
 router.put("/:warehouseId/:id", (req, res) => {
   let newData = warehouseData;
 

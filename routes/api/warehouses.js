@@ -28,6 +28,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
+// Posts a new product to the last Warehouse
 router.post("/product", (req, res) => {
   let product = req.body;
   const found = warehouseData.find(
@@ -41,7 +42,7 @@ router.post("/product", (req, res) => {
       name: product.product,
       shortDescription: product.description,
       longDescription: product.description,
-      refNumber: "2222222",
+      refNumber: "JK2020FD78112KM",
       location: {
         city: product.city,
         country: product.country
@@ -55,9 +56,18 @@ router.post("/product", (req, res) => {
     found.products.push(newProduct);
     helper.writeJSONFile(fileName, warehouseData);
     res.json(newProduct);
+
+
+  } else {
+    res
+      .status(400)
+      .json({ errorMessage: `Invalid Post Format` });
   }
+
 });
 
+
+// Gets a specific product based on its id
 router.get("/:id/product/:productId", (req, res) => {
   let found = warehouseData.find(
     warehouse => warehouse.id === parseInt(req.params.id)
@@ -85,6 +95,7 @@ router.get("/:id/product/:productId", (req, res) => {
   }
 });
 
+// Deletes a specific product from a specific warehouse
 router.delete("/:id/product/:productId", (req, res) => {
   let newData = warehouseData;
   let found = warehouseData.find(
@@ -115,6 +126,7 @@ router.delete("/:id/product/:productId", (req, res) => {
   }
 });
 
+// Posts a new warehouse
 router.post("/", (req, res) => {
   let warehouseId = helper.createNewId(warehouseData);
   const newWarehouse = {
@@ -124,7 +136,7 @@ router.post("/", (req, res) => {
     address: {
       buildingNumber: "469",
       street: req.body.address.street,
-      city: req.body.address.location,
+      city: req.body.address.city,
       province: "ON",
       postalCode: "M65GB7",
       country: "Canada"
@@ -147,6 +159,8 @@ router.post("/", (req, res) => {
   res.json(newWarehouse);
   res.redirect("/warehouses");
   console.log(req.body.warehouse);
+
+  // No 400 status option because all fields must be filled before form can be submitted
 });
 
 module.exports = router;
