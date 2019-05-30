@@ -22,6 +22,16 @@ textarea {
   padding: 5vw;
 }
 
+#ordered {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#ordered::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
 //Mobile version @320
 @media (min-width: 320px) {
   .shadow {
@@ -29,7 +39,7 @@ textarea {
     z-index: 2;
     left: 0;
     top: 0;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -41,11 +51,10 @@ textarea {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
+
     padding: 5vw;
-    overflow:hidden; 
-    overflow-y:scroll;
-    
+    overflow: hidden;
+    overflow-y: scroll;
 
     .createnew__title {
       margin-top: 32px;
@@ -62,7 +71,6 @@ textarea {
         display: flex;
         flex-direction: column;
         // align-items: center;
-
         label {
           margin-bottom: 8px;
         }
@@ -230,8 +238,8 @@ textarea {
     height: 624px;
     display: flex;
     flex-direction: column;
-    overflow:hidden; 
-    overflow-y:scroll;
+    overflow: hidden;
+    overflow-y: scroll;
 
     .createnew__title {
       margin-top: 8px;
@@ -248,7 +256,6 @@ textarea {
           input,
           #country,
           #location {
-
             width: auto;
           }
 
