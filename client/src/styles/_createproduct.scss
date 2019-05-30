@@ -32,6 +32,9 @@ textarea {
   -webkit-appearance: none;
 }
 
+input {
+  padding-left: 20px;
+}
 //Mobile version @320
 @media (min-width: 320px) {
   .shadow {
@@ -85,7 +88,6 @@ textarea {
           border: 1px solid #e1e1e1;
           width: 100%;
           &::placeholder {
-            padding-left: 16px;
             font-size: 12px;
 
             select #country &::after {
